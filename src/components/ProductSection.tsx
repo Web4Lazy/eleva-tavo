@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ImagePlaceholder from "./ImagePlaceholder";
+import ProductGallery from "./ProductGallery";
 import { getWhatsAppUrl, sendEvent, CONFIG } from "@/config";
 
 export interface ProductSize {
@@ -336,9 +336,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
   if (compact) {
     return (
       <div className="space-y-4">
-        <ImagePlaceholder
-          aspectRatio="1/1"
-          label={product.imageLabel}
+        <ProductGallery
+          productName={product.name}
           badge={product.badge}
         />
         {content}
@@ -350,12 +349,12 @@ const ProductSection = ({ product, compact = false }: Props) => {
     <section id={product.id} className={`section-padding ${product.bgClass}`}>
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-          <ImagePlaceholder
-            aspectRatio="1/1"
-            label={product.imageLabel}
-            badge={product.badge}
-            className="lg:sticky lg:top-24"
-          />
+          <div className="lg:sticky lg:top-24">
+            <ProductGallery
+              productName={product.name}
+              badge={product.badge}
+            />
+          </div>
           {content}
         </div>
       </div>
