@@ -8,7 +8,7 @@ interface Props {
 
 const NAV_ITEMS = [
   { label: "Scenari", href: "#scenari" },
-  { label: "Concierge", href: "#concierge" },
+  { label: "Assistente", href: "#concierge" },
   { label: "Selezione", href: "#prodotto-dupree" },
   { label: "Come funziona", href: "#come-funziona" },
   { label: "FAQ", href: "#faq" },
@@ -66,7 +66,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "header" })}
               className="cta-outline text-xs py-2 px-4 hidden lg:inline-flex"
             >
-              Parla col Concierge
+              Parla con l'Assistente
             </a>
 
             {/* Mobile hamburger */}
@@ -102,7 +102,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "mobile-menu" })}
               className="cta-primary text-sm w-full text-center mt-2"
             >
-              Parla col Concierge
+              Parla con l'Assistente
             </a>
           </div>
         )}

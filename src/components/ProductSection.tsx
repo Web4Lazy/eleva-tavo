@@ -327,7 +327,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
           onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
           className="cta-outline text-center"
         >
-          Chiedi al Concierge
+          Chiedi all'Assistente
         </a>
       </div>
     </div>

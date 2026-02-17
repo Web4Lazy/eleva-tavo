@@ -10,7 +10,7 @@ const ConciergeSection = () => {
   return (
     <section id="concierge" className="section-padding bg-primary text-primary-foreground">
       <div className="container-custom text-center">
-        <h2 className="mb-3">Concierge Prima Classe</h2>
+        <h2 className="mb-3">Assistente Dedicato Prima Classe</h2>
         <p className="text-lg opacity-90 mb-12">Un umano (non un bot) ti aiuta a scegliere modello e taglia.</p>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">

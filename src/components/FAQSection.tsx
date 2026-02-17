@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "È compatibile con la mia auto/ISOFIX?",
-    a: "Dipende dal veicolo. Il nostro Concierge ti aiuta a verificare compatibilità e installazione prima dell'acquisto.",
+    a: "Dipende dal veicolo. Il nostro Assistente Dedicato ti aiuta a verificare compatibilità e installazione prima dell'acquisto.",
   },
   {
     q: "Posso usare Dupree in aereo?",
@@ -27,7 +27,7 @@ const faqs = [
     a: "I resi sono gestiti dal partner. Eleva è disponibile come punto di contatto informativo. Scrivici su WhatsApp per qualsiasi dubbio.",
   },
   {
-    q: "Quando risponde il Concierge?",
+    q: "Quando risponde l'Assistente Dedicato?",
     a: "Lun–ven 9–18. Fuori orario rispondiamo al primo slot disponibile.",
   },
 ];
