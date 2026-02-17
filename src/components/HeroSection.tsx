@@ -9,7 +9,7 @@ const HeroSection = () => (
         <div>
           <h1 className="text-foreground mb-4">Prima classe, per chi ha quattro zampe.</h1>
           <p className="text-lg text-muted-foreground mb-2">
-            La selezione Tavo firmata Eleva: viaggio e riposo premium, con Concierge Prima Classe su WhatsApp prima dell'acquisto.
+            La selezione Tavo firmata Eleva: viaggio e riposo premium, con Assistente Dedicato su WhatsApp prima dell'acquisto.
           </p>
           <p className="text-sm text-micro italic mb-8">
             Acquisto importante? Normalissimo voler essere sicuri al 100%.
