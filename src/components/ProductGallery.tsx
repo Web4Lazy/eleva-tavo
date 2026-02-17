@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   productName: string;
@@ -8,17 +9,23 @@ interface Props {
 
 const ProductGallery = ({ productName, badge, imageCount = 8 }: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [hovered, setHovered] = useState(false);
 
   const images = Array.from({ length: imageCount }, (_, i) => ({
     label: `${productName} — Foto ${i + 1}`,
   }));
 
+  const prev = () => setActiveIndex((i) => (i === 0 ? images.length - 1 : i - 1));
+  const next = () => setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+
   return (
     <div className="space-y-3">
       {/* Main image */}
       <div
-        className="relative bg-[#D9D9D9] rounded-lg flex items-center justify-center overflow-hidden"
+        className="relative bg-[#D9D9D9] rounded-lg flex items-center justify-center overflow-hidden cursor-pointer group"
         style={{ aspectRatio: "1/1" }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
       >
         {badge && (
           <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
@@ -28,15 +35,33 @@ const ProductGallery = ({ productName, badge, imageCount = 8 }: Props) => {
         <span className="text-micro text-sm text-center px-4">
           {images[activeIndex].label}
         </span>
+
+        {/* Prev arrow */}
+        <button
+          onClick={(e) => { e.stopPropagation(); prev(); }}
+          className={`absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0"}`}
+          aria-label="Foto precedente"
+        >
+          <ChevronLeft size={22} />
+        </button>
+
+        {/* Next arrow */}
+        <button
+          onClick={(e) => { e.stopPropagation(); next(); }}
+          className={`absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/30 backdrop-blur-sm flex items-center justify-center text-white transition-opacity duration-300 ${hovered ? "opacity-100" : "opacity-0"}`}
+          aria-label="Foto successiva"
+        >
+          <ChevronRight size={22} />
+        </button>
       </div>
 
-      {/* Thumbnails bar */}
-      <div className="flex gap-2 overflow-x-auto pb-1">
+      {/* Thumbnails bar — flex stretch to match main image width */}
+      <div className="grid grid-cols-8 gap-1.5">
         {images.map((img, i) => (
           <button
             key={i}
             onClick={() => setActiveIndex(i)}
-            className={`flex-shrink-0 w-14 h-14 rounded-md bg-[#D9D9D9] flex items-center justify-center text-[9px] text-micro transition-all duration-200 border-2 ${
+            className={`aspect-square rounded-md bg-[#D9D9D9] flex items-center justify-center text-[9px] text-micro transition-all duration-200 border-2 ${
               i === activeIndex
                 ? "border-primary opacity-100"
                 : "border-transparent opacity-60 hover:opacity-90"
