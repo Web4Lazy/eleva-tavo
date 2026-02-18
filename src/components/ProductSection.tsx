@@ -2,6 +2,16 @@ import { useState } from "react";
 import ProductGallery from "./ProductGallery";
 import { getWhatsAppUrl, sendEvent, CONFIG } from "@/config";
 
+import dupree1 from "@/assets/dupree/dupree-1.png";
+import dupree2 from "@/assets/dupree/dupree-2.png";
+import dupree3 from "@/assets/dupree/dupree-3.png";
+import dupree4 from "@/assets/dupree/dupree-4.png";
+import dupree5 from "@/assets/dupree/dupree-5.png";
+import dupree6 from "@/assets/dupree/dupree-6.jpg";
+import dupree7 from "@/assets/dupree/dupree-7.png";
+
+const DUPREE_IMAGES = [dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
+
 export interface ProductSize {
   label: string;
   specs: { label: string; value: string }[];
@@ -339,6 +349,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
         <ProductGallery
           productName={product.name}
           badge={product.badge}
+          images={product.id === "prodotto-dupree" ? DUPREE_IMAGES : undefined}
+          imageCount={product.id === "prodotto-dupree" ? 7 : undefined}
         />
         {content}
       </div>
@@ -353,6 +365,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
             <ProductGallery
               productName={product.name}
               badge={product.badge}
+              images={product.id === "prodotto-dupree" ? DUPREE_IMAGES : undefined}
+              imageCount={product.id === "prodotto-dupree" ? 7 : undefined}
             />
           </div>
           {content}
