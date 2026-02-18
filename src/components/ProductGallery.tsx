@@ -24,7 +24,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
     <div className="space-y-3">
       {/* Main image */}
       <div
-        className="relative bg-white rounded-lg flex items-center justify-center overflow-hidden cursor-pointer group"
+        className="relative bg-transparent rounded-lg flex items-center justify-center overflow-hidden cursor-pointer group"
         style={{ aspectRatio: "1/1" }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
