@@ -88,8 +88,8 @@ const Index = () => {
 
       <main>
         <HeroSection />
-        <ManifestoSection />
         <ScenariSection onOpenDrawer={handleOpenDrawer} />
+        <ManifestoSection />
         <ExpandableVideoSection />
         <ConciergeSection />
 
