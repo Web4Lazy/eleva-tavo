@@ -90,11 +90,12 @@ const Index = () => {
         <ManifestoSection />
         <ScenariSection onOpenDrawer={handleOpenDrawer} />
         <ConciergeSection />
-        <VantaggioSection />
 
         {PRODUCTS.map((product) => (
           <ProductSection key={product.id} product={product} />
         ))}
+
+        <VantaggioSection />
 
         <ComeFunzionaSection />
         <FAQSection />
