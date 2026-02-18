@@ -11,7 +11,7 @@ const ExpandableVideoSection = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex items-center justify-between py-5 text-left"
         >
-          <h3 className="text-foreground">Scopri come funziona</h3>
+          <h1 className="text-foreground">Scopri come proteggiamo i nostri animali – clicca qui per vedere il video</h1>
           <ChevronDown
             className={`h-6 w-6 text-muted-foreground transition-transform duration-300 ${
               isOpen ? "rotate-180" : ""
