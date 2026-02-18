@@ -29,7 +29,7 @@ const HeroSection = () => (
             </a>
           </div>
         </div>
-        <img src={heroImage} alt="Cane in viaggio con Travel System" className="rounded-lg w-full object-cover" style={{ aspectRatio: "4/3" }} />
+        <img src={heroImage} alt="Cane in viaggio con Travel System" className="rounded-lg w-full object-cover" style={{ aspectRatio: "1/1" }} />
       </div>
       <div className="mt-8">
         <TrustBar />
