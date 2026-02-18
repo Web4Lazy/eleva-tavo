@@ -1,5 +1,6 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
+import dupreeImg from "@/assets/dupree-scenari.png";
 
 interface ScenarioCard {
   name: string;
@@ -7,10 +8,11 @@ interface ScenarioCard {
   targetId: string;
   imageLabel: string;
   badge?: string;
+  imageSrc?: string;
 }
 
 const cards: ScenarioCard[] = [
-  { name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300" },
+  { name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg },
   { name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300" },
   { name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva" },
   { name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300" },
@@ -32,12 +34,23 @@ const ScenariSection = ({ onOpenDrawer }: Props) => (
             key={card.targetId}
             className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start bg-background border border-border rounded-2xl p-5 flex flex-col"
           >
-            <ImagePlaceholder
-              aspectRatio="4/3"
-              label={card.imageLabel}
-              badge={card.badge}
-              className="mb-4"
-            />
+            {card.imageSrc ? (
+              <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "4/3" }}>
+                {card.badge && (
+                  <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
+                    {card.badge}
+                  </span>
+                )}
+                <img src={card.imageSrc} alt={card.name} className="w-full h-full object-contain" />
+              </div>
+            ) : (
+              <ImagePlaceholder
+                aspectRatio="4/3"
+                label={card.imageLabel}
+                badge={card.badge}
+                className="mb-4"
+              />
+            )}
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-4">{card.scenario}</p>
             <div className="mt-auto flex flex-col gap-2">
