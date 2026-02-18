@@ -5,18 +5,20 @@ interface Props {
   productName: string;
   badge?: string;
   imageCount?: number;
+  images?: string[];
 }
 
-const ProductGallery = ({ productName, badge, imageCount = 8 }: Props) => {
+const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages }: Props) => {
+  const count = realImages ? realImages.length : imageCount;
   const [activeIndex, setActiveIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
 
-  const images = Array.from({ length: imageCount }, (_, i) => ({
+  const placeholders = Array.from({ length: count }, (_, i) => ({
     label: `${productName} — Foto ${i + 1}`,
   }));
 
-  const prev = () => setActiveIndex((i) => (i === 0 ? images.length - 1 : i - 1));
-  const next = () => setActiveIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  const prev = () => setActiveIndex((i) => (i === 0 ? count - 1 : i - 1));
+  const next = () => setActiveIndex((i) => (i === count - 1 ? 0 : i + 1));
 
   return (
     <div className="space-y-3">
@@ -32,9 +34,17 @@ const ProductGallery = ({ productName, badge, imageCount = 8 }: Props) => {
             {badge}
           </span>
         )}
-        <span className="text-micro text-sm text-center px-4">
-          {images[activeIndex].label}
-        </span>
+        {realImages ? (
+          <img
+            src={realImages[activeIndex]}
+            alt={`${productName} — Foto ${activeIndex + 1}`}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <span className="text-micro text-sm text-center px-4">
+            {placeholders[activeIndex].label}
+          </span>
+        )}
 
         {/* Prev arrow */}
         <button
@@ -56,18 +66,22 @@ const ProductGallery = ({ productName, badge, imageCount = 8 }: Props) => {
       </div>
 
       {/* Thumbnails bar — flex stretch to match main image width */}
-      <div className="grid grid-cols-8 gap-1.5">
-        {images.map((img, i) => (
+      <div className={`grid gap-1.5`} style={{ gridTemplateColumns: `repeat(${count}, 1fr)` }}>
+        {Array.from({ length: count }, (_, i) => (
           <button
             key={i}
             onClick={() => setActiveIndex(i)}
-            className={`aspect-square rounded-md bg-[#D9D9D9] flex items-center justify-center text-[9px] text-micro transition-all duration-200 border-2 ${
+            className={`aspect-square rounded-md overflow-hidden flex items-center justify-center text-[9px] text-micro transition-all duration-200 border-2 ${
               i === activeIndex
                 ? "border-primary opacity-100"
                 : "border-transparent opacity-60 hover:opacity-90"
-            }`}
+            } ${!realImages ? "bg-[#D9D9D9]" : ""}`}
           >
-            {i + 1}
+            {realImages ? (
+              <img src={realImages[i]} alt={`Miniatura ${i + 1}`} className="w-full h-full object-cover" />
+            ) : (
+              i + 1
+            )}
           </button>
         ))}
       </div>
