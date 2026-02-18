@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
+import logo from "@/assets/logo.png";
 
 interface Props {
   activeSection: string;
@@ -37,8 +38,8 @@ const Header = ({ activeSection }: Props) => {
         style={{ borderBottom: "1px solid hsl(var(--grigio-bordo))" }}
       >
         <div className="container-custom flex items-center justify-between h-14 lg:h-16">
-          <a href="#" className="text-primary font-bold text-lg tracking-tight">
-            ELEVA × TAVO
+          <a href="#">
+            <img src={logo} alt="ELEVA × TAVO" className="h-8 lg:h-10 w-auto" />
           </a>
 
           {/* Desktop nav */}
