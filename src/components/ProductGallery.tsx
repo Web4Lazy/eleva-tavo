@@ -24,7 +24,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
     <div className="space-y-3">
       {/* Main image */}
       <div
-        className="relative bg-[#D9D9D9] rounded-lg flex items-center justify-center overflow-hidden cursor-pointer group"
+        className="relative bg-card rounded-lg flex items-center justify-center overflow-hidden cursor-pointer group"
         style={{ aspectRatio: "1/1" }}
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
@@ -75,7 +75,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
               i === activeIndex
                 ? "border-primary opacity-100"
                 : "border-transparent opacity-60 hover:opacity-90"
-            } ${!realImages ? "bg-[#D9D9D9]" : ""}`}
+            } ${!realImages ? "bg-card" : ""}`}
           >
             {realImages ? (
               <img src={realImages[i]} alt={`Miniatura ${i + 1}`} className="w-full h-full object-cover" />
