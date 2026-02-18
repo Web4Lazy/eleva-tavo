@@ -1,9 +1,9 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import TrustBar from "./TrustBar";
 import { getWhatsAppUrl, sendEvent } from "@/config";
+import heroImage from "@/assets/hero.jpg";
 
 const HeroSection = () => (
-  <section id="hero" className="section-padding bg-background">
+  <section id="hero" className="section-padding bg-white">
     <div className="container-custom">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div>
@@ -29,7 +29,7 @@ const HeroSection = () => (
             </a>
           </div>
         </div>
-        <ImagePlaceholder aspectRatio="4/3" label="Foto Hero — Travel System 800×600" />
+        <img src={heroImage} alt="Cane in viaggio con Travel System" className="rounded-lg w-full object-cover" style={{ aspectRatio: "4/3" }} />
       </div>
       <div className="mt-8">
         <TrustBar />
