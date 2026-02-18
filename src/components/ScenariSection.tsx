@@ -3,6 +3,7 @@ import { sendEvent } from "@/config";
 import dupreeImg from "@/assets/dupree-scenari.png";
 import maeveImg from "@/assets/maeve-scenari.png";
 import travelImg from "@/assets/travel-scenari.png";
+import shellImg from "@/assets/shell-scenari.png";
 
 interface ScenarioCard {
   name: string;
@@ -17,7 +18,7 @@ const cards: ScenarioCard[] = [
   { name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg },
   { name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg },
   { name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg },
-  { name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300" },
+  { name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg },
 ];
 
 interface Props {
