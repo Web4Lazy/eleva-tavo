@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ManifestoSection from "@/components/ManifestoSection";
 import ScenariSection from "@/components/ScenariSection";
+import ExpandableVideoSection from "@/components/ExpandableVideoSection";
 import ConciergeSection from "@/components/ConciergeSection";
 import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
@@ -89,6 +90,7 @@ const Index = () => {
         <HeroSection />
         <ManifestoSection />
         <ScenariSection onOpenDrawer={handleOpenDrawer} />
+        <ExpandableVideoSection />
         <ConciergeSection />
 
         {PRODUCTS.map((product) => (
