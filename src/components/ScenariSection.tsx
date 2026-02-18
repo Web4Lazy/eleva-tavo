@@ -44,7 +44,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) => (
                     {card.badge}
                   </span>
                 )}
-                <img src={card.imageSrc} alt={card.name} className="w-full h-full object-contain scale-150" />
+                <img src={card.imageSrc} alt={card.name} className="w-full h-full object-contain" />
               </div>
             ) : (
               <ImagePlaceholder
