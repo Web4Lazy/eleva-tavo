@@ -9,7 +9,7 @@ const ExpandableVideoSection = () => {
       <div className="container-custom">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="w-full flex items-center justify-between py-5 text-left">
+          className="w-full flex items-center justify-between py-8 text-left">
 
           <h1 className="text-foreground text-2xl text-center">Scopri come proteggiamo i nostri animali – clicca qui per vedere il video</h1>
           <ChevronDown
