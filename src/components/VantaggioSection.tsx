@@ -1,8 +1,18 @@
 import { getWhatsAppUrl, sendEvent } from "@/config";
+import midnightPattern from "@/assets/midnight-pattern.jpg";
 
 const VantaggioSection = () => (
-  <section id="vantaggio" className="section-padding bg-background">
-    <div className="container-custom">
+  <section
+    id="vantaggio"
+    className="section-padding relative"
+    style={{
+      backgroundImage: `url(${midnightPattern})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
+    <div className="container-custom relative z-10">
       <div className="bg-secondary rounded-2xl p-8 max-w-[800px] mx-auto text-center">
         <h3 className="text-foreground mb-3">Vantaggio riservato ai clienti Eleva</h3>
         <p className="text-foreground mb-2">
