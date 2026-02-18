@@ -12,6 +12,23 @@ import dupree7 from "@/assets/dupree/dupree-7.png";
 
 const DUPREE_IMAGES = [dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
 
+import maeve1 from "@/assets/maeve/maeve-1.png";
+import maeve2 from "@/assets/maeve/maeve-2.png";
+import maeve3 from "@/assets/maeve/maeve-3.png";
+import maeve4 from "@/assets/maeve/maeve-4.png";
+import maeve5 from "@/assets/maeve/maeve-5.png";
+import maeve6 from "@/assets/maeve/maeve-6.png";
+import maeve7 from "@/assets/maeve/maeve-7.png";
+import maeve8 from "@/assets/maeve/maeve-8.png";
+
+const MAEVE_IMAGES = [maeve1, maeve2, maeve3, maeve4, maeve5, maeve6, maeve7, maeve8];
+
+const getProductImages = (id: string) => {
+  if (id === "prodotto-dupree") return DUPREE_IMAGES;
+  if (id === "prodotto-maeve") return MAEVE_IMAGES;
+  return undefined;
+};
+
 export interface ProductSize {
   label: string;
   specs: { label: string; value: string }[];
@@ -349,8 +366,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
         <ProductGallery
           productName={product.name}
           badge={product.badge}
-          images={product.id === "prodotto-dupree" ? DUPREE_IMAGES : undefined}
-          imageCount={product.id === "prodotto-dupree" ? 7 : undefined}
+          images={getProductImages(product.id)}
         />
         {content}
       </div>
@@ -365,8 +381,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
             <ProductGallery
               productName={product.name}
               badge={product.badge}
-              images={product.id === "prodotto-dupree" ? DUPREE_IMAGES : undefined}
-              imageCount={product.id === "prodotto-dupree" ? 7 : undefined}
+              images={getProductImages(product.id)}
             />
           </div>
           {content}
