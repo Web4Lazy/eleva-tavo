@@ -38,7 +38,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) => (
             className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start bg-background border border-border rounded-2xl p-5 flex flex-col"
           >
             {card.imageSrc ? (
-              <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "4/3" }}>
+              <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
                 {card.badge && (
                   <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
                     {card.badge}
