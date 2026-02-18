@@ -23,9 +23,18 @@ import maeve8 from "@/assets/maeve/maeve-8.png";
 
 const MAEVE_IMAGES = [maeve1, maeve2, maeve3, maeve4, maeve5, maeve6, maeve7, maeve8];
 
+import shell1 from "@/assets/shell/shell-1.png";
+import shell2 from "@/assets/shell/shell-2.png";
+import shell3 from "@/assets/shell/shell-3.png";
+import shell4 from "@/assets/shell/shell-4.png";
+import shell5 from "@/assets/shell/shell-5.png";
+
+const SHELL_IMAGES = [shell1, shell2, shell3, shell4, shell5];
+
 const getProductImages = (id: string) => {
   if (id === "prodotto-dupree") return DUPREE_IMAGES;
   if (id === "prodotto-maeve") return MAEVE_IMAGES;
+  if (id === "prodotto-shell") return SHELL_IMAGES;
   return undefined;
 };
 
