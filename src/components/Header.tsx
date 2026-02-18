@@ -39,7 +39,7 @@ const Header = ({ activeSection }: Props) => {
       >
         <div className="container-custom flex items-center justify-between h-14 lg:h-16">
           <a href="#">
-            <img src={logo} alt="ELEVA × TAVO" className="h-8 lg:h-10 w-auto" />
+            <img src={logo} alt="ELEVA × TAVO" className="h-16 lg:h-20 w-auto object-contain" />
           </a>
 
           {/* Desktop nav */}
