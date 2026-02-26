@@ -8,6 +8,7 @@ import ExpandableVideoSection from "@/components/ExpandableVideoSection";
 import ConciergeSection from "@/components/ConciergeSection";
 import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
+import ReviewsSection from "@/components/ReviewsSection";
 import ComeFunzionaSection from "@/components/ComeFunzionaSection";
 import FAQSection from "@/components/FAQSection";
 import ClosingSection from "@/components/ClosingSection";
@@ -26,6 +27,7 @@ const SECTION_IDS = [
   "prodotto-maeve",
   "prodotto-travel",
   "prodotto-shell",
+  "recensioni",
   "come-funziona",
   "faq",
   "chiusura",
@@ -99,7 +101,7 @@ const Index = () => {
         ))}
 
         <VantaggioSection />
-
+        <ReviewsSection />
         <ComeFunzionaSection />
         <FAQSection />
         <ClosingSection />
