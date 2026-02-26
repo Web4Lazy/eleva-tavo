@@ -4,7 +4,7 @@ import midnightPattern from "@/assets/midnight-pattern.jpg";
 const VantaggioSection = () =>
 <section
   id="vantaggio"
-  className="section-padding relative"
+  className="section-padding relative shadow-2xl"
   style={{
     backgroundImage: `url(${midnightPattern})`,
     backgroundSize: "cover",
