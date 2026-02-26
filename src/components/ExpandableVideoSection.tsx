@@ -1,4 +1,5 @@
 import { useState } from "react";
+import isofixImg from "@/assets/isofix-system.jpg";
 import { ChevronDown } from "lucide-react";
 
 const ExpandableVideoSection = () => {
@@ -30,10 +31,9 @@ const ExpandableVideoSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Abbiamo unito decenni di esperienza nello sviluppo di prodotti innovativi, una manifattura di altissima qualità e crash test avanzati per realizzare dei sistemi di trasporto collaudati che soddisfino i requisiti di sicurezza per i seggiolini dei bambini secondo la norma UNECE.
               </p>
-              <div
-                className="mt-4 bg-muted rounded-xl flex items-center justify-center flex-1"
-              >
-                <span className="text-muted-foreground text-sm">Immagine placeholder</span>
+              <h3 className="mt-4 text-foreground font-bold text-lg tracking-wide">ISOFIX SYSTEM</h3>
+              <div className="mt-2 rounded-xl overflow-hidden flex-1">
+                <img src={isofixImg} alt="ISOFIX System" className="w-full h-full object-cover rounded-xl" />
               </div>
             </div>
 
