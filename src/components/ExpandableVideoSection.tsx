@@ -24,25 +24,26 @@ const ExpandableVideoSection = () => {
           isOpen ? "max-h-[800px] opacity-100 pb-8" : "max-h-0 opacity-0"}`
           }>
 
-          <div className="flex flex-col gap-8">
-            <p className="text-muted-foreground leading-relaxed max-w-2xl">
-              Guarda il video per scoprire tutti i dettagli sul funzionamento
-              dei nostri prodotti. Ti mostriamo passo dopo passo come
-              utilizzarli al meglio per il comfort e la sicurezza del tuo
-              bambino.
-            </p>
-            
-
-
-
-
-
-
-
-
-
-
-
+          <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+            <div className="lg:w-2/5 flex flex-col">
+              <p className="text-muted-foreground leading-relaxed">
+                Guarda il video per scoprire tutti i dettagli sul funzionamento
+                dei nostri prodotti. Ti mostriamo passo dopo passo come
+                utilizzarli al meglio per il comfort e la sicurezza del tuo
+                bambino.
+              </p>
+            </div>
+            <div className="lg:w-3/5">
+              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                  src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0"
+                  className="absolute inset-0 w-full h-full rounded-xl"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
