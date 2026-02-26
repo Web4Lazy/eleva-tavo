@@ -1,6 +1,6 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
-import { Car, PlaneTakeoff, Footprints, Hotel, Home } from "lucide-react";
+import { Plane, Baby, ShoppingBag, Home, Building2 } from "lucide-react";
 import dupreeImg from "@/assets/scenari-dupree.jpg";
 import maeveImg from "@/assets/scenari-maeve.jpg";
 import travelImg from "@/assets/scenari-travel.jpg";
@@ -21,10 +21,10 @@ const iconClass = "w-5 h-5 text-primary";
 const plusClass = "text-muted-foreground text-xs font-bold select-none";
 
 const cards: ScenarioCard[] = [
-{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><PlaneTakeoff className={iconClass} /></> },
-{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Car className={iconClass} /></> },
-{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><Footprints className={iconClass} /></> },
-{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Hotel className={iconClass} /></> }];
+{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><span className={plusClass}>+</span><Plane className={iconClass} /></> },
+{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Baby className={iconClass} /></> },
+{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><span className={plusClass}>+</span><ShoppingBag className={iconClass} /></> },
+{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Building2 className={iconClass} /></> }];
 
 
 interface Props {
@@ -41,7 +41,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
         {cards.map((card) =>
       <div
         key={card.targetId}
-        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start bg-background border border-border rounded-2xl p-5 flex flex-col">
+        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary">
 
             {card.imageSrc ?
         <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
