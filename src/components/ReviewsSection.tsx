@@ -53,9 +53,9 @@ const ReviewsSection = () => (
             <CarouselContent>
               {videoReviews.map((review, i) => (
                 <CarouselItem key={i}>
-                  <div className="bg-card border border-border rounded-xl overflow-hidden card-hover">
+                  <div className="bg-card border border-border rounded-xl overflow-hidden card-hover h-full flex flex-col">
                     <VideoPlaceholder />
-                    <div className="p-4">
+                    <div className="p-4 flex-1 flex flex-col justify-center min-h-[100px]">
                       <StarRating rating={review.rating} />
                       <p className="text-foreground font-semibold mt-2">{review.name}</p>
                       <p className="text-muted-foreground text-sm mt-1">"{review.quote}"</p>
@@ -76,12 +76,14 @@ const ReviewsSection = () => (
             <CarouselContent>
               {unboxingVideos.map((video, i) => (
                 <CarouselItem key={i}>
-                  <div className="bg-card border border-border rounded-xl overflow-hidden card-hover">
+                  <div className="bg-card border border-border rounded-xl overflow-hidden card-hover h-full flex flex-col">
                     <VideoPlaceholder />
-                    <div className="p-4 flex items-center gap-2">
-                      <Package className="h-4 w-4 text-primary" />
-                      <p className="text-foreground font-semibold">{video.name}</p>
-                      <span className="text-muted-foreground text-sm">— {video.label}</span>
+                    <div className="p-4 flex-1 flex flex-col justify-center min-h-[100px]">
+                      <div className="flex items-center gap-2">
+                        <Package className="h-4 w-4 text-primary" />
+                        <p className="text-foreground font-semibold">{video.name}</p>
+                      </div>
+                      <span className="text-muted-foreground text-sm mt-1">— {video.label}</span>
                     </div>
                   </div>
                 </CarouselItem>
