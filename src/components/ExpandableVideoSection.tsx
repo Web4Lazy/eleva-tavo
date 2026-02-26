@@ -5,7 +5,7 @@ const ExpandableVideoSection = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <section className="bg-card border-y border-border">
+    <section className="border-y border-border bg-beige">
       <div className="container-custom">
         <button
           onClick={() => setIsOpen(!isOpen)}
@@ -37,8 +37,8 @@ const ExpandableVideoSection = () => {
                   className="absolute inset-0 w-full h-full rounded-xl"
                   frameBorder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
-                />
+                  allowFullScreen />
+
               </div>
             </div>
           </div>
