@@ -6,7 +6,7 @@ const VantaggioSection = () =>
   id="vantaggio"
   className="section-padding relative shadow-2xl"
   style={{
-    backgroundImage: `url(${midnightPattern})`,
+    backgroundImage: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${midnightPattern})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
     backgroundRepeat: "no-repeat"
