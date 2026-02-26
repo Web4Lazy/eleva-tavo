@@ -1,6 +1,6 @@
 import TrustBar from "./TrustBar";
 import { getWhatsAppUrl, sendEvent } from "@/config";
-import heroImage from "@/assets/hero.jpg";
+import heroImage from "@/assets/aero.png";
 
 const HeroSection = () => (
   <section id="hero" className="section-padding bg-white">
@@ -29,7 +29,7 @@ const HeroSection = () => (
             </a>
           </div>
         </div>
-        <img src={heroImage} alt="Cane in viaggio con Travel System" className="rounded-lg w-full object-cover" style={{ aspectRatio: "1/1" }} />
+        <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full object-cover" style={{ aspectRatio: "1/1" }} />
       </div>
       <div className="mt-8">
         <TrustBar />
