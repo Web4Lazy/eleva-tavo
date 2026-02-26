@@ -13,7 +13,7 @@ const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
       {items.map((item) => (
         <div key={item.text} className="flex items-center gap-2 text-sm">
           <span>{item.icon}</span>
-          <span className={isDark ? "text-micro" : "text-foreground"}>{item.text}</span>
+          <span className={isDark ? "text-primary-foreground/80" : "text-muted-foreground"}>{item.text}</span>
         </div>
       ))}
     </div>
