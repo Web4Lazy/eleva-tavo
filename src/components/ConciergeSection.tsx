@@ -16,7 +16,7 @@ const ConciergeSection = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {steps.map((text, i) =>
           <div key={i} className="flex flex-col items-center">
-              <span className="text-5xl font-bold text-secondary mb-3">{i + 1}</span>
+              <span className="w-16 h-16 rounded-full border-2 border-secondary flex items-center justify-center text-3xl font-bold text-secondary mb-4">{i + 1}</span>
               <p className="text-[15px] opacity-90">{text}</p>
             </div>
           )}
