@@ -25,14 +25,14 @@ const ExpandableVideoSection = () => {
           isOpen ? "max-h-[800px] opacity-100 pb-8" : "max-h-0 opacity-0"}`
           }>
 
-          <div className="flex flex-col lg:flex-row gap-8 items-start">
+          <div className="flex flex-col lg:flex-row gap-8 items-stretch">
             {/* Testo a sinistra */}
             <div className="lg:w-2/5 flex flex-col">
               <p className="text-muted-foreground leading-relaxed">
                 Abbiamo unito decenni di esperienza nello sviluppo di prodotti innovativi, una manifattura di altissima qualità e crash test avanzati per realizzare dei sistemi di trasporto collaudati che soddisfino i requisiti di sicurezza per i seggiolini dei bambini secondo la norma UNECE.
               </p>
               <h3 className="mt-4 text-foreground font-bold text-lg tracking-wide">ISOFIX SYSTEM</h3>
-              <div className="mt-2 rounded-xl overflow-hidden" style={{ aspectRatio: "4/3" }}>
+              <div className="mt-2 rounded-xl overflow-hidden flex-1 min-h-0">
                 <img src={isofixImg} alt="ISOFIX System" className="w-full h-full object-cover object-bottom rounded-xl" />
               </div>
             </div>
