@@ -12,6 +12,7 @@ import dupree7 from "@/assets/dupree/dupree-7.png";
 
 const DUPREE_IMAGES = [dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
 
+import maeve0 from "@/assets/maeve/maeve-0.jpg";
 import maeve1 from "@/assets/maeve/maeve-1.png";
 import maeve2 from "@/assets/maeve/maeve-2.png";
 import maeve3 from "@/assets/maeve/maeve-3.png";
@@ -21,7 +22,7 @@ import maeve6 from "@/assets/maeve/maeve-6.png";
 import maeve7 from "@/assets/maeve/maeve-7.png";
 import maeve8 from "@/assets/maeve/maeve-8.png";
 
-const MAEVE_IMAGES = [maeve1, maeve2, maeve3, maeve4, maeve5, maeve6, maeve7, maeve8];
+const MAEVE_IMAGES = [maeve0, maeve1, maeve2, maeve3, maeve4, maeve5, maeve6, maeve7, maeve8];
 
 import shell1 from "@/assets/shell/shell-1.png";
 import shell2 from "@/assets/shell/shell-2.png";
