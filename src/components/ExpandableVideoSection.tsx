@@ -11,7 +11,7 @@ const ExpandableVideoSection = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="w-full flex items-center justify-between py-8 text-left">
 
-          <h1 className="text-foreground text-2xl text-center">Scopri come proteggiamo i nostri animali</h1>
+          <h1 className="text-foreground text-center text-4xl">Scopri come proteggiamo i nostri animali</h1>
           <ChevronDown
             className={`h-6 w-6 text-muted-foreground transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""}`
@@ -29,14 +29,6 @@ const ExpandableVideoSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Testiamo il nostro sistema di protezione per animali domestici in strutture di prova dinamiche, dotate di apparecchiature e tecnologie all'avanguardia. Le prestazioni del nostro sistema rispondono ai più recenti standard ECE delle Nazioni Unite in materia di sicurezza dei bambini (R129).
               </p>
-              <div className="flex gap-4 mt-6">
-                <div className="w-40 h-40 bg-[#D9D9D9] rounded-lg flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground">Logo</span>
-                </div>
-                <div className="w-40 h-40 bg-[#D9D9D9] rounded-lg flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground">Logo</span>
-                </div>
-              </div>
             </div>
             <div className="lg:w-3/5">
               <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
