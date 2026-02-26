@@ -42,26 +42,15 @@ const ExpandableVideoSection = () => {
 
             {/* Video placeholder a destra */}
             <div className="lg:w-3/5 w-full">
-              <div
-                className="relative bg-muted rounded-xl flex items-center justify-center overflow-hidden"
-                style={{ aspectRatio: "4/3" }}>
-
-                <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48"
-                    height="48"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round">
-
-                    <polygon points="5 3 19 12 5 21 5 3" />
-                  </svg>
-                  <span className="text-sm">Video 4:3</span>
-                </div>
+              <div className="relative rounded-xl overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                <iframe
+                  src="https://player.vimeo.com/video/928229394"
+                  className="absolute inset-0 w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title="Video"
+                />
               </div>
             </div>
           </div>
