@@ -26,7 +26,7 @@ interface Props {
 }
 
 const ScenariSection = ({ onOpenDrawer }: Props) =>
-<section id="scenari" className="section-padding bg-card my-0">
+<section id="scenari" className="section-padding bg-card my-0 py-0">
     <div className="container-custom">
       <h2 className="text-foreground mb-2">Scegli il tuo scenario</h2>
       <p className="text-muted-foreground mb-8">In che situazione ti serve? Seleziona e scopri il prodotto perfetto.</p>
