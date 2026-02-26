@@ -14,6 +14,7 @@ import ClosingSection from "@/components/ClosingSection";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import ProductDrawer from "@/components/ProductDrawer";
+import Footer from "@/components/Footer";
 
 const SECTION_IDS = [
   "hero",
@@ -102,6 +103,7 @@ const Index = () => {
         <ComeFunzionaSection />
         <FAQSection />
         <ClosingSection />
+        <Footer />
       </main>
 
       <StickyBottomBar />
