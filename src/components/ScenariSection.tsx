@@ -22,7 +22,7 @@ const plusClass = "text-muted-foreground text-xs font-bold select-none";
 
 const cards: ScenarioCard[] = [
 { name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><span className={plusClass}>+</span><Plane className={iconClass} /></> },
-{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><Baby className={iconClass} /></> },
+{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><span className={plusClass}>+</span><Baby className={iconClass} /></> },
 { name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><ShoppingBag className={iconClass} /></> },
 { name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Building2 className={iconClass} /></> }];
 
