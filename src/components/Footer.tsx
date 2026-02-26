@@ -1,5 +1,5 @@
 import { Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/eleva.png";
 
 const NAV_ITEMS = [
   { label: "Scenari", href: "#scenari" },
