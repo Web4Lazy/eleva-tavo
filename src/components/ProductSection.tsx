@@ -2,6 +2,7 @@ import { useState } from "react";
 import ProductGallery from "./ProductGallery";
 import { getWhatsAppUrl, sendEvent, CONFIG } from "@/config";
 
+import dupree0 from "@/assets/dupree/dupree-0.jpg";
 import dupree1 from "@/assets/dupree/dupree-1.png";
 import dupree2 from "@/assets/dupree/dupree-2.png";
 import dupree3 from "@/assets/dupree/dupree-3.png";
@@ -10,7 +11,7 @@ import dupree5 from "@/assets/dupree/dupree-5.png";
 import dupree6 from "@/assets/dupree/dupree-6.jpg";
 import dupree7 from "@/assets/dupree/dupree-7.png";
 
-const DUPREE_IMAGES = [dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
+const DUPREE_IMAGES = [dupree0, dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
 
 import maeve0 from "@/assets/maeve/maeve-0.jpg";
 import maeve1 from "@/assets/maeve/maeve-1.png";
