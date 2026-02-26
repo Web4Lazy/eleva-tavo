@@ -1,7 +1,7 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 
 const ManifestoSection = () =>
-<section id="manifesto" className="section-padding bg-background">
+<section id="manifesto" className="section-padding bg-secondary">
     <div className="container-custom">
       <div className="max-w-[720px] mx-auto lg:mx-0 lg:max-w-none lg:grid lg:grid-cols-[1fr_280px] lg:gap-16 lg:items-center">
         <div className="text-center lg:text-left">
