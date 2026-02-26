@@ -1,19 +1,11 @@
 
 
-## Immagine Hero e sfondo bianco
+## Sostituzione immagine card Dupree
 
-### Modifiche
+L'immagine selezionata e' quella della card "Dupree" nella sezione Scenari. Verra' sostituita con la nuova foto caricata (donna con passeggino e cane bianco).
 
-1. **Copiare l'immagine** caricata in `src/assets/hero.jpg`
+### Passaggi
 
-2. **Modificare `HeroSection.tsx`**:
-   - Importare l'immagine hero
-   - Sostituire il componente `ImagePlaceholder` con un tag `<img>` che mostra la foto reale
-   - Cambiare la classe di sfondo della sezione da `bg-background` a `bg-white`
-
-### Dettagli tecnici
-
-- L'immagine viene importata come modulo ES6 per ottimizzazione del bundler
-- Il placeholder `ImagePlaceholder` verra rimosso e sostituito con un `<img>` con `rounded-lg` e aspect ratio coerente
-- Lo sfondo della sezione hero passera a bianco puro (`bg-white`)
+1. Copiare il file `user-uploads://djdi.png` in `src/assets/scenari-dupree.jpg` (sovrascrivendo l'immagine attuale)
+2. Nessuna modifica al codice necessaria: il componente `ScenariSection.tsx` gia' importa da `@/assets/scenari-dupree.jpg`
 
