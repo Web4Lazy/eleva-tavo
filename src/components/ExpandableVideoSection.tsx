@@ -28,10 +28,7 @@ const ExpandableVideoSection = () => {
             {/* Testo a sinistra */}
             <div className="lg:w-2/5 flex flex-col">
               <p className="text-muted-foreground leading-relaxed">
-                Guarda il video per scoprire tutti i dettagli sul funzionamento
-                dei nostri prodotti. Ti mostriamo passo dopo passo come
-                utilizzarli al meglio per il comfort e la sicurezza del tuo
-                bambino.
+                Abbiamo unito decenni di esperienza nello sviluppo di prodotti innovativi, una manifattura di altissima qualità e crash test avanzati per realizzare dei sistemi di trasporto collaudati che soddisfino i requisiti di sicurezza per i seggiolini dei bambini secondo la norma UNECE.
               </p>
               <div
                 className="mt-4 bg-muted rounded-xl flex items-center justify-center flex-1"
