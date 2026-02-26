@@ -1,7 +1,7 @@
 const ComeFunzionaSection = () => {
   const steps = [
     { title: "Checkout su Eleva", desc: "Acquisti sul sito Eleva e applichi il Vantaggio Fedeltà." },
-    { title: "Spedizione DHL", desc: "Il partner spedisce con DHL in circa 10 giorni lavorativi." },
+    { title: "Spedizione Partner", desc: "Il partner spedisce con DHL in circa 10 giorni lavorativi." },
     { title: "Resi gestiti dal partner", desc: "I resi sono gestiti dal partner. Eleva resta disponibile per supporto informativo." },
   ];
 
