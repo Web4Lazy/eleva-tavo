@@ -20,9 +20,9 @@ const Footer = () => (
   <footer className="bg-secondary py-10 lg:py-14" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
     <div className="container-custom">
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-        {/* Logo */}
-        <a href="#">
-          <img src={logo} alt="ELEVA × TAVO" className="h-16 lg:h-20 w-auto object-contain" />
+        {/* Logo - only ELEVA half */}
+        <a href="#" className="overflow-hidden" style={{ maxWidth: '5rem' }}>
+          <img src={logo} alt="ELEVA" className="h-16 lg:h-20 w-auto object-contain object-left" />
         </a>
 
         {/* Nav links */}
