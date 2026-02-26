@@ -78,7 +78,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-dupree",
     tag: "Auto + Aereo",
     name: "Dupree",
-    bgClass: "bg-card",
+    bgClass: "bg-[#f7f5f3]",
     benefits: [
       "Pensato anche per la cabina (verifica sempre con la compagnia)",
       "Fissaggio in auto sicuro e integrato",
