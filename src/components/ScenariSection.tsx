@@ -1,6 +1,6 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
-import { Car, PlaneTakeoff, Footprints, Hotel } from "lucide-react";
+import { Car, PlaneTakeoff, Footprints, Hotel, Home } from "lucide-react";
 import dupreeImg from "@/assets/scenari-dupree.jpg";
 import maeveImg from "@/assets/scenari-maeve.jpg";
 import travelImg from "@/assets/scenari-travel.jpg";
@@ -24,7 +24,7 @@ const cards: ScenarioCard[] = [
 { name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><PlaneTakeoff className={iconClass} /></> },
 { name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Car className={iconClass} /></> },
 { name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><Footprints className={iconClass} /></> },
-{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Car className={iconClass} /><span className={plusClass}>/</span><Hotel className={iconClass} /></> }];
+{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Hotel className={iconClass} /></> }];
 
 
 interface Props {
