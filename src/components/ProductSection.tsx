@@ -176,7 +176,7 @@ export const PRODUCTS: ProductData[] = [
     name: "Travel System",
     subtitle: "Maeve iso + Roscoe Stroller Frame",
     badge: "TOP scelta Eleva",
-    bgClass: "bg-card",
+    bgClass: "bg-[#f7f5f3]",
     benefits: [
       "Passaggio auto → passeggio senza cambiare setup",
       "Connessione sicura ISOFIX",
