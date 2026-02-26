@@ -21,8 +21,8 @@ const Footer = () => (
     <div className="container-custom">
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         {/* Logo - only ELEVA half */}
-        <a href="#" className="overflow-hidden" style={{ maxWidth: '5rem' }}>
-          <img src={logo} alt="ELEVA" className="h-16 lg:h-20 w-auto object-contain object-left" />
+        <a href="#" className="overflow-hidden" style={{ maxWidth: '15rem' }}>
+          <img src={logo} alt="ELEVA" className="h-48 lg:h-60 w-auto object-contain object-left" />
         </a>
 
         {/* Nav links */}
