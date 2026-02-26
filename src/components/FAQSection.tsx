@@ -7,28 +7,36 @@ import {
 
 const faqs = [
   {
-    q: "Come scelgo la taglia giusta?",
-    a: "Scrivici su WhatsApp: ci bastano peso e misure principali del tuo pet e ti guidiamo noi.",
+    q: "Come scelgo la taglia?",
+    a: "Ti servono 3 misure del tuo pet: peso, lunghezza (naso-coda) e altezza al garrese. Con questi dati possiamo consigliarti la taglia corretta.\n\nPer Maeve iso, considera anche le dimensioni del sedile della tua auto. Contattaci su WhatsApp per una consulenza personalizzata.",
   },
   {
-    q: "È compatibile con la mia auto/ISOFIX?",
-    a: "Dipende dal veicolo. Il nostro Assistente Dedicato ti aiuta a verificare compatibilità e installazione prima dell'acquisto.",
+    q: "Maeve iso funziona nella mia auto?",
+    a: "Gli agganci ISOFIX sono standard, ma le dimensioni del sedile variano per marca e modello. Prima di acquistare, verifica la compatibilità con noi: inviaci marca, modello e anno su WhatsApp.",
   },
   {
-    q: "Posso usare Dupree in aereo?",
-    a: "Dupree è pensato anche per la cabina, ma le regole variano per compagnia aerea. Ti aiutiamo a controllare misure e peso prima di acquistare.",
+    q: "Dupree è approvato per tutti gli aerei?",
+    a: "Ogni compagnia ha regole diverse su dimensioni e peso. Dupree è progettato secondo gli standard comuni, ma devi verificare con la tua compagnia prima del volo. Ti forniamo le specifiche complete per facilitare il controllo.",
   },
   {
-    q: "In quanto tempo arriva?",
-    a: "Spedizione con DHL in circa 10 giorni lavorativi.",
+    q: "Cosa include il Travel System?",
+    a: "Include carrier Maeve iso (taglia a scelta) + telaio Roscoe + accessori (SIP Guard, liner, materassini, organizer). Sistema completo per auto e passeggio.",
   },
   {
-    q: "Resi e garanzia come funzionano?",
-    a: "I resi sono gestiti dal partner. Eleva è disponibile come punto di contatto informativo. Scrivici su WhatsApp per qualsiasi dubbio.",
+    q: "Tempi di spedizione?",
+    a: "DHL ~10 giorni lavorativi. Tracking via email. Per urgenze, contattaci prima di ordinare.",
   },
   {
-    q: "Quando risponde l'Assistente Dedicato?",
-    a: "Lun–ven 9–18. Fuori orario rispondiamo al primo slot disponibile.",
+    q: "Resi?",
+    a: "Gestiti dal partner Tavo. Eleva fornisce supporto informativo e guida nella procedura. Garanzia standard produttore attiva.",
+  },
+  {
+    q: "Come uso il codice Vantaggio Fedeltà?",
+    a: "Inserisci il codice ricevuto via email al checkout su elevapet.com. Importo fisso scontato automaticamente. Codice non ricevuto? Recuperalo su WhatsApp.",
+  },
+  {
+    q: "Orari assistenza WhatsApp?",
+    a: "Lun–ven 9–18, risposta entro 60 minuti. Assistente umano, non bot. Messaggi fuori orario ricevono risposta alla riapertura.",
   },
 ];
 
