@@ -1,9 +1,11 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
+import { Car, Plane, Baby, ShoppingBag, Home, Building2 } from "lucide-react";
 import dupreeImg from "@/assets/scenari-dupree.jpg";
 import maeveImg from "@/assets/scenari-maeve.jpg";
 import travelImg from "@/assets/scenari-travel.jpg";
 import shellImg from "@/assets/scenari-shell.jpg";
+import type { ReactNode } from "react";
 
 interface ScenarioCard {
   name: string;
@@ -12,13 +14,17 @@ interface ScenarioCard {
   imageLabel: string;
   badge?: string;
   imageSrc?: string;
+  icons: ReactNode;
 }
 
+const iconClass = "w-5 h-5 text-primary";
+const plusClass = "text-muted-foreground text-xs font-bold select-none";
+
 const cards: ScenarioCard[] = [
-{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg },
-{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg },
-{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg },
-{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg }];
+{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><Plane className={iconClass} /></> },
+{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><Baby className={iconClass} /></> },
+{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><Car className={iconClass} /><span className={plusClass}>+</span><ShoppingBag className={iconClass} /></> },
+{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Building2 className={iconClass} /></> }];
 
 
 interface Props {
@@ -54,6 +60,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
           className="mb-4" />
 
         }
+            <div className="flex items-center gap-1.5 mb-2">{card.icons}</div>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-4">{card.scenario}</p>
             <div className="mt-auto flex flex-col gap-2">
