@@ -1,9 +1,9 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
-import dupreeImg from "@/assets/dupree-scenari.png";
-import maeveImg from "@/assets/maeve-scenari.png";
-import travelImg from "@/assets/travel-scenari.png";
-import shellImg from "@/assets/shell-scenari.png";
+import dupreeImg from "@/assets/scenari-dupree.jpg";
+import maeveImg from "@/assets/scenari-maeve.jpg";
+import travelImg from "@/assets/scenari-travel.jpg";
+import shellImg from "@/assets/scenari-shell.jpg";
 
 interface ScenarioCard {
   name: string;
@@ -44,7 +44,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
                     {card.badge}
                   </span>
           }
-                <img src={card.imageSrc} alt={card.name} className="w-full h-full object-contain" />
+                <img src={card.imageSrc} alt={card.name} className="w-full h-full object-cover" />
               </div> :
 
         <ImagePlaceholder
