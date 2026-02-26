@@ -25,7 +25,7 @@ const ExpandableVideoSection = () => {
           isOpen ? "max-h-[800px] opacity-100 pb-8" : "max-h-0 opacity-0"}`
           }>
 
-          <div className="flex flex-col lg:flex-row gap-8 items-end">
+          <div className="flex flex-col lg:flex-row gap-8 items-start">
             {/* Testo a sinistra */}
             <div className="lg:w-2/5 flex flex-col">
               <p className="text-muted-foreground leading-relaxed">
