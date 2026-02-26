@@ -5,7 +5,7 @@ const ExpandableVideoSection = () => {
   const [isOpen, setIsOpen] = useState(true);
 
   return (
-    <section className="border-y border-border bg-beige">
+    <section className="border-y border-border bg-[#f7f5f3]">
       <div className="container-custom">
         <button
           onClick={() => setIsOpen(!isOpen)}
