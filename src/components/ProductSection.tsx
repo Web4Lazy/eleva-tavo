@@ -33,6 +33,7 @@ import shell5 from "@/assets/shell/shell-5.png";
 
 const SHELL_IMAGES = [shell1, shell2, shell3, shell4, shell5];
 
+import travel0 from "@/assets/travel/travel-0.jpg";
 import travel1 from "@/assets/travel/travel-1.png";
 import travel2 from "@/assets/travel/travel-2.png";
 import travel3 from "@/assets/travel/travel-3.png";
@@ -40,7 +41,7 @@ import travel4 from "@/assets/travel/travel-4.png";
 import travel5 from "@/assets/travel/travel-5.png";
 import travel6 from "@/assets/travel/travel-6.png";
 
-const TRAVEL_IMAGES = [travel1, travel2, travel3, travel4, travel5, travel6];
+const TRAVEL_IMAGES = [travel0, travel1, travel2, travel3, travel4, travel5, travel6];
 
 const getProductImages = (id: string) => {
   if (id === "prodotto-dupree") return DUPREE_IMAGES;
