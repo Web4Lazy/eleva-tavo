@@ -18,7 +18,7 @@ const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
           </div>
         ))}
       </div>
-      <p className={`text-sm mt-3 ${isDark ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+      <p className={`text-base font-semibold mt-3 ${isDark ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
         Assistenza WhatsApp lun–ven 9–18 — rispondiamo in giornata.
       </p>
     </div>
