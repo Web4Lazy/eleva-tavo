@@ -1,12 +1,14 @@
 import ImagePlaceholder from "./ImagePlaceholder";
 import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
-import { Plane, Baby, ShoppingBag, Home, Building2 } from "lucide-react";
 import dupreeImg from "@/assets/scenari-dupree.jpg";
 import maeveImg from "@/assets/scenari-maeve.jpg";
 import travelImg from "@/assets/scenari-travel.jpg";
 import shellImg from "@/assets/scenari-shell.jpg";
-import type { ReactNode } from "react";
+import iconDupree from "@/assets/icons/icon-dupree.png";
+import iconMaeve from "@/assets/icons/icon-maeve.png";
+import iconTravel from "@/assets/icons/icon-travel.png";
+import iconShell from "@/assets/icons/icon-shell.png";
 
 interface ScenarioCard {
   name: string;
@@ -15,17 +17,14 @@ interface ScenarioCard {
   imageLabel: string;
   badge?: string;
   imageSrc?: string;
-  icons: ReactNode;
+  iconSrc: string;
 }
 
-const iconClass = "w-5 h-5 text-primary";
-const plusClass = "text-muted-foreground text-xs font-bold select-none";
-
 const cards: ScenarioCard[] = [
-{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, icons: <><span className={plusClass}>+</span><Plane className={iconClass} /></> },
-{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, icons: <><Baby className={iconClass} /></> },
-{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, icons: <><span className={plusClass}>+</span><ShoppingBag className={iconClass} /></> },
-{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, icons: <><Home className={iconClass} /><span className={plusClass}>/</span><Building2 className={iconClass} /></> }];
+{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, iconSrc: iconDupree },
+{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, iconSrc: iconMaeve },
+{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, iconSrc: iconTravel },
+{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, iconSrc: iconShell }];
 
 
 interface Props {
@@ -61,7 +60,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
           className="mb-4" />
 
         }
-            <div className="flex items-center gap-1.5 mb-2">{card.icons}</div>
+            <div className="flex items-center gap-1.5 mb-2"><img src={card.iconSrc} alt={card.scenario} className="h-6" /></div>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
             <a
