@@ -6,7 +6,8 @@ const HeroSection = () => (
   <section id="hero" className="section-padding bg-white">
     <div className="container-custom">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <div>
+        <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full object-cover order-first lg:order-last" style={{ aspectRatio: "1/1" }} />
+        <div className="order-last lg:order-first">
           <h1 className="text-foreground mb-4">Prima classe, per chi ha quattro zampe.</h1>
           <p className="text-lg text-muted-foreground mb-2">
             La selezione Tavo firmata Eleva: viaggio e riposo premium, con un assistente umano su WhatsApp che ti aiuta a scegliere modello e taglia prima dell'acquisto.
@@ -29,7 +30,6 @@ const HeroSection = () => (
             </a>
           </div>
         </div>
-        <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full object-cover" style={{ aspectRatio: "1/1" }} />
       </div>
       <div className="mt-8">
         <TrustBar />
