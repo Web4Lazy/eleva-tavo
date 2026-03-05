@@ -32,7 +32,7 @@ const ExpandableVideoSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Testiamo il nostro sistema di protezione per animali domestici in strutture di prova dinamiche, dotate di apparecchiature e tecnologie all'avanguardia. Le prestazioni del nostro sistema rispondono ai più recenti standard ECE delle Nazioni Unite in materia di sicurezza dei bambini (R129).
               </p>
-              <img src={eceR129} alt="Standard ECE R129 / i-Size" className="mt-4 w-40 h-auto" />
+              <img src={eceR129} alt="Standard ECE R129 / i-Size" className="mt-4 w-56 h-auto" />
             </div>
             <div className="lg:w-3/5">
               <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
