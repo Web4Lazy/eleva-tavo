@@ -55,7 +55,7 @@ const Footer = () =>
         </div>
       </div>
 
-      <div className="mt-8 pt-6 text-center text-xs text-muted-foreground" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
+      <div className="mt-8 pt-6 text-center text-sm text-muted-foreground" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
         © {new Date().getFullYear()} ELEVA × TAVO. Tutti i diritti riservati.
       </div>
     </div>
