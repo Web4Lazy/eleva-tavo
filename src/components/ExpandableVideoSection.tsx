@@ -28,7 +28,7 @@ const ExpandableVideoSection = () => {
           }>
 
           <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-            <div className="lg:w-2/5 flex flex-col">
+            <div className="lg:w-2/5 flex flex-col items-center lg:items-start text-center lg:text-left">
               <p className="text-muted-foreground leading-relaxed">
                 Testiamo il nostro sistema di protezione per animali domestici in strutture di prova dinamiche, dotate di apparecchiature e tecnologie all'avanguardia. Le prestazioni del nostro sistema rispondono ai più recenti standard ECE delle Nazioni Unite in materia di sicurezza dei bambini (R129).
               </p>
