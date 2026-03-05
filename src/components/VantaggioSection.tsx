@@ -22,7 +22,7 @@ const VantaggioSection = () =>
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => sendEvent("ClickWhatsApp", { section: "vantaggio" })}
-            className="underline font-medium text-secondary">
+            className="underline font-medium text-primary-foreground">
             scrivici su WhatsApp
           </a>.
         </p>
