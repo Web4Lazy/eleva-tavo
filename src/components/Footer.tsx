@@ -10,10 +10,9 @@ const NAV_ITEMS = [
 
 
 const SOCIALS = [
-{ icon: Instagram, href: "#", label: "Instagram" },
-{ icon: Facebook, href: "#", label: "Facebook" },
-{ icon: Youtube, href: "#", label: "YouTube" },
-{ icon: Linkedin, href: "#", label: "LinkedIn" }];
+{ icon: Instagram, href: "https://www.instagram.com/elevapet.official/", label: "Instagram" },
+{ icon: Facebook, href: "https://www.facebook.com/elevapet.official/", label: "Facebook" },
+{ icon: Youtube, href: "https://www.youtube.com/@ElevaPetOfficial", label: "YouTube" }];
 
 
 const Footer = () =>
