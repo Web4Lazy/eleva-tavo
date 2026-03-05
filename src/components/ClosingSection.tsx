@@ -13,11 +13,11 @@ const ClosingSection = () => (
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => sendEvent("ClickWhatsApp", { section: "closing" })}
-          className="cta-primary"
+          className="cta-white"
         >
           Parla con un umano
         </a>
-        <a href="#scenari" className="cta-outline">
+        <a href="#scenari" className="cta-outline-white">
           Scopri la selezione
         </a>
       </div>
