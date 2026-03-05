@@ -51,7 +51,7 @@ const ExpandableVideoSection = () => {
                       alt="Video crash test TAVO"
                       className="absolute inset-0 w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity group-hover:bg-black/40">
+                    <div className="absolute inset-0 bg-black/10 flex items-center justify-center transition-opacity group-hover:bg-black/20">
                       <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
                         <Play className="w-7 h-7 text-primary ml-1" />
                       </div>
