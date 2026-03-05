@@ -120,7 +120,7 @@ export const PRODUCTS: ProductData[] = [
     bgClass: "bg-background",
     benefits: [
       "Agganci ISOFIX integrati per massima stabilità",
-      "Test d'impatto dichiarati dal brand",
+      "Progettato per stabilità e protezione in auto (ISOFIX integrato).",
       "Comfort & igiene: capottina + fodere lavabili",
     ],
     sizes: [
@@ -364,22 +364,25 @@ const ProductSection = ({ product, compact = false }: Props) => {
 
       <div className="flex flex-col sm:flex-row gap-3">
         <a
-          href={product.cartLink}
-          onClick={() => sendEvent("AddToCart", { product: product.name, size: product.sizes[selectedSize]?.label })}
-          className="cta-primary text-center"
-        >
-          Aggiungi al carrello
-        </a>
-        <a
           href={getWhatsAppUrl()}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
-          className="cta-outline text-center"
+          className="cta-primary text-center"
         >
           Chiedi all'Assistente
         </a>
+        <a
+          href={product.cartLink}
+          onClick={() => sendEvent("AddToCart", { product: product.name, size: product.sizes[selectedSize]?.label })}
+          className="cta-outline text-center"
+        >
+          Aggiungi al carrello
+        </a>
       </div>
+      <p className="text-xs text-muted-foreground mt-3">
+        Dubbi sulla taglia? Te la confermiamo su WhatsApp prima dell'acquisto.
+      </p>
     </div>
   );
 

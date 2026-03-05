@@ -29,8 +29,8 @@ const StickyBottomBar = () => {
       >
         WhatsApp
       </a>
-      <a href="#scenari" className="cta-outline flex-1 text-center text-sm py-2.5">
-        Scopri la selezione
+      <a href="#scenari" className="flex-1 text-center text-sm py-2.5 text-primary font-medium hover:underline">
+        Scopri
       </a>
     </div>
   );
