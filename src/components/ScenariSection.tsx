@@ -1,4 +1,5 @@
 import ImagePlaceholder from "./ImagePlaceholder";
+import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
 import { Plane, Baby, ShoppingBag, Home, Building2 } from "lucide-react";
 import dupreeImg from "@/assets/scenari-dupree.jpg";
@@ -34,8 +35,8 @@ interface Props {
 const ScenariSection = ({ onOpenDrawer }: Props) =>
 <section id="scenari" className="section-padding bg-card my-0 py-0">
     <div className="container-custom">
-      <h2 className="text-foreground mb-2">Scegli il tuo scenario</h2>
-      <p className="text-muted-foreground mb-8">In che situazione ti serve? Seleziona e scopri il prodotto perfetto.</p>
+      <h2 className="text-foreground mb-2">Scegli il tuo scenario. Al resto pensiamo noi.</h2>
+      <p className="text-muted-foreground mb-8">Seleziona dove ti serve (auto, aereo, passeggiata, casa). Se hai dubbi su taglia o compatibilità, scrivici su WhatsApp: ti guidiamo prima dell'acquisto.</p>
 
       <div className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-4 lg:overflow-visible">
         {cards.map((card) =>
@@ -62,7 +63,14 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
         }
             <div className="flex items-center gap-1.5 mb-2">{card.icons}</div>
             <h3 className="text-foreground mb-1">{card.name}</h3>
-            <p className="text-sm text-micro mb-4">{card.scenario}</p>
+            <p className="text-sm text-micro mb-2">{card.scenario}</p>
+            <a
+              href={getWhatsAppUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-primary hover:underline mb-2 inline-block">
+              Dubbi su taglia o uso? Chiedi all'assistente →
+            </a>
             <div className="mt-auto flex flex-col gap-2">
               <a
             href={`#${card.targetId}`}

@@ -32,6 +32,8 @@ const ConciergeSection = () => {
           Parla con il tuo assistente umano
         </a>
         <p className="text-[13px] mt-4 text-secondary">+39 351 841 1304 • lun–ven 9–18</p>
+        <p className="text-sm mt-4 text-secondary opacity-90">Per partire veloce, scrivici: specie + peso + scenario (auto/aereo/casa) + modello auto (se ISOFIX). Se vuoi, anche una foto.</p>
+        <p className="text-sm mt-1 text-secondary opacity-90">Rispondiamo lun–ven 9–18 (in giornata).</p>
       </div>
     </section>);
 
