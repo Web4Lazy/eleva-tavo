@@ -100,10 +100,10 @@ const Index = () => {
           <ProductSection key={product.id} product={product} />
         ))}
 
-        <VantaggioSection />
         <ReviewsSection />
         <ComeFunzionaSection />
         <FAQSection />
+        <VantaggioSection />
         <ClosingSection />
         <Footer />
       </main>

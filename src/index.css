@@ -123,4 +123,18 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
   }
+
+  /* 1a: Text links — #1B372B, no underline, underline on hover */
+  a:not(.cta-primary):not(.cta-outline):not(.cta-white):not(.cta-outline-white):not([class*="btn"]):not([role="button"]) {
+    @apply no-underline;
+    color: hsl(var(--primary));
+  }
+  a:not(.cta-primary):not(.cta-outline):not(.cta-white):not(.cta-outline-white):not([class*="btn"]):not([role="button"]):hover {
+    @apply underline;
+  }
+
+  /* 1d: Minimum 14px for microcopy on mobile */
+  .text-micro {
+    @apply text-sm;
+  }
 }

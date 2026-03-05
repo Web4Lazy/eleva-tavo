@@ -270,7 +270,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
 
   const content = (
     <div className="flex-1">
-      <span className="inline-block bg-secondary text-foreground text-xs font-medium px-3 py-1 rounded-full mb-3">
+      <span className="inline-block bg-secondary text-foreground text-sm font-medium px-3 py-1 rounded-full mb-3">
         {product.tag}
       </span>
       <h2 className="text-foreground mb-1">{product.name}</h2>
@@ -286,7 +286,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
       </ul>
 
       {product.disclaimer && (
-        <div className="bg-[#FFF8E7] border-l-[3px] border-[#D4A843] rounded-lg p-3 text-[13px] text-foreground mb-6">
+        <div className="bg-[#FFF8E7] border-l-[3px] border-[#D4A843] rounded-lg p-3 text-sm text-foreground mb-6">
           {product.disclaimer}
         </div>
       )}
@@ -325,6 +325,15 @@ const ProductSection = ({ product, compact = false }: Props) => {
             </div>
           ))}
         </div>
+        <a
+          href={getWhatsAppUrl()}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "size-table" })}
+          className="text-sm text-primary mt-3 inline-block"
+        >
+          Chiedi conferma taglia →
+        </a>
       </div>
 
       {isTravel && (
@@ -380,7 +389,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
           Aggiungi al carrello
         </a>
       </div>
-      <p className="text-xs text-muted-foreground mt-3">
+      <p className="text-sm text-muted-foreground mt-3">
         Dubbi sulla taglia? Te la confermiamo su WhatsApp prima dell'acquisto.
       </p>
     </div>
