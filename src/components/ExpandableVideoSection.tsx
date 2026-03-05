@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Play } from "lucide-react";
+import crashTestCover from "@/assets/crash-test-cover.png";
 
 const ExpandableVideoSection = () => {
   const [isOpen, setIsOpen] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <section className="border-y border-border bg-[#f7f5f3]">
@@ -31,14 +33,31 @@ const ExpandableVideoSection = () => {
               </p>
             </div>
             <div className="lg:w-3/5">
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0"
-                  className="absolute inset-0 w-full h-full rounded-xl"
-                  frameBorder="0"
-                  allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen />
-
+              <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
+                {isPlaying ? (
+                  <iframe
+                    src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0&autoplay=1"
+                    className="absolute inset-0 w-full h-full"
+                    frameBorder="0"
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowFullScreen />
+                ) : (
+                  <button
+                    onClick={() => setIsPlaying(true)}
+                    className="absolute inset-0 w-full h-full group cursor-pointer"
+                  >
+                    <img
+                      src={crashTestCover}
+                      alt="Video crash test TAVO"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center transition-opacity group-hover:bg-black/40">
+                      <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                        <Play className="w-7 h-7 text-primary ml-1" />
+                      </div>
+                    </div>
+                  </button>
+                )}
               </div>
             </div>
           </div>
