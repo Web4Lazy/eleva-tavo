@@ -1,4 +1,4 @@
-import { Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
+import { Instagram, Facebook, Youtube, Globe } from "lucide-react";
 import logo from "@/assets/eleva.png";
 
 const NAV_ITEMS = [
@@ -12,7 +12,8 @@ const NAV_ITEMS = [
 const SOCIALS = [
 { icon: Instagram, href: "https://www.instagram.com/elevapet.official/", label: "Instagram" },
 { icon: Facebook, href: "https://www.facebook.com/elevapet.official/", label: "Facebook" },
-{ icon: Youtube, href: "https://www.youtube.com/@ElevaPetOfficial", label: "YouTube" }];
+{ icon: Youtube, href: "https://www.youtube.com/@ElevaPetOfficial", label: "YouTube" },
+{ icon: Globe, href: "https://elevapet.com/", label: "Sito web" }];
 
 
 const Footer = () =>
