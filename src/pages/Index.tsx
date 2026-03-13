@@ -98,6 +98,7 @@ const Index = () => {
         <ExpandableVideoSection />
         <ConciergeSection />
         <AssistanceBanner />
+        <QuickFAQSection />
 
         {PRODUCTS.map((product) => (
           <ProductSection key={product.id} product={product} />
