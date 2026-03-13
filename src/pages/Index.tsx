@@ -7,6 +7,7 @@ import ScenariSection from "@/components/ScenariSection";
 import ExpandableVideoSection from "@/components/ExpandableVideoSection";
 import ConciergeSection from "@/components/ConciergeSection";
 import AssistanceBanner from "@/components/AssistanceBanner";
+import QuickFAQSection from "@/components/QuickFAQSection";
 import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
 import ReviewsSection from "@/components/ReviewsSection";
