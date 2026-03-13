@@ -1,6 +1,6 @@
 import TrustBar from "./TrustBar";
 import { getWhatsAppUrl, sendEvent } from "@/config";
-import heroImage from "@/assets/aero.png";
+import heroImage from "@/assets/hero-new.jpg";
 
 const HeroSection = () => (
   <section id="hero" className="section-padding bg-white">
