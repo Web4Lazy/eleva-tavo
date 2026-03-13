@@ -54,6 +54,28 @@ const ReviewsSection = () => (
     <div className="container-custom">
       <h2 className="text-foreground mb-10 text-center">Cosa dicono i nostri clienti</h2>
 
+      {/* Recensioni Scritte */}
+      <div className="mb-10">
+        <h3 className="text-foreground mb-5 text-center lg:text-left">Recensioni</h3>
+        <Carousel opts={{ loop: true }}>
+          <CarouselContent>
+            {textReviews.map((review, i) => (
+              <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
+                <div className="bg-card border border-border rounded-xl p-6 card-hover h-full flex flex-col justify-between min-h-[160px]">
+                  <div>
+                    <StarRating rating={review.rating} />
+                    <p className="text-muted-foreground text-sm mt-3 italic">"{review.quote}"</p>
+                  </div>
+                  <p className="text-foreground font-semibold text-sm mt-4">— {review.name}</p>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious className="-left-4 lg:-left-5 bg-card border-border" />
+          <CarouselNext className="-right-4 lg:-right-5 bg-card border-border" />
+        </Carousel>
+      </div>
+
       <div className="flex flex-col lg:flex-row gap-10">
         {/* Video Recensioni */}
         <div className="flex-1 min-w-0">
@@ -102,27 +124,6 @@ const ReviewsSection = () => (
             <CarouselNext className="-right-4 lg:-right-5 bg-card border-border" />
           </Carousel>
         </div>
-      </div>
-      {/* Recensioni Scritte */}
-      <div className="mt-10">
-        <h3 className="text-foreground mb-5 text-center lg:text-left">Recensioni</h3>
-        <Carousel opts={{ loop: true }}>
-          <CarouselContent>
-            {textReviews.map((review, i) => (
-              <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
-                <div className="bg-card border border-border rounded-xl p-6 card-hover h-full flex flex-col justify-between min-h-[160px]">
-                  <div>
-                    <StarRating rating={review.rating} />
-                    <p className="text-muted-foreground text-sm mt-3 italic">"{review.quote}"</p>
-                  </div>
-                  <p className="text-foreground font-semibold text-sm mt-4">— {review.name}</p>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-4 lg:-left-5 bg-card border-border" />
-          <CarouselNext className="-right-4 lg:-right-5 bg-card border-border" />
-        </Carousel>
       </div>
     </div>
   </section>
