@@ -16,13 +16,13 @@ const ClosingSection = () => (
           className="cta-white"
         >
            Parla con un umano
-19:         </a>
-20:         <a href="#scenari" className="cta-outline-white">
-21:           Scopri la selezione
-22:         </a>
-23:       </div>
-24:       <p className="text-sm opacity-80 mb-2">Ti aiutiamo a scegliere taglia, modello e utilizzo corretto prima dell'acquisto.</p>
-25:       <p className="text-xs opacity-60 mb-8">Risposta umana negli orari indicati in pagina.</p>
+        </a>
+        <a href="#scenari" className="cta-outline-white">
+          Scopri la selezione
+        </a>
+      </div>
+      <p className="text-sm opacity-80 mb-2">Ti aiutiamo a scegliere taglia, modello e utilizzo corretto prima dell'acquisto.</p>
+      <p className="text-xs opacity-60 mb-8">Risposta umana negli orari indicati in pagina.</p>
 
       <TrustBar variant="dark" />
     </div>
