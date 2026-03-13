@@ -23,10 +23,10 @@ const HeroSection = () => (
               onClick={() => sendEvent("ClickWhatsApp", { section: "hero" })}
               className="cta-primary"
             >
-              Parla con un assistente umano
+              Chiedi a un assistente
             </a>
             <a href="#scenari" className="cta-outline">
-              Vedi i modelli consigliati
+              Vedi dettagli completi
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">

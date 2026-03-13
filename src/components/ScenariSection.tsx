@@ -82,7 +82,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
               onOpenDrawer(card.targetId);
             }}
             className="cta-outline text-xs py-2">
-                  Apri dettagli
+                  Vedi dettagli completi
                 </button>
           }
             </div>

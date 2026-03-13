@@ -29,7 +29,7 @@ const ConciergeSection = () => {
           onClick={() => sendEvent("ClickWhatsApp", { section: "concierge" })}
           className="cta-white mb-4 inline-flex">
 
-          Parla con il tuo assistente umano
+          Chiedi a un assistente
         </a>
         <p className="text-sm mt-3 text-secondary opacity-90">Ti aiutiamo a scegliere taglia, modello e utilizzo corretto prima dell'acquisto.</p>
         <p className="text-xs mt-1 text-secondary opacity-70">Risposta umana negli orari indicati in pagina.</p>
