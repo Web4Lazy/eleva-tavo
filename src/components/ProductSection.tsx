@@ -432,7 +432,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
           onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
           className="cta-primary text-center"
         >
-          Chiedi all'Assistente
+          Chiedi a un assistente
         </a>
         <a
           href={product.cartLink}

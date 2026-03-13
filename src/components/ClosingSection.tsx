@@ -15,10 +15,10 @@ const ClosingSection = () => (
           onClick={() => sendEvent("ClickWhatsApp", { section: "closing" })}
           className="cta-white"
         >
-           Parla con un umano
+           Chiedi a un assistente
         </a>
         <a href="#scenari" className="cta-outline-white">
-          Scopri la selezione
+          Vedi dettagli completi
         </a>
       </div>
       <p className="text-sm opacity-80 mb-2">Ti aiutiamo a scegliere taglia, modello e utilizzo corretto prima dell'acquisto.</p>

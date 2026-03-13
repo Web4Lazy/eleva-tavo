@@ -13,7 +13,7 @@ const AssistanceBanner = () => (
         onClick={() => sendEvent("ClickWhatsApp", { section: "pre-products-banner" })}
         className="text-sm font-semibold text-primary hover:underline"
       >
-        Parla con un assistente umano →
+        Chiedi a un assistente →
       </a>
     </div>
   </div>
