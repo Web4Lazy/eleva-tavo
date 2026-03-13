@@ -16,6 +16,7 @@ const videoReviews = [
 ];
 
 const unboxingVideos = [
+  { name: "ELEVA", label: "Unboxing TAVO", youtubeId: "8vHOtG01SmE" },
   { name: "Sara P.", label: "Unboxing Dupree" },
   { name: "Matteo G.", label: "Unboxing Maeve" },
   { name: "Chiara F.", label: "Unboxing Travel" },
