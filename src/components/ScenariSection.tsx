@@ -67,34 +67,26 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
             <p className="text-xs text-muted-foreground mb-2">{card.description}</p>
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-primary hover:underline mb-2 inline-block">
+            <span
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(getWhatsAppUrl(), '_blank'); }}
+              className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
               Dubbi su taglia o uso? Chiedi all'assistente →
-            </a>
+            </span>
             <div className="mt-auto flex flex-col gap-2">
-              <a
-            href={`#${card.targetId}`}
-            className="text-sm font-medium text-primary hover:underline"
-            onClick={() => sendEvent("ClickScenario", { scenario: card.name })}>
-
-                Scopri di più →
-              </a>
               {onOpenDrawer &&
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
               sendEvent("ClickScenario", { scenario: card.name, drawer: true });
               onOpenDrawer(card.targetId);
             }}
             className="cta-outline text-xs py-2">
-
                   Apri dettagli
                 </button>
           }
+            </div>
           </a>
-          </div>
       )}
       </div>
     </div>
