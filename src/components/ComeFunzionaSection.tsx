@@ -1,8 +1,9 @@
 const ComeFunzionaSection = () => {
   const steps = [
-  { title: "Checkout su Eleva", desc: "Acquisti sul sito Eleva e applichi il Vantaggio Fedeltà." },
-  { title: "Spedizione Partner", desc: "Il partner spedisce con DHL in circa 10 giorni lavorativi." },
-  { title: "Resi gestiti dal partner", desc: "I resi sono gestiti dal partner. Eleva resta disponibile per supporto informativo." }];
+  { title: "Scegli il prodotto", desc: "Scegli il prodotto con autonomia o con il supporto di un assistente umano." },
+  { title: "Completa l'ordine", desc: "Completi l'ordine online in modo semplice." },
+  { title: "Spedizione", desc: "Spedizione e gestione logistica sono curate dal partner indicato in pagina." },
+  { title: "Assistenza e resi", desc: "In caso di dubbi o necessità, trovi le indicazioni su assistenza e resi nelle FAQ." }];
 
 
   return (
