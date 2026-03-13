@@ -85,6 +85,12 @@ export const PRODUCTS: ProductData[] = [
     tag: "Auto + Aereo",
     name: "Dupree",
     bgClass: "bg-[#f7f5f3]",
+    quickSummary: {
+      idealePer: "Viaggi in auto e spostamenti in aereo",
+      tagliaPet: "Fino a 9 kg",
+      puntoForte: "Leggerezza e versatilità auto/aereo",
+      quandoSceglierlo: "Se viaggi spesso in auto o aereo con un pet di piccola taglia",
+    },
     benefits: [
       "Pensato anche per la cabina (verifica sempre con la compagnia)",
       "Fissaggio in auto sicuro e integrato",
