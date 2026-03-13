@@ -31,11 +31,11 @@ const ManifestoSection = () => {
             </ul>
           </div>
           <div ref={videoRef} className="hidden lg:block">
-            <div className="relative w-full rounded-lg overflow-hidden aspect-[9/16]">
+            <div className="relative w-full rounded-lg overflow-hidden aspect-square">
               {isVisible && (
                 <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src="https://www.youtube.com/embed/Rx9OpVNWyDw?autoplay=1&mute=1&loop=1&playlist=Rx9OpVNWyDw&controls=0&showinfo=0&modestbranding=1"
+                  className="absolute inset-[-50%] w-[200%] h-[200%]"
+                  src="https://www.youtube.com/embed/Rx9OpVNWyDw?autoplay=1&mute=1&loop=1&playlist=Rx9OpVNWyDw&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1"
                   title="TAVO lifestyle video"
                   allow="autoplay; encrypted-media"
                   allowFullScreen
