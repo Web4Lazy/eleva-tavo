@@ -9,7 +9,7 @@ const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
 
   return (
     <div className={`rounded-xl p-4 ${isDark ? "bg-transparent" : "bg-secondary"}`}>
-      <div className="flex flex-wrap justify-center gap-10">
+      <div className="flex flex-wrap justify-center gap-16">
         {items.map((item) => (
           <div key={item.text} className="flex items-center gap-2 text-sm">
             <span>{item.icon}</span>
