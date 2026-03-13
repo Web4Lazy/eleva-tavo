@@ -130,6 +130,12 @@ export const PRODUCTS: ProductData[] = [
     tag: "Auto (ISOFIX)",
     name: "Maeve™ iso",
     bgClass: "bg-background",
+    quickSummary: {
+      idealePer: "Viaggi in auto con massima stabilità",
+      tagliaPet: "Fino a 18 kg",
+      puntoForte: "Stabilità ISOFIX e protezione integrata",
+      quandoSceglierlo: "Se cerchi la soluzione più sicura e stabile per l'auto",
+    },
     benefits: [
       "Agganci ISOFIX integrati per massima stabilità",
       "Progettato per stabilità e protezione in auto (ISOFIX integrato).",
