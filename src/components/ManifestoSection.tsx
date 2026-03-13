@@ -1,4 +1,4 @@
-import ImagePlaceholder from "./ImagePlaceholder";
+import manifestoImg from "@/assets/manifesto-lifestyle.png";
 
 const ManifestoSection = () =>
 <section id="manifesto" className="section-padding bg-secondary">
@@ -16,7 +16,7 @@ const ManifestoSection = () =>
           </ul>
         </div>
         <div className="hidden lg:block">
-          <ImagePlaceholder aspectRatio="1/1" label="Foto Lifestyle — 280×280" />
+          <img src={manifestoImg} alt="Tavo lifestyle" className="w-full h-auto rounded-lg aspect-square object-cover" />
         </div>
       </div>
     </div>
