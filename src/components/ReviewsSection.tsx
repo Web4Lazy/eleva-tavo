@@ -17,7 +17,7 @@ const videoReviews = [
 
 const unboxingVideos = [
   { name: "STROLLERIA", label: "Unboxing TAVO", youtubeId: "8vHOtG01SmE" },
-  { name: "Sara P.", label: "Unboxing Dupree" },
+  { name: "YT BRICO", label: "Unboxing Dupree", youtubeId: "ZjRarW7PsZo" },
   { name: "Matteo G.", label: "Unboxing Maeve" },
   { name: "Chiara F.", label: "Unboxing Travel" },
   { name: "Davide S.", label: "Unboxing Shell" },
