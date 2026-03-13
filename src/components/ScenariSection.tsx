@@ -40,9 +40,11 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
 
       <div className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-4 lg:overflow-visible">
         {cards.map((card) =>
-      <div
+      <a
         key={card.targetId}
-        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary">
+        href={`#${card.targetId}`}
+        onClick={() => sendEvent("ClickScenario", { scenario: card.name })}
+        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary no-underline cursor-pointer">
 
             {card.imageSrc ?
         <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
