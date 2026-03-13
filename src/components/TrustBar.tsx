@@ -3,7 +3,6 @@ const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
     { icon: "✓", text: "Checkout su Eleva" },
     { icon: "📦", text: "Corriere Espresso ~ 10 giorni" },
     { icon: "↩", text: "Resi gestiti dal partner" },
-    { icon: "💬", text: "WhatsApp lun–ven 9–18" },
   ];
 
   const isDark = variant === "dark";
