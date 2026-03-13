@@ -1,23 +1,18 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-
 const ManifestoSection = () =>
 <section id="manifesto" className="section-padding bg-secondary">
     <div className="container-custom">
-      <div className="max-w-[720px] mx-auto lg:mx-0 lg:max-w-none lg:grid lg:grid-cols-[1fr_280px] lg:gap-16 lg:items-center">
-        <div className="text-center lg:text-left">
-          <h2 className="text-foreground mb-6">Scelto da Eleva. Condiviso con voi.</h2>
-          <p className="text-base text-muted-foreground leading-relaxed">I nostri amici a quattro zampe meritano il meglio in ogni momento — in auto, in viaggio, a casa. Per questo abbiamo cercato, testato e selezionato ogni prodotto Tavo con la stessa cura che mettiamo nella nostra routine quotidiana. Non è un catalogo: è una scelta, fatta con amore e competenza.
-
-
-
+      <div className="max-w-[720px] mx-auto text-center lg:text-left">
+        <h2 className="text-foreground mb-6">Perché abbiamo scelto Tavo</h2>
+        <p className="text-base text-muted-foreground leading-relaxed mb-6">
+          Non proponiamo un catalogo generico. Abbiamo selezionato questi prodotti perché uniscono design, comfort e attenzione alla sicurezza, con supporto umano nella scelta.
         </p>
-        </div>
-        <div className="hidden lg:block">
-          <ImagePlaceholder aspectRatio="1/1" label="Foto Eva / Lifestyle — 280×280" />
-        </div>
+        <ul className="space-y-2 text-muted-foreground text-sm">
+          <li className="flex items-center gap-2">✓ Selezione curata</li>
+          <li className="flex items-center gap-2">✓ Supporto nella scelta</li>
+          <li className="flex items-center gap-2">✓ Prodotti premium per utilizzi reali</li>
+        </ul>
       </div>
     </div>
   </section>;
-
 
 export default ManifestoSection;
