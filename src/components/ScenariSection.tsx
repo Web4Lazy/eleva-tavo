@@ -93,7 +93,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
                   Apri dettagli
                 </button>
           }
-            </div>
+          </a>
           </div>
       )}
       </div>
