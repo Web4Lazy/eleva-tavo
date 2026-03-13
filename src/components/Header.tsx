@@ -67,7 +67,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "header" })}
               className="cta-outline text-xs py-2 px-4 hidden lg:inline-flex"
             >
-              Parla con l'Assistente
+              Chiedi a un assistente
             </a>
 
             {/* Mobile hamburger */}
