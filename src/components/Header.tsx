@@ -34,8 +34,8 @@ const Header = ({ activeSection }: Props) => {
 
       {/* Header */}
       <header
-        className={`sticky top-0 z-50 bg-background transition-shadow duration-300 ${scrolled ? "shadow-sm" : ""}`}
-        style={{ borderBottom: "1px solid hsl(var(--grigio-bordo))" }}
+        className={`sticky top-0 z-50 transition-shadow duration-300 ${scrolled ? "shadow-sm" : ""}`}
+        style={{ borderBottom: "1px solid hsl(var(--grigio-bordo))", backgroundColor: "#eae2d6" }}
       >
         <div className="container-custom flex items-center justify-between h-14 lg:h-16">
           <a href="#">
