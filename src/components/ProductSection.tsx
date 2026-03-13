@@ -65,6 +65,12 @@ export interface ProductData {
   badge?: string;
   benefits: string[];
   disclaimer?: string;
+  quickSummary?: {
+    idealePer: string;
+    tagliaPet: string;
+    puntoForte: string;
+    quandoSceglierlo: string;
+  };
   sizes: ProductSize[];
   includes: string;
   manuals: { label: string; url: string }[];
