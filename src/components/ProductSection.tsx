@@ -306,6 +306,29 @@ const ProductSection = ({ product, compact = false }: Props) => {
       <h2 className="text-foreground mb-1">{product.name}</h2>
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
+      {product.quickSummary && (
+        <div className="bg-secondary border border-border rounded-lg p-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div>
+              <span className="font-semibold text-foreground">Ideale per:</span>
+              <p className="text-muted-foreground">{product.quickSummary.idealePer}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Taglia pet consigliata:</span>
+              <p className="text-muted-foreground">{product.quickSummary.tagliaPet}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Punto forte:</span>
+              <p className="text-muted-foreground">{product.quickSummary.puntoForte}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Quando sceglierlo:</span>
+              <p className="text-muted-foreground">{product.quickSummary.quandoSceglierlo}</p>
+            </div>
+          </div>
+        </div>
+      )}
+
       <ul className="space-y-2 mb-6">
         {product.benefits.map((b) => (
           <li key={b} className="flex items-start gap-2 text-[15px] text-foreground">
