@@ -65,6 +65,12 @@ export interface ProductData {
   badge?: string;
   benefits: string[];
   disclaimer?: string;
+  quickSummary?: {
+    idealePer: string;
+    tagliaPet: string;
+    puntoForte: string;
+    quandoSceglierlo: string;
+  };
   sizes: ProductSize[];
   includes: string;
   manuals: { label: string; url: string }[];
@@ -79,6 +85,12 @@ export const PRODUCTS: ProductData[] = [
     tag: "Auto + Aereo",
     name: "Dupree",
     bgClass: "bg-[#f7f5f3]",
+    quickSummary: {
+      idealePer: "Viaggi in auto e spostamenti in aereo",
+      tagliaPet: "Fino a 9 kg",
+      puntoForte: "Leggerezza e versatilità auto/aereo",
+      quandoSceglierlo: "Se viaggi spesso in auto o aereo con un pet di piccola taglia",
+    },
     benefits: [
       "Pensato anche per la cabina (verifica sempre con la compagnia)",
       "Fissaggio in auto sicuro e integrato",
@@ -118,6 +130,12 @@ export const PRODUCTS: ProductData[] = [
     tag: "Auto (ISOFIX)",
     name: "Maeve™ iso",
     bgClass: "bg-background",
+    quickSummary: {
+      idealePer: "Viaggi in auto con massima stabilità",
+      tagliaPet: "Fino a 18 kg",
+      puntoForte: "Stabilità ISOFIX e protezione integrata",
+      quandoSceglierlo: "Se cerchi la soluzione più sicura e stabile per l'auto",
+    },
     benefits: [
       "Agganci ISOFIX integrati per massima stabilità",
       "Progettato per stabilità e protezione in auto (ISOFIX integrato).",
@@ -177,6 +195,12 @@ export const PRODUCTS: ProductData[] = [
     subtitle: "Maeve iso + Roscoe Stroller Frame",
     badge: "TOP scelta Eleva",
     bgClass: "bg-[#f7f5f3]",
+    quickSummary: {
+      idealePer: "Uso quotidiano auto + passeggiate",
+      tagliaPet: "Fino a 18 kg",
+      puntoForte: "Praticità e versatilità auto/passeggio",
+      quandoSceglierlo: "Se cerchi una soluzione completa per spostamenti frequenti",
+    },
     benefits: [
       "Passaggio auto → passeggio senza cambiare setup",
       "Connessione sicura ISOFIX",
@@ -224,6 +248,12 @@ export const PRODUCTS: ProductData[] = [
     tag: "Casa / Hotel",
     name: "Shell",
     bgClass: "bg-background",
+    quickSummary: {
+      idealePer: "Riposo e comfort a casa o in hotel",
+      tagliaPet: "Fino a 59 kg",
+      puntoForte: "Design rialzato e movimento oscillante",
+      quandoSceglierlo: "Se cerchi un prodotto di arredo per il riposo quotidiano del tuo pet",
+    },
     benefits: [
       "Design rialzato e basculante",
       "Movimento oscillante + reclinazione",
@@ -275,6 +305,29 @@ const ProductSection = ({ product, compact = false }: Props) => {
       </span>
       <h2 className="text-foreground mb-1">{product.name}</h2>
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
+
+      {product.quickSummary && (
+        <div className="bg-secondary border border-border rounded-lg p-4 mb-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+            <div>
+              <span className="font-semibold text-foreground">Ideale per:</span>
+              <p className="text-muted-foreground">{product.quickSummary.idealePer}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Taglia pet consigliata:</span>
+              <p className="text-muted-foreground">{product.quickSummary.tagliaPet}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Punto forte:</span>
+              <p className="text-muted-foreground">{product.quickSummary.puntoForte}</p>
+            </div>
+            <div>
+              <span className="font-semibold text-foreground">Quando sceglierlo:</span>
+              <p className="text-muted-foreground">{product.quickSummary.quandoSceglierlo}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       <ul className="space-y-2 mb-6">
         {product.benefits.map((b) => (
