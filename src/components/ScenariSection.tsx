@@ -13,6 +13,7 @@ import iconShell from "@/assets/icons/icon-shell.png";
 interface ScenarioCard {
   name: string;
   scenario: string;
+  description: string;
   targetId: string;
   imageLabel: string;
   badge?: string;
@@ -21,10 +22,10 @@ interface ScenarioCard {
 }
 
 const cards: ScenarioCard[] = [
-{ name: "Dupree", scenario: "Auto + Aereo", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, iconSrc: iconDupree },
-{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, iconSrc: iconMaeve },
-{ name: "Travel System", scenario: "Auto + Passeggio", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, iconSrc: iconTravel },
-{ name: "Shell", scenario: "Casa / Hotel", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, iconSrc: iconShell }];
+{ name: "Dupree", scenario: "Auto + Aereo", description: "Soluzioni pensate per viaggiare in auto con più stabilità e sicurezza.", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, iconSrc: iconDupree },
+{ name: "Maeve™ iso", scenario: "Auto (ISOFIX)", description: "Modelli adatti a spostamenti e viaggi, con attenzione a misure e praticità.", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, iconSrc: iconMaeve },
+{ name: "Travel System", scenario: "Auto + Passeggio", description: "Soluzioni comode per uscite frequenti e mobilità quotidiana.", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, iconSrc: iconTravel },
+{ name: "Shell", scenario: "Casa / Hotel", description: "Prodotti pensati per il riposo e il comfort a casa.", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, iconSrc: iconShell }];
 
 
 interface Props {
@@ -39,9 +40,11 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
 
       <div className="flex gap-4 lg:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 -mx-5 px-5 lg:mx-0 lg:px-0 lg:grid lg:grid-cols-4 lg:overflow-visible">
         {cards.map((card) =>
-      <div
+      <a
         key={card.targetId}
-        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary">
+        href={`#${card.targetId}`}
+        onClick={() => sendEvent("ClickScenario", { scenario: card.name })}
+        className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary no-underline cursor-pointer">
 
             {card.imageSrc ?
         <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
@@ -63,34 +66,27 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
             <div className="flex items-center gap-1.5 mb-2"><img src={card.iconSrc} alt={card.scenario} className="h-6" /></div>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
-            <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-primary hover:underline mb-2 inline-block">
+            <p className="text-xs text-muted-foreground mb-2">{card.description}</p>
+            <span
+              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(getWhatsAppUrl(), '_blank'); }}
+              className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
               Dubbi su taglia o uso? Chiedi all'assistente →
-            </a>
+            </span>
             <div className="mt-auto flex flex-col gap-2">
-              <a
-            href={`#${card.targetId}`}
-            className="text-sm font-medium text-primary hover:underline"
-            onClick={() => sendEvent("ClickScenario", { scenario: card.name })}>
-
-                Scopri di più →
-              </a>
               {onOpenDrawer &&
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
               sendEvent("ClickScenario", { scenario: card.name, drawer: true });
               onOpenDrawer(card.targetId);
             }}
             className="cta-outline text-xs py-2">
-
                   Apri dettagli
                 </button>
           }
             </div>
-          </div>
+          </a>
       )}
       </div>
     </div>
