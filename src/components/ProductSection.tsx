@@ -195,6 +195,12 @@ export const PRODUCTS: ProductData[] = [
     subtitle: "Maeve iso + Roscoe Stroller Frame",
     badge: "TOP scelta Eleva",
     bgClass: "bg-[#f7f5f3]",
+    quickSummary: {
+      idealePer: "Uso quotidiano auto + passeggiate",
+      tagliaPet: "Fino a 18 kg",
+      puntoForte: "Praticità e versatilità auto/passeggio",
+      quandoSceglierlo: "Se cerchi una soluzione completa per spostamenti frequenti",
+    },
     benefits: [
       "Passaggio auto → passeggio senza cambiare setup",
       "Connessione sicura ISOFIX",
