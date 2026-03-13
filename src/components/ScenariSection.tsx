@@ -33,7 +33,7 @@ interface Props {
 }
 
 const ScenariSection = ({ onOpenDrawer }: Props) =>
-<section id="scenari" className="section-padding bg-card my-0 py-0">
+<section id="scenari" className="section-padding my-0 py-0 bg-[#f7f5f3]">
     <div className="container-custom">
       <h2 className="text-foreground mb-2">Scegli il tuo scenario. Al resto pensiamo noi.</h2>
       <p className="text-muted-foreground mb-8">Seleziona dove ti serve (auto, aereo, passeggiata, casa). Se hai dubbi su taglia o compatibilità, scrivici su WhatsApp: ti guidiamo prima dell'acquisto.</p>
@@ -68,8 +68,8 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
             <p className="text-xs text-muted-foreground mb-2 font-semibold">{card.description}</p>
             <span
-              onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(getWhatsAppUrl(), '_blank'); }}
-              className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
+          onClick={(e) => {e.preventDefault();e.stopPropagation();window.open(getWhatsAppUrl(), '_blank');}}
+          className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
               Dubbi su taglia o uso? Chiedi all'assistente →
             </span>
             <div className="mt-auto flex flex-col gap-2">
