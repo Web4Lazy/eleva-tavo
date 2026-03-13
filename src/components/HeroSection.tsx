@@ -2,8 +2,8 @@ import TrustBar from "./TrustBar";
 import { getWhatsAppUrl, sendEvent } from "@/config";
 import heroImage from "@/assets/hero-new.jpg";
 
-const HeroSection = () => (
-  <section id="hero" className="section-padding bg-white">
+const HeroSection = () =>
+<section id="hero" className="section-padding bg-[#f7f5f3]">
     <div className="container-custom">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full object-cover order-first lg:order-last" style={{ aspectRatio: "1/1" }} />
@@ -17,12 +17,12 @@ const HeroSection = () => (
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => sendEvent("ClickWhatsApp", { section: "hero" })}
-              className="cta-primary"
-            >
+            href={getWhatsAppUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => sendEvent("ClickWhatsApp", { section: "hero" })}
+            className="cta-primary">
+            
               Chiedi a un assistente
             </a>
             <a href="#scenari" className="cta-outline">
@@ -40,7 +40,7 @@ const HeroSection = () => (
         <TrustBar />
       </div>
     </div>
-  </section>
-);
+  </section>;
+
 
 export default HeroSection;
