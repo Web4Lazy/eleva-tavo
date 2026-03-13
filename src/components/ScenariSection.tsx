@@ -66,7 +66,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
             <div className="flex items-center gap-1.5 mb-2"><img src={card.iconSrc} alt={card.scenario} className="h-6" /></div>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
-            <p className="text-xs text-muted-foreground mb-2">{card.description}</p>
+            <p className="text-xs text-muted-foreground mb-2 font-semibold">{card.description}</p>
             <span
               onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(getWhatsAppUrl(), '_blank'); }}
               className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
