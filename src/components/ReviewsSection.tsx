@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 
 const videoReviews = [
-  { name: "Marco R.", rating: 5, quote: "Il mio cane finalmente viaggia sicuro e comodo." },
+  { name: "DESTINATION BABY & KIDS", rating: 5, quote: "Review completa del sistema TAVO.", youtubeId: "-IeENZEcOP4" },
   { name: "Giulia T.", rating: 5, quote: "Qualità eccezionale, si vede che è pensato per gli animali." },
   { name: "Alessandro M.", rating: 5, quote: "Montaggio semplicissimo grazie all'ISOFIX." },
   { name: "Francesca L.", rating: 5, quote: "Il design è bellissimo, si integra perfettamente in auto." },
