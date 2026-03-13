@@ -6,6 +6,7 @@ import ManifestoSection from "@/components/ManifestoSection";
 import ScenariSection from "@/components/ScenariSection";
 import ExpandableVideoSection from "@/components/ExpandableVideoSection";
 import ConciergeSection from "@/components/ConciergeSection";
+import AssistanceBanner from "@/components/AssistanceBanner";
 import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -95,6 +96,7 @@ const Index = () => {
         <ManifestoSection />
         <ExpandableVideoSection />
         <ConciergeSection />
+        <AssistanceBanner />
 
         {PRODUCTS.map((product) => (
           <ProductSection key={product.id} product={product} />
