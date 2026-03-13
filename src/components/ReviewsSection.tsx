@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/carousel";
 
 const videoReviews = [
-  { name: "Marco R.", rating: 5, quote: "Il mio cane finalmente viaggia sicuro e comodo." },
+  { name: "DESTINATION BABY & KIDS", rating: 5, quote: "Review completa del sistema TAVO.", youtubeId: "-IeENZEcOP4" },
   { name: "Giulia T.", rating: 5, quote: "Qualità eccezionale, si vede che è pensato per gli animali." },
   { name: "Alessandro M.", rating: 5, quote: "Montaggio semplicissimo grazie all'ISOFIX." },
   { name: "Francesca L.", rating: 5, quote: "Il design è bellissimo, si integra perfettamente in auto." },
@@ -86,7 +86,19 @@ const ReviewsSection = () => (
               {videoReviews.map((review, i) => (
                 <CarouselItem key={i}>
                   <div className="bg-card border border-border rounded-xl overflow-hidden card-hover h-full flex flex-col">
-                    <VideoPlaceholder />
+                    {review.youtubeId ? (
+                      <div className="relative w-full rounded-t-xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+                        <iframe
+                          className="absolute inset-0 w-full h-full"
+                          src={`https://www.youtube.com/embed/${review.youtubeId}`}
+                          title={review.name}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                        />
+                      </div>
+                    ) : (
+                      <VideoPlaceholder />
+                    )}
                     <div className="p-4 flex-1 flex flex-col justify-center min-h-[100px]">
                       <StarRating rating={review.rating} />
                       <p className="text-foreground font-semibold mt-2">{review.name}</p>
