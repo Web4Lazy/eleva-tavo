@@ -96,6 +96,7 @@ const Index = () => {
         <ManifestoSection />
         <ExpandableVideoSection />
         <ConciergeSection />
+        <AssistanceBanner />
 
         {PRODUCTS.map((product) => (
           <ProductSection key={product.id} product={product} />
