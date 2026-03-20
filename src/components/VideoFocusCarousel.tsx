@@ -7,7 +7,6 @@ interface VideoSlide {
   label: string;
   color: string;
   videoUrl?: string;
-  instagramUrl?: string;
   youtubeId?: string;
 }
 
