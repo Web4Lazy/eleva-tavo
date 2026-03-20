@@ -7,11 +7,12 @@ interface VideoSlide {
   label: string;
   color: string;
   videoUrl?: string;
+  instagramUrl?: string;
 }
 
 const slides: VideoSlide[] = [
-  { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)" },
-  { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)" },
+  { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)", instagramUrl: "https://www.instagram.com/reel/DKtYBwnMUi0/embed/" },
+  { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", instagramUrl: "https://www.instagram.com/reel/DKc205pMkE6/embed/" },
   { id: "v3", label: "Video 3", color: "hsl(0 0% 30%)" },
   { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)" },
   { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)" },
@@ -142,14 +143,24 @@ const VideoFocusCarousel = () => {
                     : "0 2px 12px rgba(0,0,0,0.06)",
                 }}
               >
-                {/* Placeholder colored card */}
-                <div
-                  className="absolute inset-0 flex flex-col items-center justify-center"
-                  style={{ backgroundColor: slide.color }}
-                >
-                  <Play className="w-12 h-12 text-white/60 mb-3" />
-                  <span className="text-white/80 text-sm font-medium">{slide.label}</span>
-                </div>
+                {slide.instagramUrl ? (
+                  <iframe
+                    src={slide.instagramUrl}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    scrolling="no"
+                    style={{ overflow: "hidden" }}
+                    title={slide.label}
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    style={{ backgroundColor: slide.color }}
+                  >
+                    <Play className="w-12 h-12 text-white/60 mb-3" />
+                    <span className="text-white/80 text-sm font-medium">{slide.label}</span>
+                  </div>
+                )}
 
                 {/* Mute toggle — only on center */}
                 {isCenter && (
