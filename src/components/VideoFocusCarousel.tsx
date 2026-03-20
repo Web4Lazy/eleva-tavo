@@ -13,7 +13,7 @@ interface VideoSlide {
 const slides: VideoSlide[] = [
   { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)", instagramUrl: "https://www.instagram.com/reel/DKtYBwnMUi0/embed/" },
   { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", instagramUrl: "https://www.instagram.com/reel/DKc205pMkE6/embed/" },
-  { id: "v3", label: "Video 3", color: "hsl(0 0% 30%)" },
+  { id: "v3", label: "Maeve Montato", color: "hsl(0 0% 30%)", videoUrl: "/videos/maeve-montato.mov" },
   { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)" },
   { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)" },
   { id: "v6", label: "Video 6", color: "hsl(0 0% 20%)" },
