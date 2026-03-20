@@ -153,6 +153,14 @@ const VideoFocusCarousel = () => {
                     style={{ overflow: "hidden" }}
                     title={slide.label}
                   />
+                ) : slide.youtubeId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
+                    title={slide.label}
+                  />
                 ) : slide.videoUrl ? (
                   <video
                     className="absolute inset-0 w-full h-full object-cover"
