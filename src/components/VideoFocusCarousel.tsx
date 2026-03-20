@@ -8,6 +8,7 @@ interface VideoSlide {
   color: string;
   videoUrl?: string;
   instagramUrl?: string;
+  youtubeId?: string;
 }
 
 const slides: VideoSlide[] = [
