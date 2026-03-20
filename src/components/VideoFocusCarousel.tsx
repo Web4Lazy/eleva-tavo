@@ -119,6 +119,7 @@ const VideoFocusCarousel = () => {
             const height = isCenter ? ACTIVE_HEIGHT : INACTIVE_HEIGHT;
             const opacity = isCenter ? 1 : distFromCenter === 1 ? 0.85 : 0.7;
             const radius = isCenter ? 16 : 12;
+            const scale = isCenter ? 1 : distFromCenter === 1 ? 0.97 : 0.94;
             const slide = slides[slideIdx];
 
             return (
@@ -130,13 +131,14 @@ const VideoFocusCarousel = () => {
                     goTo(activeIndex + offset);
                   }
                 }}
-                className="shrink-0 relative overflow-hidden cursor-pointer"
+                className="shrink-0 relative overflow-hidden cursor-pointer will-change-transform"
                 style={{
                   width: CARD_WIDTH,
                   height,
                   borderRadius: radius,
                   opacity,
-                  transition: "height 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms ease-out, border-radius 300ms ease",
+                  transform: `scale(${scale})`,
+                  transition: "height 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease-out, transform 500ms cubic-bezier(0.16, 1, 0.3, 1), border-radius 400ms ease",
                   boxShadow: isCenter
                     ? "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)"
                     : "0 2px 12px rgba(0,0,0,0.06)",
