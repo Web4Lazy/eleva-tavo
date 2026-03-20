@@ -106,7 +106,7 @@
     @apply py-14 lg:py-16;
   }
   .container-custom {
-    @apply max-w-[1200px] mx-auto px-5 lg:px-10;
+    @apply max-w-[1480px] mx-auto px-5 lg:px-10;
   }
   .cta-primary {
     @apply inline-flex items-center justify-center px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-lg transition-all duration-300 hover:scale-[1.02] hover:shadow-lg;
