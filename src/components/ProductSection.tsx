@@ -251,6 +251,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-shell",
     tag: "Casa / Hotel",
     name: "Shell",
+    startingPrice: 299,
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Riposo e comfort a casa o in hotel",
