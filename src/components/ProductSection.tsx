@@ -309,6 +309,11 @@ const ProductSection = ({ product, compact = false }: Props) => {
         {product.tag}
       </span>
       <h2 className="text-foreground mb-1">{product.name}</h2>
+      {product.startingPrice ? (
+        <p className="text-[14px] text-muted-foreground mb-1">
+          a partire da €{product.startingPrice.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
+        </p>
+      ) : null}
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
       {product.quickSummary && (
