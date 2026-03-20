@@ -67,11 +67,6 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
             <p className="text-xs text-muted-foreground mb-2 font-semibold">{card.description}</p>
-            <span
-          onClick={(e) => {e.preventDefault();e.stopPropagation();window.open(getWhatsAppUrl(), '_blank');}}
-          className="text-xs text-primary hover:underline mb-2 inline-block cursor-pointer">
-              Dubbi su taglia o uso? Chiedi all'assistente →
-            </span>
             <div className="mt-auto flex flex-col gap-2">
               {onOpenDrawer &&
           <button
