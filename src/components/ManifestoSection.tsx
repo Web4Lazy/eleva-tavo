@@ -1,20 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import stefaniaEva from "@/assets/stefania-eva.jpg";
 
 const ManifestoSection = () => {
-  const videoRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const el = videoRef.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
-      { threshold: 0.3 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="manifesto" className="section-padding bg-secondary">
       <div className="container-custom">
@@ -30,18 +16,12 @@ const ManifestoSection = () => {
               <li className="flex items-center gap-2">✓ Prodotti premium per utilizzi reali</li>
             </ul>
           </div>
-          <div ref={videoRef} className="hidden lg:block">
-            <div className="relative w-full rounded-lg overflow-hidden aspect-square">
-              {isVisible && (
-                <iframe
-                  className="absolute inset-[-50%] w-[200%] h-[200%]"
-                  src="https://www.youtube.com/embed/Rx9OpVNWyDw?autoplay=1&mute=1&loop=1&playlist=Rx9OpVNWyDw&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1"
-                  title="TAVO lifestyle video"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                />
-              )}
-            </div>
+          <div className="hidden lg:block">
+            <img
+              src={stefaniaEva}
+              alt="Stefania & Eva con passeggino Tavo"
+              className="w-full rounded-lg object-cover aspect-square"
+            />
           </div>
         </div>
       </div>
