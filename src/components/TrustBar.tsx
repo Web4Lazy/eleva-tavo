@@ -1,6 +1,8 @@
+import { ShoppingCart } from "lucide-react";
+
 const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   const items = [
-    { icon: "✓", text: "Checkout su Eleva" },
+    { icon: <ShoppingCart size={16} />, text: "Checkout su Eleva" },
     { icon: "📦", text: "Corriere Espresso ~ 10 giorni" },
     { icon: "↩", text: "Resi gestiti dal partner" },
   ];
