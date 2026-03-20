@@ -1,5 +1,5 @@
-import { useState, useRef, useCallback } from "react";
-import { Volume2, VolumeX, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState, useRef, useEffect, useCallback } from "react";
+import { Volume2, VolumeX, ChevronLeft, ChevronRight, Play } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 interface VideoSlide {
@@ -27,20 +27,36 @@ const GAP = 16;
 
 const VideoFocusCarousel = () => {
   const isMobile = useIsMobile();
+  const visibleCount = isMobile ? 3 : 5;
   const [activeIndex, setActiveIndex] = useState(0);
   const [isMuted, setIsMuted] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const touchDeltaX = useRef(0);
   const isDragging = useRef(false);
 
-  const n = slides.length;
+  const getWrappedIndex = useCallback(
+    (i: number) => ((i % slides.length) + slides.length) % slides.length,
+    []
+  );
 
-  const goTo = useCallback((index: number) => {
-    setActiveIndex(((index % n) + n) % n);
-  }, [n]);
+  const goTo = useCallback(
+    (index: number) => setActiveIndex(getWrappedIndex(index)),
+    [getWrappedIndex]
+  );
 
   const goNext = useCallback(() => goTo(activeIndex + 1), [activeIndex, goTo]);
   const goPrev = useCallback(() => goTo(activeIndex - 1), [activeIndex, goTo]);
+
+  // Keyboard nav
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [goNext, goPrev]);
 
   // Touch/swipe
   const onTouchStart = (e: React.TouchEvent) => {
@@ -58,15 +74,12 @@ const VideoFocusCarousel = () => {
     touchDeltaX.current = 0;
   };
 
-  // We triple the slides array to fake infinite scroll: [slides, slides, slides]
-  // The "real" center is in the middle copy (index n + activeIndex)
-  const tripled = [...slides, ...slides, ...slides];
-  const centerInTripled = n + activeIndex;
-
-  // Calculate offset so the active card is centered
-  const totalCardWidth = CARD_WIDTH + GAP;
-  // offset to put centerInTripled at the visual center
-  const offsetX = -(centerInTripled * totalCardWidth) + (totalCardWidth * 0.5);
+  // Build visible indices centered around activeIndex
+  const half = Math.floor(visibleCount / 2);
+  const visibleIndices: number[] = [];
+  for (let i = -half; i <= half; i++) {
+    visibleIndices.push(getWrappedIndex(activeIndex + i));
+  }
 
   return (
     <section className="section-padding bg-background overflow-hidden">
@@ -91,96 +104,96 @@ const VideoFocusCarousel = () => {
           <ChevronRight className="h-5 w-5 text-foreground" />
         </button>
 
-        {/* Track */}
+        {/* Cards */}
         <div
-          className="flex items-center justify-start overflow-hidden"
-          style={{ height: ACTIVE_HEIGHT + 40 }}
+          ref={containerRef}
+          className="flex items-center justify-center"
+          style={{ gap: GAP }}
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
           onTouchEnd={onTouchEnd}
         >
-          <div
-            className="flex items-center"
-            style={{
-              gap: GAP,
-              transform: `translateX(calc(50% + ${offsetX}px))`,
-              transition: "transform 500ms cubic-bezier(0.16, 1, 0.3, 1)",
-            }}
-          >
-            {tripled.map((slide, i) => {
-              // Distance from the center card in the tripled array
-              const distFromCenter = i - centerInTripled;
-              const absDist = Math.abs(distFromCenter);
-              const isCenter = distFromCenter === 0;
-              const height = isCenter ? ACTIVE_HEIGHT : INACTIVE_HEIGHT;
-              const opacity = isCenter ? 1 : absDist === 1 ? 0.85 : 0.7;
-              const radius = isCenter ? 16 : 12;
+          {visibleIndices.map((slideIdx, posIdx) => {
+            const isCenter = posIdx === half;
+            const distFromCenter = Math.abs(posIdx - half);
+            const height = isCenter ? ACTIVE_HEIGHT : INACTIVE_HEIGHT;
+            const opacity = isCenter ? 1 : distFromCenter === 1 ? 0.85 : 0.7;
+            const radius = isCenter ? 16 : 12;
+            const slide = slides[slideIdx];
 
-              return (
-                <div
-                  key={`${slide.id}-${i}`}
-                  onClick={() => {
-                    if (!isCenter && absDist <= 3) {
-                      goTo(activeIndex + distFromCenter);
-                    }
-                  }}
-                  className="shrink-0 relative overflow-hidden cursor-pointer"
-                  style={{
-                    width: CARD_WIDTH,
-                    height,
-                    borderRadius: radius,
-                    opacity,
-                    transition:
-                      "height 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 500ms ease-out, border-radius 300ms ease",
-                    boxShadow: isCenter
-                      ? "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)"
-                      : "0 2px 12px rgba(0,0,0,0.06)",
-                  }}
-                >
-                  {slide.youtubeId ? (
-                    <>
-                      <iframe
-                        src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
-                        className="absolute inset-0 w-full h-full border-0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                        loading="lazy"
-                        title={slide.label}
-                      />
-                      {!isCenter && <div className="absolute inset-0 z-10" />}
-                    </>
-                  ) : slide.videoUrl ? (
-                    <video
-                      className="absolute inset-0 w-full h-full object-cover"
-                      src={slide.videoUrl}
-                      muted={isMuted}
-                      loop
-                      playsInline
-                      autoPlay={isCenter}
+            return (
+              <div
+                key={`${slide.id}-${posIdx}`}
+                onClick={() => {
+                  if (!isCenter) {
+                    const offset = posIdx - half;
+                    goTo(activeIndex + offset);
+                  }
+                }}
+                className="shrink-0 relative overflow-hidden cursor-pointer"
+                style={{
+                  width: CARD_WIDTH,
+                  height,
+                  borderRadius: radius,
+                  opacity,
+                  transition: "height 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms ease-out, border-radius 300ms ease",
+                  boxShadow: isCenter
+                    ? "0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.08)"
+                    : "0 2px 12px rgba(0,0,0,0.06)",
+                }}
+              >
+                {slide.youtubeId ? (
+                  <>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
+                      className="absolute inset-0 w-full h-full border-0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title={slide.label}
                     />
-                  ) : null}
+                    {!isCenter && (
+                      <div className="absolute inset-0 z-10" />
+                    )}
+                  </>
+                ) : slide.videoUrl ? (
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={slide.videoUrl}
+                    muted={isMuted}
+                    loop
+                    playsInline
+                    autoPlay={isCenter}
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    style={{ backgroundColor: slide.color }}
+                  >
+                    <Play className="w-12 h-12 text-white/60 mb-3" />
+                    <span className="text-white/80 text-sm font-medium">{slide.label}</span>
+                  </div>
+                )}
 
-                  {/* Mute toggle — only on center */}
-                  {isCenter && (
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setIsMuted(!isMuted);
-                      }}
-                      className="absolute bottom-3 right-3 z-10 w-8 h-8 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm hover:bg-black/60 transition-colors active:scale-95"
-                      aria-label={isMuted ? "Attiva audio" : "Disattiva audio"}
-                    >
-                      {isMuted ? (
-                        <VolumeX className="h-4 w-4 text-white" />
-                      ) : (
-                        <Volume2 className="h-4 w-4 text-white" />
-                      )}
-                    </button>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                {/* Mute toggle — only on center */}
+                {isCenter && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsMuted(!isMuted);
+                    }}
+                    className="absolute bottom-3 right-3 z-10 w-8 h-8 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm hover:bg-black/60 transition-colors active:scale-95"
+                    aria-label={isMuted ? "Attiva audio" : "Disattiva audio"}
+                  >
+                    {isMuted ? (
+                      <VolumeX className="h-4 w-4 text-white" />
+                    ) : (
+                      <Volume2 className="h-4 w-4 text-white" />
+                    )}
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Dot indicators */}
