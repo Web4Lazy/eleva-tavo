@@ -63,6 +63,7 @@ export interface ProductData {
   name: string;
   subtitle?: string;
   badge?: string;
+  startingPrice?: number;
   benefits: string[];
   disclaimer?: string;
   quickSummary?: {
@@ -84,6 +85,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-dupree",
     tag: "Auto + Aereo",
     name: "Dupree",
+    startingPrice: 0,
     bgClass: "bg-[#f7f5f3]",
     quickSummary: {
       idealePer: "Viaggi in auto e spostamenti in aereo",
@@ -129,6 +131,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-maeve",
     tag: "Auto (ISOFIX)",
     name: "Maeve™ iso",
+    startingPrice: 0,
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Viaggi in auto con massima stabilità",
@@ -194,6 +197,7 @@ export const PRODUCTS: ProductData[] = [
     name: "Travel System",
     subtitle: "Maeve iso + Roscoe Stroller Frame",
     badge: "TOP scelta Eleva",
+    startingPrice: 700,
     bgClass: "bg-[#f7f5f3]",
     quickSummary: {
       idealePer: "Uso quotidiano auto + passeggiate",
@@ -247,6 +251,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-shell",
     tag: "Casa / Hotel",
     name: "Shell",
+    startingPrice: 299,
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Riposo e comfort a casa o in hotel",
@@ -304,6 +309,11 @@ const ProductSection = ({ product, compact = false }: Props) => {
         {product.tag}
       </span>
       <h2 className="text-foreground mb-1">{product.name}</h2>
+      {product.startingPrice ? (
+        <p className="text-[14px] text-muted-foreground mb-1">
+          a partire da €{product.startingPrice.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
+        </p>
+      ) : null}
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
       {product.quickSummary && (
