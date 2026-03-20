@@ -308,12 +308,14 @@ const ProductSection = ({ product, compact = false }: Props) => {
       <span className="inline-block bg-secondary text-foreground text-sm font-medium px-3 py-1 rounded-full mb-3">
         {product.tag}
       </span>
-      <h2 className="text-foreground mb-1">{product.name}</h2>
-      {product.startingPrice ? (
-        <p className="text-[14px] text-muted-foreground mb-1">
-          a partire da €{product.startingPrice.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
-        </p>
-      ) : null}
+      <div className="flex items-baseline gap-3 mb-1">
+        <h2 className="text-foreground">{product.name}</h2>
+        {product.startingPrice ? (
+          <span className="text-[14px] text-muted-foreground whitespace-nowrap">
+            a partire da €{product.startingPrice.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
+          </span>
+        ) : null}
+      </div>
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
       {product.quickSummary && (
