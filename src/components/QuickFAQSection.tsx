@@ -1,73 +1,54 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { getWhatsAppUrl } from "@/config";
 
 const quickFaqs = [
   {
     q: "Come scelgo la taglia giusta?",
-    a: (
-      <>
-        Ti servono peso, lunghezza e altezza al garrese del tuo pet. Con questi dati ti consigliamo la taglia corretta.{" "}
-        <a href="#faq" className="text-primary hover:underline font-medium">Leggi la risposta completa →</a>
-      </>
-    ),
+    a: "Ti servono peso, lunghezza e altezza al garrese del tuo pet. Con questi dati ti consigliamo la taglia corretta.",
+    link: "#faq",
   },
   {
     q: "È compatibile con la mia auto?",
-    a: (
-      <>
-        Gli agganci ISOFIX sono standard, ma le dimensioni del sedile variano. Verifica la compatibilità con noi prima dell'acquisto.{" "}
-        <a href="#faq" className="text-primary hover:underline font-medium">Leggi la risposta completa →</a>
-      </>
-    ),
+    a: "Gli agganci ISOFIX sono standard, ma le dimensioni del sedile variano. Verifica la compatibilità con noi prima dell'acquisto.",
+    link: "#faq",
   },
   {
     q: "Posso usarlo per viaggiare?",
-    a: (
-      <>
-        Dupree è progettato per auto e aereo, ma ogni compagnia ha regole diverse. Ti forniamo le specifiche per verificare.{" "}
-        <a href="#faq" className="text-primary hover:underline font-medium">Leggi la risposta completa →</a>
-      </>
-    ),
+    a: "Dupree è progettato per auto e aereo, ma ogni compagnia ha regole diverse. Ti forniamo le specifiche per verificare.",
+    link: "#faq",
   },
   {
-    q: "Se ho dubbi posso scrivere prima di acquistare?",
-    a: (
-      <>
-        Sì, puoi contattare un{" "}
-        <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
-          assistente umano via WhatsApp
-        </a>{" "}
-        prima dell'acquisto.
-      </>
-    ),
+    q: "Dubbi? Scrivici prima di acquistare",
+    a: "Puoi contattare un assistente umano via WhatsApp prima dell'acquisto per qualsiasi domanda.",
+    link: getWhatsAppUrl(),
+    external: true,
   },
 ];
 
 const QuickFAQSection = () => (
   <section className="section-padding bg-[#f7f5f3]">
-    <div className="container-custom max-w-[800px]">
+    <div className="container-custom">
       <h2 className="text-foreground mb-8 text-center">Domande veloci</h2>
-      <Accordion type="single" collapsible className="space-y-3">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {quickFaqs.map((faq, i) => (
-          <AccordionItem
+          <a
             key={i}
-            value={`quick-faq-${i}`}
-            className="bg-background border border-border rounded-lg px-5"
+            href={faq.link}
+            target={faq.external ? "_blank" : undefined}
+            rel={faq.external ? "noopener noreferrer" : undefined}
+            className="group bg-background border border-border rounded-xl p-5 flex flex-col gap-3 transition-shadow duration-200 hover:shadow-md active:scale-[0.98]"
           >
-            <AccordionTrigger className="text-left text-[15px] font-semibold text-foreground hover:no-underline">
+            <h3 className="text-sm font-semibold text-foreground leading-snug">
               {faq.q}
-            </AccordionTrigger>
-            <AccordionContent className="text-sm text-muted-foreground pb-4">
+            </h3>
+            <p className="text-xs text-muted-foreground leading-relaxed flex-1">
               {faq.a}
-            </AccordionContent>
-          </AccordionItem>
+            </p>
+            <span className="text-xs text-primary font-medium group-hover:underline mt-auto">
+              {faq.external ? "Scrivi su WhatsApp →" : "Leggi di più →"}
+            </span>
+          </a>
         ))}
-      </Accordion>
+      </div>
     </div>
   </section>
 );
