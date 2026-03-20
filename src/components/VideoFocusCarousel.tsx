@@ -152,6 +152,15 @@ const VideoFocusCarousel = () => {
                     style={{ overflow: "hidden" }}
                     title={slide.label}
                   />
+                ) : slide.videoUrl ? (
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    src={slide.videoUrl}
+                    muted={isMuted}
+                    loop
+                    playsInline
+                    autoPlay={isCenter}
+                  />
                 ) : (
                   <div
                     className="absolute inset-0 flex flex-col items-center justify-center"
