@@ -85,6 +85,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-dupree",
     tag: "Auto + Aereo",
     name: "Dupree",
+    startingPrice: 0,
     bgClass: "bg-[#f7f5f3]",
     quickSummary: {
       idealePer: "Viaggi in auto e spostamenti in aereo",
