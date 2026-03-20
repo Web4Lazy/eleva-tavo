@@ -15,11 +15,10 @@ const slides: VideoSlide[] = [
   { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)", youtubeId: "iYa7epx4oPc" },
   { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", youtubeId: "JnNXKKN5V4I" },
   { id: "v3", label: "Maeve Montato", color: "hsl(0 0% 30%)", videoUrl: "/videos/maeve-montato.mov" },
-  { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)" },
-  { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)" },
-  { id: "v6", label: "Video 6", color: "hsl(0 0% 20%)" },
-  { id: "v7", label: "Video 7", color: "hsl(152 33% 25%)" },
-  { id: "v8", label: "Video 8", color: "hsl(36 33% 40%)" },
+  { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)", youtubeId: "SU2Ap0Zt3JU" },
+  { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)", youtubeId: "HaOCDcYP78M" },
+  { id: "v6", label: "Video 6", color: "hsl(0 0% 20%)", youtubeId: "CT9A_FFL9fM" },
+  { id: "v7", label: "Video 7", color: "hsl(152 33% 25%)", youtubeId: "4EbxKOkjb0o" },
 ];
 
 const CARD_WIDTH = 280;
