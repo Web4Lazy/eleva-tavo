@@ -85,7 +85,7 @@ const VideoFocusCarousel = () => {
   return (
     <section className="section-padding bg-background overflow-hidden">
       <div className="container-custom">
-        <h2 className="text-foreground mb-10 text-center">Cosa dicono i nostri clienti</h2>
+        <h2 className="text-foreground mb-10 text-center">Unboxing e recensioni</h2>
       </div>
 
       <div className="relative">
