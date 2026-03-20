@@ -8,11 +8,12 @@ interface VideoSlide {
   color: string;
   videoUrl?: string;
   instagramUrl?: string;
+  youtubeId?: string;
 }
 
 const slides: VideoSlide[] = [
   { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)", instagramUrl: "https://www.instagram.com/reel/DKtYBwnMUi0/embed/" },
-  { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", instagramUrl: "https://www.instagram.com/reel/DKc205pMkE6/embed/" },
+  { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", youtubeId: "JnNXKKN5V4I" },
   { id: "v3", label: "Maeve Montato", color: "hsl(0 0% 30%)", videoUrl: "/videos/maeve-montato.mov" },
   { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)" },
   { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)" },
@@ -150,6 +151,14 @@ const VideoFocusCarousel = () => {
                     allowFullScreen
                     scrolling="no"
                     style={{ overflow: "hidden" }}
+                    title={slide.label}
+                  />
+                ) : slide.youtubeId ? (
+                  <iframe
+                    src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allow="autoplay; encrypted-media"
+                    allowFullScreen
                     title={slide.label}
                   />
                 ) : slide.videoUrl ? (
