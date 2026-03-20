@@ -143,14 +143,24 @@ const VideoFocusCarousel = () => {
                     : "0 2px 12px rgba(0,0,0,0.06)",
                 }}
               >
-                {/* Placeholder colored card */}
-                <div
-                  className="absolute inset-0 flex flex-col items-center justify-center"
-                  style={{ backgroundColor: slide.color }}
-                >
-                  <Play className="w-12 h-12 text-white/60 mb-3" />
-                  <span className="text-white/80 text-sm font-medium">{slide.label}</span>
-                </div>
+                {slide.instagramUrl ? (
+                  <iframe
+                    src={slide.instagramUrl}
+                    className="absolute inset-0 w-full h-full border-0"
+                    allowFullScreen
+                    scrolling="no"
+                    style={{ overflow: "hidden" }}
+                    title={slide.label}
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    style={{ backgroundColor: slide.color }}
+                  >
+                    <Play className="w-12 h-12 text-white/60 mb-3" />
+                    <span className="text-white/80 text-sm font-medium">{slide.label}</span>
+                  </div>
+                )}
 
                 {/* Mute toggle — only on center */}
                 {isCenter && (
