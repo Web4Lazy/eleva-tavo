@@ -97,7 +97,7 @@ const Index = () => {
         <ManifestoSection />
         <ExpandableVideoSection />
         <ConciergeSection />
-        <AssistanceBanner />
+        
         <QuickFAQSection />
 
         {PRODUCTS.map((product) => (
