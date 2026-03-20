@@ -131,7 +131,7 @@ export const PRODUCTS: ProductData[] = [
     id: "prodotto-maeve",
     tag: "Auto (ISOFIX)",
     name: "Maeve™ iso",
-    startingPrice: 0,
+    startingPrice: 399,
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Viaggi in auto con massima stabilità",
