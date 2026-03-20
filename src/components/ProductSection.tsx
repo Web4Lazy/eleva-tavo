@@ -63,6 +63,7 @@ export interface ProductData {
   name: string;
   subtitle?: string;
   badge?: string;
+  startingPrice?: number;
   benefits: string[];
   disclaimer?: string;
   quickSummary?: {
