@@ -7,7 +7,6 @@ interface VideoSlide {
   label: string;
   color: string;
   videoUrl?: string;
-  instagramUrl?: string;
   youtubeId?: string;
 }
 
@@ -143,23 +142,19 @@ const VideoFocusCarousel = () => {
                     : "0 2px 12px rgba(0,0,0,0.06)",
                 }}
               >
-                {slide.instagramUrl ? (
-                  <iframe
-                    src={slide.instagramUrl}
-                    className="absolute inset-0 w-full h-full border-0"
-                    allowFullScreen
-                    scrolling="no"
-                    style={{ overflow: "hidden" }}
-                    title={slide.label}
-                  />
-                ) : slide.youtubeId ? (
-                  <iframe
-                    src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
-                    className="absolute inset-0 w-full h-full border-0"
-                    allow="autoplay; encrypted-media"
-                    allowFullScreen
-                    title={slide.label}
-                  />
+                {slide.youtubeId ? (
+                  <>
+                    <iframe
+                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
+                      className="absolute inset-0 w-full h-full border-0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      title={slide.label}
+                    />
+                    {!isCenter && (
+                      <div className="absolute inset-0 z-10" />
+                    )}
+                  </>
                 ) : slide.videoUrl ? (
                   <video
                     className="absolute inset-0 w-full h-full object-cover"
