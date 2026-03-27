@@ -23,7 +23,7 @@ const ManifestoSection = () => {
           </div>
           <div className="hidden lg:block">
             <img
-              src={stefaniaEva}
+              src={manifestoPhoto}
               alt="Stefania & Eva con passeggino Tavo"
               className="w-full rounded-lg object-cover aspect-square"
             />
