@@ -6,7 +6,7 @@ const HeroSection = () =>
 <section id="hero" className="section-padding bg-[#f7f5f3]">
     <div className="container-custom">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-        <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full max-w-[75%] mx-auto object-cover order-first lg:order-last" style={{ aspectRatio: "1/1" }} />
+        <img src={heroImage} alt="Donna con passeggino per cani ELEVA Aero" className="rounded-lg w-full max-w-[70%] mx-auto object-cover order-first lg:order-last" style={{ aspectRatio: "1/1" }} />
         <div className="order-last lg:order-first">
           <h1 className="text-foreground mb-4">Prima classe, per chi ha quattro zampe.</h1>
           <p className="text-lg text-muted-foreground mb-2">
