@@ -1,4 +1,4 @@
-import stefaniaEva from "@/assets/stefania-eva.jpg";
+import manifestoPhoto from "@/assets/manifesto-photo.jpg";
 
 const ManifestoSection = () => {
   return (
