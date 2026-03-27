@@ -28,7 +28,7 @@ const GAP = 16;
 const VideoFocusCarousel = () => {
   const isMobile = useIsMobile();
   const visibleCount = isMobile ? 3 : 5;
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(2);
   const [isMuted, setIsMuted] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
