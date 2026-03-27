@@ -8,7 +8,7 @@ export const CONFIG = {
     DUPREE: '[LINK_ADD_TO_CART_DUPREE]',
     MAEVE: '[LINK_ADD_TO_CART_MAEVE]',
     TRAVEL: '[LINK_ADD_TO_CART_TRAVEL]',
-    SHELL: '[LINK_ADD_TO_CART_SHELL]',
+    SHELL: 'https://elevapet.com/eleva-x-tavo/43-98-cuccia-oscillante-shell-tavo.html#/40-colore_shell-latte',
   },
   MANUALS: {
     DUPREE_I: '[LINK_MANUALE_DUPREE_I]',
