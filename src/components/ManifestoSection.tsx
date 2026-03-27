@@ -1,4 +1,4 @@
-import manifestoPhoto from "@/assets/manifesto-photo.jpg";
+import stefaniaEva from "@/assets/stefania-eva.jpg";
 
 const ManifestoSection = () => {
   return (
@@ -23,7 +23,7 @@ const ManifestoSection = () => {
           </div>
           <div className="hidden lg:block">
             <img
-              src={manifestoPhoto}
+              src={stefaniaEva}
               alt="Stefania & Eva con passeggino Tavo"
               className="w-full rounded-lg object-cover aspect-square"
             />
