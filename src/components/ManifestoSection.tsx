@@ -10,11 +10,16 @@ const ManifestoSection = () => {
             <p className="text-base text-muted-foreground leading-relaxed mb-6">
               Non proponiamo un catalogo generico. Abbiamo selezionato questi prodotti perché uniscono design, comfort e attenzione alla sicurezza, con supporto umano nella scelta.
             </p>
-            <ul className="space-y-2 text-muted-foreground text-sm">
-              <li className="flex items-center gap-2">✓ Selezione curata</li>
-              <li className="flex items-center gap-2">✓ Supporto nella scelta</li>
-              <li className="flex items-center gap-2">✓ Prodotti premium per utilizzi reali</li>
-            </ul>
+            <div className="flex flex-wrap gap-3 justify-center lg:justify-start mt-2">
+              {["Selezione curata", "Supporto nella scelta", "Prodotti premium"].map((label) => (
+                <span
+                  key={label}
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-medium border border-primary/20"
+                >
+                  ✓ {label}
+                </span>
+              ))}
+            </div>
           </div>
           <div className="hidden lg:block">
             <img
