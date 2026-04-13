@@ -55,6 +55,7 @@ Generata inizialmente con Lovable.dev, ora gestita via Git con deploy automatico
 
 - Push su `main` -> GitHub Action `.github/workflows/deploy.yml` fa `npm ci` + `npm run build` + deploy su Pages
 - CNAME in `public/CNAME` contiene `www.eleva-tavo.it` (preservato in ogni build via Vite)
+- Il routing SPA funziona su URL dirette grazie allo script in 404.html che codifica il path in query string, e allo script in index.html che decodifica e fa history.replaceState prima del mount di React.
 - Se la Action fallisce su `npm ci`, significa `package-lock.json` disallineato -> `npm install` in locale + commit lockfile
 
 ## Regole di lavoro per Claude Code
@@ -68,6 +69,7 @@ Generata inizialmente con Lovable.dev, ora gestita via Git con deploy automatico
 
 ## Changelog
 
+- 2026-04-13 — Fix SPA routing su GitHub Pages: implementato pattern spa-github-pages (rafgraph) in 404.html e index.html per supportare URL dirette e F5 su /cookie-policy e /privacy-policy
 - 2026-04-13 — Aggiunte pagine /cookie-policy e /privacy-policy (GDPR art. 13), link nel Footer + pulsante "Preferenze cookie" ghost shadcn per riaprire il banner, componente ScrollToTop per reset scroll al cambio rotta
 - 2026-04-13 — Self-host DM Sans per GDPR compliance, rimosso Google Fonts
 - 2026-04-13 — Aggiunto sistema consenso cookie (hook + banner) e gating YouTube via youtube-nocookie.com con fallback placeholder senza consenso marketing; aggiunto dnt=1 a Vimeo
