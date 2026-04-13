@@ -29,7 +29,7 @@ const Header = ({ activeSection }: Props) => {
     <>
       {/* Top Strip */}
       <div className="bg-primary text-primary-foreground text-[13px] text-center py-2 px-4">
-        Scelto da Eleva per chi si prende cura davvero. Supporto WhatsApp lun–ven 9–18.
+        Scelto da Eleva per chi si prende cura davvero del proprio pet. Supporto WhatsApp lun–ven 9–18.
       </div>
 
       {/* Header */}
