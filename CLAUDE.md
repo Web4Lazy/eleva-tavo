@@ -68,6 +68,7 @@ Generata inizialmente con Lovable.dev, ora gestita via Git con deploy automatico
 
 ## Changelog
 
+- 2026-04-13 — Aggiunte pagine /cookie-policy e /privacy-policy (GDPR art. 13), link nel Footer + pulsante "Preferenze cookie" ghost shadcn per riaprire il banner, componente ScrollToTop per reset scroll al cambio rotta
 - 2026-04-13 — Self-host DM Sans per GDPR compliance, rimosso Google Fonts
 - 2026-04-13 — Aggiunto sistema consenso cookie (hook + banner) e gating YouTube via youtube-nocookie.com con fallback placeholder senza consenso marketing; aggiunto dnt=1 a Vimeo
 - 2026-04-13 — Setup GitHub Pages + custom domain www.eleva-tavo.it (DNS GoDaddy), workflow deploy.yml, CNAME, 404.html fallback

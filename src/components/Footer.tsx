@@ -1,4 +1,7 @@
 import { Instagram, Facebook, Youtube, Globe } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
+import { Button } from "@/components/ui/button";
 import logo from "@/assets/eleva.png";
 
 const NAV_ITEMS = [
@@ -33,7 +36,10 @@ const SocialIcons = () => (
   </div>
 );
 
-const Footer = () => (
+const Footer = () => {
+  const { reopenBanner } = useCookieConsent();
+
+  return (
   <footer className="py-10 lg:py-14 bg-secondary" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
     <div className="container-custom">
       <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -66,11 +72,23 @@ const Footer = () => (
         </div>
       </div>
 
-      <div className="mt-8 pt-6 text-center text-sm text-muted-foreground" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
-        © {new Date().getFullYear()} ELEVA × TAVO. Tutti i diritti riservati.
+      <div className="mt-8 pt-6 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3 text-sm text-muted-foreground" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
+        <span>© {new Date().getFullYear()} ELEVA × TAVO. Tutti i diritti riservati.</span>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <Link to="/cookie-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Cookie Policy
+          </Link>
+          <Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+            Privacy Policy
+          </Link>
+          <Button variant="ghost" size="sm" onClick={reopenBanner} className="text-sm text-muted-foreground hover:text-foreground h-auto p-0">
+            Preferenze cookie
+          </Button>
+        </div>
       </div>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;
