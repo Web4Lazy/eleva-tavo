@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Volume2, VolumeX, ChevronLeft, ChevronRight, Play } from "lucide-react";
+import { Volume2, VolumeX, ChevronLeft, ChevronRight, Play, Cookie } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useCookieConsent } from "@/hooks/useCookieConsent";
 
 interface VideoSlide {
   id: string;
@@ -28,6 +29,8 @@ const GAP = 16;
 
 const VideoFocusCarousel = () => {
   const isMobile = useIsMobile();
+  const { choices, reopenBanner } = useCookieConsent();
+  const marketingAllowed = choices?.marketing ?? false;
   const visibleCount = isMobile ? 3 : 5;
   const [activeIndex, setActiveIndex] = useState(2);
   const [isMuted, setIsMuted] = useState(true);
@@ -146,18 +149,37 @@ const VideoFocusCarousel = () => {
                 }}
               >
                 {slide.youtubeId ? (
-                  <>
-                    <iframe
-                      src={`https://www.youtube.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1`}
-                      className="absolute inset-0 w-full h-full border-0"
-                      allow="autoplay; encrypted-media"
-                      allowFullScreen
-                      title={slide.label}
-                    />
-                    {!isCenter && (
-                      <div className="absolute inset-0 z-10" />
-                    )}
-                  </>
+                  marketingAllowed ? (
+                    <>
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1&rel=0`}
+                        className="absolute inset-0 w-full h-full border-0"
+                        allow="autoplay; encrypted-media"
+                        allowFullScreen
+                        title={slide.label}
+                      />
+                      {!isCenter && (
+                        <div className="absolute inset-0 z-10" />
+                      )}
+                    </>
+                  ) : (
+                    <div
+                      className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
+                      style={{ backgroundColor: slide.color }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        reopenBanner();
+                      }}
+                    >
+                      <Cookie className="w-10 h-10 text-white/70 mb-3" />
+                      <span className="text-white/90 text-sm font-medium leading-snug">
+                        Abilita i cookie marketing per vedere il video
+                      </span>
+                      <span className="text-white/60 text-xs mt-1.5 underline cursor-pointer">
+                        Gestisci preferenze
+                      </span>
+                    </div>
+                  )
                 ) : slide.videoUrl ? (
                   <video
                     className="absolute inset-0 w-full h-full object-cover"

@@ -38,7 +38,7 @@ const ExpandableVideoSection = () => {
               <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
                 {isPlaying ? (
                   <iframe
-                    src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0&autoplay=1"
+                    src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0&autoplay=1&dnt=1"
                     className="absolute inset-0 w-full h-full"
                     frameBorder="0"
                     allow="autoplay; fullscreen; picture-in-picture"
