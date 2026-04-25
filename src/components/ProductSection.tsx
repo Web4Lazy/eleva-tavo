@@ -249,7 +249,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "prodotto-shell",
-    tag: "Casa / Hotel",
+    tag: "Casa",
     name: "Shell",
     startingPrice: 299,
     bgClass: "bg-background",
