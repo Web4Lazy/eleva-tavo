@@ -14,12 +14,13 @@ interface VideoSlide {
 const slides: VideoSlide[] = [
   { id: "v1", label: "Video 1", color: "hsl(152 33% 16%)", youtubeId: "iYa7epx4oPc" },
   { id: "v2", label: "Video 2", color: "hsl(36 33% 50%)", youtubeId: "JnNXKKN5V4I" },
-  { id: "v3", label: "Maeve Montato", color: "hsl(0 0% 30%)", videoUrl: "/videos/maeve-montato.mov" },
-  { id: "v-rosco", label: "Rosco Montato", color: "hsl(0 0% 25%)", videoUrl: "/videos/rosco-montato.mov" },
-  { id: "v4", label: "Video 4", color: "hsl(152 33% 30%)", youtubeId: "SU2Ap0Zt3JU" },
-  { id: "v5", label: "Video 5", color: "hsl(34 14% 50%)", youtubeId: "HaOCDcYP78M" },
-  { id: "v6", label: "Video 6", color: "hsl(0 0% 20%)", youtubeId: "CT9A_FFL9fM" },
-  { id: "v7", label: "Video 7", color: "hsl(152 33% 25%)", youtubeId: "4EbxKOkjb0o" },
+  { id: "v-local-1", label: "Video 3", color: "hsl(0 0% 30%)", videoUrl: "/videos/0420.mov" },
+  { id: "v-local-2", label: "Video 4", color: "hsl(0 0% 28%)", videoUrl: "/videos/0420_1.mov" },
+  { id: "v-local-3", label: "Video 5", color: "hsl(0 0% 26%)", videoUrl: "/videos/0420_2.mov" },
+  { id: "v4", label: "Video 6", color: "hsl(152 33% 30%)", youtubeId: "SU2Ap0Zt3JU" },
+  { id: "v5", label: "Video 7", color: "hsl(34 14% 50%)", youtubeId: "HaOCDcYP78M" },
+  { id: "v6", label: "Video 8", color: "hsl(0 0% 20%)", youtubeId: "CT9A_FFL9fM" },
+  { id: "v7", label: "Video 9", color: "hsl(152 33% 25%)", youtubeId: "4EbxKOkjb0o" },
 ];
 
 const CARD_WIDTH = 280;
@@ -32,7 +33,7 @@ const VideoFocusCarousel = () => {
   const { choices, reopenBanner } = useCookieConsent();
   const marketingAllowed = choices?.marketing ?? false;
   const visibleCount = isMobile ? 3 : 5;
-  const [activeIndex, setActiveIndex] = useState(2);
+  const [activeIndex, setActiveIndex] = useState(3);
   const [isMuted, setIsMuted] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
