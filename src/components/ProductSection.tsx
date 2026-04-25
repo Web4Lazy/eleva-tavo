@@ -254,7 +254,7 @@ export const PRODUCTS: ProductData[] = [
     startingPrice: 299,
     bgClass: "bg-background",
     quickSummary: {
-      idealePer: "Riposo e comfort a casa o in hotel",
+      idealePer: "Riposo e comfort a casa",
       tagliaPet: "Fino a 59 kg",
       puntoForte: "Design rialzato e movimento oscillante",
       quandoSceglierlo: "Se cerchi un prodotto di arredo per il riposo quotidiano del tuo pet",
