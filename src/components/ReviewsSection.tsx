@@ -10,7 +10,7 @@ import VideoFocusCarousel from "@/components/VideoFocusCarousel";
 
 const textReviews = [
   { name: "Elena V.", rating: 5, quote: "Finalmente un prodotto pensato davvero per la sicurezza del mio gatto in auto. Consigliatissimo!" },
-  { name: "Roberto D.", rating: 5, quote: "Spedizione veloce, materiali premium. Il mio labrador lo adora." },
+  { name: "Roberto D.", rating: 5, quote: "Ho acquistato la cuccia Shell, materiali top! Il mio cocker la adora, si fa certe dormite…" },
   { name: "Valentina S.", rating: 5, quote: "Ho provato altri prodotti ma nessuno si avvicina alla qualità di ELEVA." },
   { name: "Giorgio M.", rating: 5, quote: "Assistenza clienti impeccabile, mi hanno guidato nella scelta perfetta." },
   { name: "Paola C.", rating: 5, quote: "Il sistema ISOFIX dà una sicurezza in più che non ha prezzo." },
