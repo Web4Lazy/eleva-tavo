@@ -25,7 +25,7 @@ const cards: ScenarioCard[] = [
 { name: "Dupree", scenario: "Auto + Aereo", description: "Soluzioni pensate per viaggiare in auto con più stabilità e sicurezza.", targetId: "prodotto-dupree", imageLabel: "Foto Dupree 400×300", imageSrc: dupreeImg, iconSrc: iconDupree },
 { name: "Maeve™ iso", scenario: "Auto (ISOFIX)", description: "Modelli adatti a spostamenti e viaggi, con attenzione a misure e praticità.", targetId: "prodotto-maeve", imageLabel: "Foto Maeve 400×300", imageSrc: maeveImg, iconSrc: iconMaeve },
 { name: "Travel System", scenario: "Auto + Passeggio", description: "Soluzioni comode per uscite frequenti e mobilità quotidiana.", targetId: "prodotto-travel", imageLabel: "Foto Travel System 400×300", badge: "TOP scelta Eleva", imageSrc: travelImg, iconSrc: iconTravel },
-{ name: "Shell", scenario: "Casa / Hotel", description: "Prodotti pensati per il riposo e il comfort a casa.", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, iconSrc: iconShell }];
+{ name: "Shell", scenario: "Casa", description: "Prodotti pensati per il riposo e il comfort a casa.", targetId: "prodotto-shell", imageLabel: "Foto Shell 400×300", imageSrc: shellImg, iconSrc: iconShell }];
 
 
 interface Props {
