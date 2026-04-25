@@ -206,7 +206,7 @@ export const PRODUCTS: ProductData[] = [
       quandoSceglierlo: "Se cerchi una soluzione completa per spostamenti frequenti",
     },
     benefits: [
-      "Passaggio auto → passeggio senza cambiare setup",
+      "Passeggio-trasporto auto senza cambiare setup",
       "Connessione sicura ISOFIX",
       "Telaio passeggino Roscoe incluso",
     ],
