@@ -447,7 +447,15 @@ const ProductSection = ({ product, compact = false }: Props) => {
           Chiedi a un assistente
         </a>
         <a
-          href={product.cartLink}
+          href={
+            product.id === "prodotto-travel"
+              ? (product.sizes[selectedSize]?.label?.startsWith("5X")
+                  ? CONFIG.LINKS.TRAVEL_5X
+                  : CONFIG.LINKS.TRAVEL_6X)
+              : product.cartLink
+          }
+          target="_blank"
+          rel="noopener noreferrer"
           onClick={() => sendEvent("AddToCart", { product: product.name, size: product.sizes[selectedSize]?.label })}
           className="cta-outline text-center"
         >

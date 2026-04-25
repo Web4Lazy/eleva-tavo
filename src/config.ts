@@ -5,9 +5,12 @@ export const CONFIG = {
   PIXEL_ID: '[PLACEHOLDER_PIXEL_ID]',
   GA4_ID: '[PLACEHOLDER_GA4_ID]',
   LINKS: {
-    DUPREE: '[LINK_ADD_TO_CART_DUPREE]',
-    MAEVE: '[LINK_ADD_TO_CART_MAEVE]',
-    TRAVEL: '[LINK_ADD_TO_CART_TRAVEL]',
+    DUPREE: 'https://elevapet.com/eleva-x-tavo/48-121-dupree-by-tavo-trasportino-aereo-seggiolino-auto-animali.html#/43-colore_dupree_series-dupree_series_merle/50-taglia_dupree_series-dupree_taglia_i',
+    MAEVE: 'https://elevapet.com/eleva-x-tavo/49-125-maeve-iso-5x-travel-system-tavo-seggiolino-auto-isofix-animali.html#/38-colore_maeve_series-maeve_iso_series_onyx/41-colore_roscoe_trek-roscoe_chocolate',
+    TRAVEL_5X: 'https://elevapet.com/eleva-x-tavo/49-125-maeve-iso-5x-travel-system-tavo-seggiolino-auto-isofix-animali.html#/38-colore_maeve_series-maeve_iso_series_onyx/41-colore_roscoe_trek-roscoe_chocolate',
+    TRAVEL_6X: 'https://elevapet.com/eleva-x-tavo/50-129-maeve-iso-6x-travel-system-tavo-passeggino-seggiolino-auto-animali.html#/38-colore_maeve_series-maeve_iso_series_onyx/41-colore_roscoe_trek-roscoe_chocolate',
+    TRAVEL: 'https://elevapet.com/eleva-x-tavo/50-129-maeve-iso-6x-travel-system-tavo-passeggino-seggiolino-auto-animali.html#/38-colore_maeve_series-maeve_iso_series_onyx/41-colore_roscoe_trek-roscoe_chocolate',
+    ROSCOE_TREK: 'https://elevapet.com/eleva-x-tavo/46-111-roscoe-trek-by-tavo-telaio-passeggino-animali.html#/41-colore_roscoe_trek-roscoe_chocolate',
     SHELL: 'https://elevapet.com/eleva-x-tavo/43-98-cuccia-oscillante-shell-tavo.html#/40-colore_shell-latte',
   },
   MANUALS: {
