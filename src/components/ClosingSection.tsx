@@ -8,7 +8,7 @@ const ClosingSection = () => (
       <p className="text-lg opacity-90 mb-10">Kit Conosciamoci, Spazzola Professional e consiglio personalizzato per prenderti cura del manto lungo con metodo.</p>
 
       <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-        <a href="#kit" className="cta-white">
+        <a href="#scenari" className="cta-white">
           Scopri il Kit
         </a>
         <a

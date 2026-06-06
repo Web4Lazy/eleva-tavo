@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import ImagePlaceholder from "./ImagePlaceholder";
 
 const NAV_ITEMS = [
-  { label: "Nodi", href: "#nodi" },
-  { label: "Metodo", href: "#metodo" },
-  { label: "Kit", href: "#kit" },
+  { label: "Nodi", href: "#hero" },
+  { label: "Metodo", href: "#manifesto" },
+  { label: "Kit", href: "#scenari" },
   { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];

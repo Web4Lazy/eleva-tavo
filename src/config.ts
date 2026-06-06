@@ -1,5 +1,6 @@
 export const CONFIG = {
   WHATSAPP_NUMBER: '393518411304',
+  // TODO(cliente): conferma testo prefill WhatsApp
   WHATSAPP_TEXT: 'Ciao Eleva, vorrei un consiglio sulla routine anti-nodi per il mio cane.',
   WHATSAPP_TEXT_FULL: 'Ciao Eleva, vorrei un consiglio sulla routine anti-nodi Eleva.\nIl mio cane è di razza ______ e ha il pelo ______ (lungo/medio).\nHa nodi? ______\nVorrei capire quale routine / Kit è più adatto al suo pelo. Mi aiutate a scegliere?',
   PIXEL_ID: '[PLACEHOLDER_PIXEL_ID]',

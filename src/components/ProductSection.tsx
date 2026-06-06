@@ -16,11 +16,14 @@ export interface ProductData {
   quickSummary?: {
     idealePer: string;
     formato: string;
+    /** Etichetta della voce "formato" (default "Formato consigliato", "Uso consigliato" per la spazzola). */
+    formatoLabel?: string;
     puntoForte: string;
     quandoSceglierlo: string;
   };
   benefits: string[];
   note?: string;
+  noteExtra?: string;
   /** Taglie/varianti — non pertinenti per i cosmetici, lasciate vuote. */
   sizes: ProductSize[];
   cartLink: string;
@@ -31,7 +34,7 @@ export interface ProductData {
 export const PRODUCTS: ProductData[] = [
   {
     id: "prodotto-shampoo",
-    tag: "Step 1 · Detersione delicata",
+    tag: "Step 1 — Detersione delicata",
     name: "Shampoo Delicato",
     subtitle: "il primo step del Metodo Eleva",
     bgClass: "bg-[#f7f5f3]",
@@ -54,7 +57,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "prodotto-maschera",
-    tag: "Step 2 · Nutrimento e districabilità",
+    tag: "Step 2 — Nutrimento e districabilità",
     name: "Maschera Nutriente",
     subtitle: "il secondo step del Metodo Eleva",
     bgClass: "bg-background",
@@ -77,7 +80,7 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "prodotto-scioglinodi",
-    tag: "Step 3 · Protezione e districabilità",
+    tag: "Step 3 — Protezione e districabilità",
     name: "Scioglinodi Spray",
     subtitle: "il terzo step del Metodo Eleva",
     bgClass: "bg-[#f7f5f3]",
@@ -100,14 +103,15 @@ export const PRODUCTS: ProductData[] = [
   },
   {
     id: "prodotto-spazzola",
-    tag: "Step 4 · Spazzolatura corretta",
+    tag: "Step 4 — Spazzolatura corretta",
     name: "Spazzola Professional",
     subtitle: "completa il Metodo Eleva",
-    badge: "Con il Kit: -40%",
+    badge: "-40% col Kit",
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Cani a pelo lungo, manti annodati o difficili da spazzolare",
-      formato: "Inclusa nel Kit Conosciamoci a prezzo speciale (-40%)",
+      formatoLabel: "Uso consigliato",
+      formato: "Dopo lo Scioglinodi sul pelo asciutto, oppure durante l'asciugatura",
       puntoForte: "Aiuta a districare facilmente il pelo senza spezzarlo",
       quandoSceglierlo: "Se vuoi completare il Metodo Eleva con lo strumento corretto per la spazzolata",
     },
@@ -118,7 +122,8 @@ export const PRODUCTS: ProductData[] = [
       "Aiuta a snodare il pelo velocemente",
       "Cuscinetto antistatico",
     ],
-    note: "La Spazzola Professional è lo strumento che completa il Metodo Eleva: lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato. Con il Kit Conosciamoci, la Spazzola Professional è riservata a prezzo speciale: -40%.",
+    note: "La Spazzola Professional è lo strumento che completa il Metodo Eleva: lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato.",
+    noteExtra: "Con il Kit Conosciamoci, la Spazzola Professional è riservata a prezzo speciale: -40%.",
     sizes: [],
     cartLink: CONFIG.LINKS.KIT,
     ctaLabel: "-40% col kit",
@@ -153,7 +158,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
               <p className="text-muted-foreground">{product.quickSummary.idealePer}</p>
             </div>
             <div>
-              <span className="font-semibold text-foreground">Formato consigliato:</span>
+              <span className="font-semibold text-foreground">{product.quickSummary.formatoLabel || "Formato consigliato"}:</span>
               <p className="text-muted-foreground">{product.quickSummary.formato}</p>
             </div>
             <div>
@@ -216,7 +221,13 @@ const ProductSection = ({ product, compact = false }: Props) => {
       )}
 
       {product.note && (
-        <p className="text-sm text-muted-foreground mb-6">{product.note}</p>
+        <p className="text-sm text-muted-foreground mb-4">{product.note}</p>
+      )}
+
+      {product.noteExtra && (
+        <div className="bg-secondary border-l-[3px] border-primary rounded-lg p-3 text-sm font-medium text-foreground mb-6">
+          {product.noteExtra}
+        </div>
       )}
 
       <div className="flex flex-col sm:flex-row gap-3">

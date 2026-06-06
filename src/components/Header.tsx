@@ -8,9 +8,9 @@ interface Props {
 }
 
 const NAV_ITEMS = [
-  { label: "Nodi", href: "#nodi" },
-  { label: "Metodo", href: "#metodo" },
-  { label: "Kit", href: "#kit" },
+  { label: "Nodi", href: "#hero" },
+  { label: "Metodo", href: "#manifesto" },
+  { label: "Kit", href: "#scenari" },
   { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -72,7 +72,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "header" })}
               className="cta-outline text-xs py-2 px-4 hidden lg:inline-flex"
             >
-              Chiedi consiglio
+              Chiedi consigli
             </a>
 
             {/* Mobile hamburger */}
@@ -108,7 +108,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "mobile-menu" })}
               className="cta-primary text-sm w-full text-center mt-2"
             >
-              Chiedi consiglio
+              Chiedi consigli
             </a>
           </div>
         )}

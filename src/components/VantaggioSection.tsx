@@ -13,7 +13,7 @@ const VantaggioSection = () =>
           Acquista il Kit Conosciamoci e aggiungi la Spazzola Professional con il 40% di sconto. Per iniziare subito con tutti gli step del Metodo Eleva.
         </p>
         <div className="mt-5 flex flex-col sm:flex-row gap-3 justify-center">
-          <a href="#kit" className="cta-white">
+          <a href="#scenari" className="cta-white">
             Scopri il Kit
           </a>
           <a
@@ -22,7 +22,7 @@ const VantaggioSection = () =>
             rel="noopener noreferrer"
             onClick={() => sendEvent("ClickWhatsApp", { section: "vantaggio" })}
             className="underline font-medium self-center" style={{ color: 'white' }}>
-            Chiedi consiglio
+            Chiedi consigli
           </a>
         </div>
       </div>

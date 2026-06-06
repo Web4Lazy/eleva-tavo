@@ -22,7 +22,7 @@ const HeroSection = () =>
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <a
-            href="#kit"
+            href="#scenari"
             onClick={() => sendEvent("ClickKit", { section: "hero" })}
             className="cta-primary">
 
@@ -34,7 +34,7 @@ const HeroSection = () =>
             rel="noopener noreferrer"
             onClick={() => sendEvent("ClickWhatsApp", { section: "hero" })}
             className="cta-outline">
-              Chiedi consiglio
+              Chiedi consigli
             </a>
           </div>
           <div className="flex flex-col sm:flex-row gap-4 text-sm text-muted-foreground">

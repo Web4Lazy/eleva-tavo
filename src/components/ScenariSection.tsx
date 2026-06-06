@@ -53,7 +53,7 @@ interface Props {
 }
 
 const ScenariSection = ({ onOpenDrawer }: Props) =>
-<section id="kit" className="section-padding my-0 py-0 bg-[#f7f5f3]">
+<section id="scenari" className="section-padding my-0 py-0 bg-[#f7f5f3]">
     <div className="container-custom">
       <h2 className="text-foreground mb-2">Inizia dal Kit Conosciamoci più spazzola Eleva</h2>
       <p className="text-muted-foreground mb-8">Tre minisize per provare la routine Eleva e capire come risponde il pelo del tuo cane. Aggiungi la Spazzola Professional per completare il metodo fin dal primo utilizzo.</p>

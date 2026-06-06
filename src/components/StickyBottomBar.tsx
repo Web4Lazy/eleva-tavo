@@ -27,9 +27,10 @@ const StickyBottomBar = () => {
         onClick={() => sendEvent("ClickWhatsApp", { section: "sticky-bar" })}
         className="cta-primary flex-1 text-center text-sm py-2.5"
       >
-        Chiedi consiglio
+        {/* TODO(cliente): conferma testi sticky bar */}
+        Chiedi consigli
       </a>
-      <a href="#kit" className="cta-outline flex-1 text-center text-sm py-2.5">
+      <a href="#scenari" className="cta-outline flex-1 text-center text-sm py-2.5">
         Scopri il Kit
       </a>
     </div>

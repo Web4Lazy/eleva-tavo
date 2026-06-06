@@ -9,15 +9,16 @@ const STEPS = [
 
 const ManifestoSection = () => {
   return (
-    <section id="metodo" className="section-padding bg-secondary">
+    <section id="manifesto" className="section-padding bg-secondary">
       <div className="container-custom">
         <div className="max-w-[720px] mx-auto lg:max-w-none lg:grid lg:grid-cols-[1fr_320px] lg:gap-16 lg:items-center">
           <div className="text-center lg:text-left">
             <h2 className="text-foreground mb-6">Il Metodo Eleva. Routine gentile in 4 step</h2>
-            <p className="text-base text-muted-foreground leading-relaxed mb-6">
-              Il pelo lungo non ha bisogno di mille prodotti, ha bisogno di un metodo facile da applicare. Per questo, il Metodo Eleva si fonda su una routine semplice in 4 step: detergere, nutrire, proteggere e spazzolare.
+            <p className="text-base text-muted-foreground leading-relaxed mb-8">
+              Il pelo lungo non ha bisogno di mille prodotti, ha bisogno di un metodo facile da applicare. Per questo, il metodo Eleva si fonda su una routine semplice in 4 step: detergere, nutrire, proteggere e spazzolare.
             </p>
-            <p className="text-sm font-semibold text-foreground mb-3">
+            <h3 className="text-foreground mb-1">I 4 step Eleva</h3>
+            <p className="text-sm font-semibold text-muted-foreground mb-4">
               Segui questi passaggi per ottenere un manto sano, morbido e luminoso
             </p>
             <ol className="space-y-3 text-left">
