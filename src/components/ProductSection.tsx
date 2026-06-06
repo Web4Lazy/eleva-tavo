@@ -2,56 +2,6 @@ import { useState } from "react";
 import ProductGallery from "./ProductGallery";
 import { getWhatsAppUrl, sendEvent, CONFIG } from "@/config";
 
-import dupree0 from "@/assets/dupree/dupree-0.jpg";
-import dupree1 from "@/assets/dupree/dupree-1.png";
-import dupree2 from "@/assets/dupree/dupree-2.png";
-import dupree3 from "@/assets/dupree/dupree-3.png";
-import dupree4 from "@/assets/dupree/dupree-4.png";
-import dupree5 from "@/assets/dupree/dupree-5.png";
-import dupree6 from "@/assets/dupree/dupree-6.jpg";
-import dupree7 from "@/assets/dupree/dupree-7.png";
-
-const DUPREE_IMAGES = [dupree0, dupree1, dupree2, dupree3, dupree4, dupree5, dupree6, dupree7];
-
-import maeve0 from "@/assets/maeve/maeve-0.jpg";
-import maeve1 from "@/assets/maeve/maeve-1.png";
-import maeve2 from "@/assets/maeve/maeve-2.png";
-import maeve3 from "@/assets/maeve/maeve-3.png";
-import maeve4 from "@/assets/maeve/maeve-4.png";
-import maeve5 from "@/assets/maeve/maeve-5.png";
-import maeve6 from "@/assets/maeve/maeve-6.png";
-import maeve7 from "@/assets/maeve/maeve-7.png";
-import maeve8 from "@/assets/maeve/maeve-8.png";
-
-const MAEVE_IMAGES = [maeve0, maeve1, maeve2, maeve3, maeve4, maeve5, maeve6, maeve7, maeve8];
-
-import shell0 from "@/assets/shell/shell-0.jpg";
-import shell1 from "@/assets/shell/shell-1.png";
-import shell2 from "@/assets/shell/shell-2.png";
-import shell3 from "@/assets/shell/shell-3.png";
-import shell4 from "@/assets/shell/shell-4.png";
-import shell5 from "@/assets/shell/shell-5.png";
-
-const SHELL_IMAGES = [shell0, shell1, shell2, shell3, shell4, shell5];
-
-import travel0 from "@/assets/travel/travel-0.jpg";
-import travel1 from "@/assets/travel/travel-1.png";
-import travel2 from "@/assets/travel/travel-2.png";
-import travel3 from "@/assets/travel/travel-3.png";
-import travel4 from "@/assets/travel/travel-4.png";
-import travel5 from "@/assets/travel/travel-5.png";
-import travel6 from "@/assets/travel/travel-6.png";
-
-const TRAVEL_IMAGES = [travel0, travel1, travel2, travel3, travel4, travel5, travel6];
-
-const getProductImages = (id: string) => {
-  if (id === "prodotto-dupree") return DUPREE_IMAGES;
-  if (id === "prodotto-maeve") return MAEVE_IMAGES;
-  if (id === "prodotto-shell") return SHELL_IMAGES;
-  if (id === "prodotto-travel") return TRAVEL_IMAGES;
-  return undefined;
-};
-
 export interface ProductSize {
   label: string;
   specs: { label: string; value: string }[];
@@ -63,233 +13,116 @@ export interface ProductData {
   name: string;
   subtitle?: string;
   badge?: string;
-  startingPrice?: number;
-  benefits: string[];
-  disclaimer?: string;
   quickSummary?: {
     idealePer: string;
-    tagliaPet: string;
+    formato: string;
     puntoForte: string;
     quandoSceglierlo: string;
   };
+  benefits: string[];
+  note?: string;
+  /** Taglie/varianti — non pertinenti per i cosmetici, lasciate vuote. */
   sizes: ProductSize[];
-  includes: string;
-  manuals: { label: string; url: string }[];
   cartLink: string;
-  imageLabel: string;
+  ctaLabel: string;
   bgClass: string;
 }
 
 export const PRODUCTS: ProductData[] = [
   {
-    id: "prodotto-dupree",
-    tag: "Auto + Aereo",
-    name: "Dupree",
-    startingPrice: 299,
+    id: "prodotto-shampoo",
+    tag: "Step 1 · Detersione delicata",
+    name: "Shampoo Delicato",
+    subtitle: "il primo step del Metodo Eleva",
     bgClass: "bg-[#f7f5f3]",
     quickSummary: {
-      idealePer: "Viaggi in auto e spostamenti in aereo",
-      tagliaPet: "Fino a 9 kg",
-      puntoForte: "Leggerezza e versatilità auto/aereo",
-      quandoSceglierlo: "Se viaggi spesso in auto o aereo con un pet di piccola taglia",
+      idealePer: "Cani a pelo lungo, cute delicata e lavaggi frequenti",
+      formato: "100 ml nel Kit Conosciamoci",
+      puntoForte: "Deterge senza seccare il pelo",
+      quandoSceglierlo: "Se vuoi iniziare una routine delicata contro nodi, pelo secco e manto difficile da gestire",
     },
     benefits: [
-      "Pensato anche per la cabina (verifica sempre con la compagnia)",
-      "Fissaggio in auto sicuro e integrato",
-      "Dimensioni e capienza ottimizzate per il viaggio",
+      "Deterge il manto rispettando la cute del cane",
+      "Già pronto all'uso: non va diluito",
+      "Senza SLS/SLES, con tensioattivi delicati",
+      "Prepara il pelo agli step successivi del Metodo Eleva",
     ],
-    disclaimer: "⚠ Le regole cambiano per compagnia aerea: ti aiutiamo a verificare misure e peso prima di acquistare.",
-    sizes: [
-      {
-        label: "Dupree I",
-        specs: [
-          { label: "Esterno", value: "L 47 × W 29 × H 26 cm" },
-          { label: "Interno", value: "L 47 × W 28 × H 23 cm" },
-          { label: "Peso", value: "2,33 kg" },
-          { label: "Capienza", value: "fino a 9 kg" },
-        ],
-      },
-      {
-        label: "Dupree II",
-        specs: [
-          { label: "Esterno", value: "L 47 × W 29 × H 26 cm" },
-          { label: "Interno", value: "L 47 × W 28 × H 22 cm" },
-          { label: "Peso", value: "2,72 kg" },
-          { label: "Capienza", value: "fino a 9 kg" },
-        ],
-      },
-    ],
-    includes: "(1) Trasportino Dupree, (2) materassini imbottiti, (1) tracolla sganciabile, (1) protezione impatti laterali.",
-    manuals: [
-      { label: "📄 Manuale Dupree I", url: CONFIG.MANUALS.DUPREE_I },
-      { label: "📄 Manuale Dupree II", url: CONFIG.MANUALS.DUPREE_II },
-    ],
-    cartLink: CONFIG.LINKS.DUPREE,
-    imageLabel: "Foto Dupree — 480×480",
+    note: "Lo Shampoo Delicato è il primo passaggio della routine Eleva: pulisce il manto senza aggredirlo e aiuta a preparare il pelo alla Maschera Nutriente.",
+    sizes: [],
+    cartLink: CONFIG.LINKS.KIT,
+    ctaLabel: "Acquista il Kit",
   },
   {
-    id: "prodotto-maeve",
-    tag: "Auto (ISOFIX)",
-    name: "Maeve™ iso",
-    startingPrice: 399,
+    id: "prodotto-maschera",
+    tag: "Step 2 · Nutrimento e districabilità",
+    name: "Maschera Nutriente",
+    subtitle: "il secondo step del Metodo Eleva",
     bgClass: "bg-background",
     quickSummary: {
-      idealePer: "Viaggi in auto con massima stabilità",
-      tagliaPet: "Fino a 18 kg",
-      puntoForte: "Stabilità ISOFIX e protezione integrata",
-      quandoSceglierlo: "Se cerchi la soluzione più sicura e stabile per l'auto",
+      idealePer: "Cani a pelo lungo, manti secchi, annodati o difficili da pettinare",
+      formato: "50 ml nel Kit Conosciamoci",
+      puntoForte: "Nutre, ammorbidisce e aiuta a districare il pelo",
+      quandoSceglierlo: "Dopo lo shampoo, per rendere il manto più morbido, setoso e facile da pettinare",
     },
     benefits: [
-      "Agganci ISOFIX integrati per massima stabilità",
-      "Progettato per stabilità e protezione in auto (ISOFIX integrato).",
-      "Comfort & igiene: capottina + fodere lavabili",
+      "Nutre il pelo dopo la detersione",
+      "Rende il manto più morbido, setoso e pettinabile",
+      "Aiuta a districare i nodi e a prevenirne la formazione",
+      "Si diluisce e si frulla in acqua calda prima dell'applicazione",
     ],
-    sizes: [
-      {
-        label: "iso 5X",
-        specs: [
-          { label: "Esterno", value: "60 × 43,5 × 53 cm" },
-          { label: "Interno", value: "47 × 32 × 37,5 cm" },
-          { label: "Peso", value: "4,45 kg" },
-          { label: "Capienza", value: "13,5 kg" },
-        ],
-      },
-      {
-        label: "iso 6X",
-        specs: [
-          { label: "Esterno", value: "74,5 × 46 × 59,6 cm" },
-          { label: "Interno", value: "57 × 32 × 42 cm" },
-          { label: "Peso", value: "6,34 kg" },
-          { label: "Capienza", value: "18 kg" },
-        ],
-      },
-      {
-        label: "iso 7X-R",
-        specs: [
-          { label: "Esterno", value: "84 × 46,8 × 59 cm" },
-          { label: "Interno", value: "67 × 32 × 43 cm" },
-          { label: "Peso", value: "6,8 kg" },
-          { label: "Capienza", value: "18,1 kg" },
-        ],
-      },
-      {
-        label: "iso 7X-L",
-        specs: [
-          { label: "Esterno", value: "84 × 46,8 × 59 cm" },
-          { label: "Interno", value: "67 × 32 × 43 cm" },
-          { label: "Peso", value: "6,8 kg" },
-          { label: "Capienza", value: "18,1 kg" },
-        ],
-      },
-    ],
-    includes: "(1) Maeve Car Seat, (1) Side Impact Protection Guard, (1) Durable liner, (1) Plush liner, (2) Mattress pads, (1) Long inlay.",
-    manuals: [
-      { label: "📄 Manuale iso 5X", url: CONFIG.MANUALS.MAEVE_5X },
-      { label: "📄 Manuale iso 6X", url: CONFIG.MANUALS.MAEVE_6X },
-      { label: "📄 Manuale iso 7X", url: CONFIG.MANUALS.MAEVE_7X },
-    ],
-    cartLink: CONFIG.LINKS.MAEVE,
-    imageLabel: "Foto Maeve iso — 480×480",
+    note: "La Maschera Nutriente è lo step che fa la differenza nei cani a pelo lungo: dopo lo shampoo aiuta a rendere il manto più morbido, elastico e facile da pettinare.",
+    sizes: [],
+    cartLink: CONFIG.LINKS.KIT,
+    ctaLabel: "Acquista il Kit",
   },
   {
-    id: "prodotto-travel",
-    tag: "Auto + Passeggio",
-    name: "Travel System",
-    subtitle: "Maeve iso + Roscoe Stroller Frame",
-    badge: "TOP scelta Eleva",
-    startingPrice: 700,
+    id: "prodotto-scioglinodi",
+    tag: "Step 3 · Protezione e districabilità",
+    name: "Scioglinodi Spray",
+    subtitle: "il terzo step del Metodo Eleva",
     bgClass: "bg-[#f7f5f3]",
     quickSummary: {
-      idealePer: "Uso quotidiano auto + passeggiate",
-      tagliaPet: "Fino a 18 kg",
-      puntoForte: "Praticità e versatilità auto/passeggio",
-      quandoSceglierlo: "Se cerchi una soluzione completa per spostamenti frequenti",
+      idealePer: "Cani a pelo lungo, manti che si annodano facilmente e mantenimento tra un bagno e l'altro",
+      formato: "50 ml nel Kit Conosciamoci",
+      puntoForte: "Aiuta a districare il pelo asciutto prima della spazzolata",
+      quandoSceglierlo: "Tra un bagnetto e l'altro, quando il pelo tende ad annodarsi o diventa più difficile da spazzolare",
     },
     benefits: [
-      "Passeggio-trasporto auto senza cambiare setup",
-      "Connessione sicura ISOFIX",
-      "Telaio passeggino Roscoe incluso",
+      "Si usa sul pelo asciutto prima della spazzola",
+      "Aiuta a districare i nodi e a rendere il pelo più pettinabile",
+      "Favorisce una spazzolatura più veloce e meno stressante",
+      "Aiuta a mantenere il manto più ordinato tra un lavaggio e l'altro",
     ],
-    sizes: [
-      {
-        label: "5X",
-        specs: [
-          { label: "Esterno", value: "60 × 43,5 × 53 cm" },
-          { label: "Interno", value: "47 × 32 × 37,5 cm" },
-          { label: "Peso", value: "4,5 kg" },
-          { label: "Capienza", value: "13,5 kg" },
-        ],
-      },
-      {
-        label: "6X",
-        specs: [
-          { label: "Esterno", value: "74,5 × 46 × 59,6 cm" },
-          { label: "Interno", value: "57 × 32 × 42 cm" },
-          { label: "Peso", value: "5,8 kg" },
-          { label: "Capienza", value: "18 kg" },
-        ],
-      },
-      {
-        label: "7X",
-        specs: [
-          { label: "Esterno", value: "80 × 47 × 60 cm" },
-          { label: "Interno", value: "66 × 29 × 50 cm" },
-          { label: "Peso", value: "5,6 kg (con SIP 6,3 kg)" },
-        ],
-      },
-    ],
-    includes: "(1) Carrier a scelta, (1) SIP Guard, (1) Durable liner, (1) Plush liner, (2) Mattress pads, (1) Long inlay, (1) Roscoe Stroller Frame + Wheels + Organizer.",
-    manuals: [
-      { label: "📄 Manuale iso 5X", url: CONFIG.MANUALS.MAEVE_5X },
-      { label: "📄 Manuale iso 6X", url: CONFIG.MANUALS.MAEVE_6X },
-      { label: "📄 Manuale Roscoe", url: CONFIG.MANUALS.ROSCOE },
-    ],
-    cartLink: CONFIG.LINKS.TRAVEL,
-    imageLabel: "Foto Travel System — 480×480",
+    note: "Lo Scioglinodi Spray è lo step di mantenimento del Metodo Eleva: prepara il pelo alla spazzola e aiuta a gestire i nodi tra un bagno e l'altro.",
+    sizes: [],
+    cartLink: CONFIG.LINKS.KIT,
+    ctaLabel: "Acquista il Kit",
   },
   {
-    id: "prodotto-shell",
-    tag: "Casa",
-    name: "Shell",
-    startingPrice: 299,
+    id: "prodotto-spazzola",
+    tag: "Step 4 · Spazzolatura corretta",
+    name: "Spazzola Professional",
+    subtitle: "completa il Metodo Eleva",
+    badge: "Con il Kit: -40%",
     bgClass: "bg-background",
     quickSummary: {
-      idealePer: "Riposo e comfort a casa",
-      tagliaPet: "Fino a 59 kg",
-      puntoForte: "Design rialzato e movimento oscillante",
-      quandoSceglierlo: "Se cerchi un prodotto di arredo per il riposo quotidiano del tuo pet",
+      idealePer: "Cani a pelo lungo, manti annodati o difficili da spazzolare",
+      formato: "Inclusa nel Kit Conosciamoci a prezzo speciale (-40%)",
+      puntoForte: "Aiuta a districare facilmente il pelo senza spezzarlo",
+      quandoSceglierlo: "Se vuoi completare il Metodo Eleva con lo strumento corretto per la spazzolata",
     },
     benefits: [
-      "Design rialzato e basculante",
-      "Movimento oscillante + reclinazione",
-      "Oggetto di arredo, non accessorio",
+      "Completa la routine anti-nodi Eleva",
+      "Da usare dopo lo Scioglinodi, sul pelo asciutto",
+      "Da usare dopo il bagnetto in asciugatura",
+      "Aiuta a snodare il pelo velocemente",
+      "Cuscinetto antistatico",
     ],
-    sizes: [
-      {
-        label: "Taglia unica",
-        specs: [
-          { label: "Dimensioni", value: "L 66–73 × W 78,7 × H 43,2–57,2 cm" },
-          { label: "Peso", value: "8,5 kg" },
-          { label: "Capienza", value: "59 kg" },
-          { label: "Altezza dal pavimento", value: "27 cm" },
-        ],
-      },
-    ],
-    includes: "",
-    manuals: [
-      { label: "📄 Manuale Shell", url: CONFIG.MANUALS.SHELL },
-    ],
-    cartLink: CONFIG.LINKS.SHELL,
-    imageLabel: "Foto Shell — 480×480",
+    note: "La Spazzola Professional è lo strumento che completa il Metodo Eleva: lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato. Con il Kit Conosciamoci, la Spazzola Professional è riservata a prezzo speciale: -40%.",
+    sizes: [],
+    cartLink: CONFIG.LINKS.KIT,
+    ctaLabel: "-40% col kit",
   },
-];
-
-// Roscoe specs for Travel System
-const ROSCOE_SPECS = [
-  { label: "Aperto", value: "90,1 × 52,3 × 106,5 cm" },
-  { label: "Chiuso", value: "30,5 × 52,3 × 61 cm" },
-  { label: "Peso", value: "6,6 kg" },
-  { label: "Capienza", value: "50 lbs" },
 ];
 
 interface Props {
@@ -301,7 +134,6 @@ const ProductSection = ({ product, compact = false }: Props) => {
   const [selectedSize, setSelectedSize] = useState(0);
   const currentSpecs = product.sizes[selectedSize]?.specs || [];
   const hasSizeSelector = product.sizes.length > 1;
-  const isTravel = product.id === "prodotto-travel";
 
   const content = (
     <div className="flex-1">
@@ -310,11 +142,6 @@ const ProductSection = ({ product, compact = false }: Props) => {
       </span>
       <div className="flex items-baseline gap-3 mb-1">
         <h2 className="text-foreground">{product.name}</h2>
-        {product.startingPrice ? (
-          <span className="text-[14px] text-muted-foreground whitespace-nowrap">
-            a partire da €{product.startingPrice.toLocaleString("it-IT", { minimumFractionDigits: 2 })}
-          </span>
-        ) : null}
       </div>
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
@@ -326,8 +153,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
               <p className="text-muted-foreground">{product.quickSummary.idealePer}</p>
             </div>
             <div>
-              <span className="font-semibold text-foreground">Taglia pet consigliata:</span>
-              <p className="text-muted-foreground">{product.quickSummary.tagliaPet}</p>
+              <span className="font-semibold text-foreground">Formato consigliato:</span>
+              <p className="text-muted-foreground">{product.quickSummary.formato}</p>
             </div>
             <div>
               <span className="font-semibold text-foreground">Punto forte:</span>
@@ -350,15 +177,9 @@ const ProductSection = ({ product, compact = false }: Props) => {
         ))}
       </ul>
 
-      {product.disclaimer && (
-        <div className="bg-[#FFF8E7] border-l-[3px] border-[#D4A843] rounded-lg p-3 text-sm text-foreground mb-6">
-          {product.disclaimer}
-        </div>
-      )}
-
       {hasSizeSelector && (
         <div className="mb-4">
-          <p className="text-sm font-semibold text-foreground mb-2">Taglia</p>
+          <p className="text-sm font-semibold text-foreground mb-2">Formato</p>
           <div className="flex flex-wrap gap-2">
             {product.sizes.map((size, i) => (
               <button
@@ -377,35 +198,14 @@ const ProductSection = ({ product, compact = false }: Props) => {
         </div>
       )}
 
-      {/* Specs table */}
-      <div className="bg-secondary rounded-lg p-4 mb-4">
-        <p className="text-sm font-semibold text-foreground mb-2">
-          Dimensioni {hasSizeSelector ? `(${product.sizes[selectedSize].label})` : ""}
-        </p>
-        <div className="space-y-1">
-          {currentSpecs.map((s) => (
-            <div key={s.label} className="flex justify-between text-sm">
-              <span className="text-muted-foreground">{s.label}</span>
-              <span className="text-foreground font-medium">{s.value}</span>
-            </div>
-          ))}
-        </div>
-        <a
-          href={getWhatsAppUrl()}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "size-table" })}
-          className="text-sm text-primary mt-3 inline-block"
-        >
-          Chiedi conferma taglia →
-        </a>
-      </div>
-
-      {isTravel && (
+      {/* Specs table — solo se il prodotto ha specifiche dimensionali */}
+      {currentSpecs.length > 0 && (
         <div className="bg-secondary rounded-lg p-4 mb-4">
-          <p className="text-sm font-semibold text-foreground mb-2">Roscoe Stroller Frame</p>
+          <p className="text-sm font-semibold text-foreground mb-2">
+            Dettagli {hasSizeSelector ? `(${product.sizes[selectedSize].label})` : ""}
+          </p>
           <div className="space-y-1">
-            {ROSCOE_SPECS.map((s) => (
+            {currentSpecs.map((s) => (
               <div key={s.label} className="flex justify-between text-sm">
                 <span className="text-muted-foreground">{s.label}</span>
                 <span className="text-foreground font-medium">{s.value}</span>
@@ -415,26 +215,9 @@ const ProductSection = ({ product, compact = false }: Props) => {
         </div>
       )}
 
-      {product.includes && (
-        <div className="mb-4">
-          <p className="text-sm font-semibold text-foreground mb-1">Cosa include</p>
-          <p className="text-sm text-muted-foreground">{product.includes}</p>
-        </div>
+      {product.note && (
+        <p className="text-sm text-muted-foreground mb-6">{product.note}</p>
       )}
-
-      <div className="flex flex-wrap gap-3 mb-6">
-        {product.manuals.map((m) => (
-          <a
-            key={m.label}
-            href={m.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-primary hover:underline"
-          >
-            {m.label}
-          </a>
-        ))}
-      </div>
 
       <div className="flex flex-col sm:flex-row gap-3">
         <a
@@ -444,26 +227,20 @@ const ProductSection = ({ product, compact = false }: Props) => {
           onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
           className="cta-primary text-center"
         >
-          Chiedi a un assistente
+          Chiedi consiglio
         </a>
         <a
-          href={
-            product.id === "prodotto-travel"
-              ? (product.sizes[selectedSize]?.label?.startsWith("5X")
-                  ? CONFIG.LINKS.TRAVEL_5X
-                  : CONFIG.LINKS.TRAVEL_6X)
-              : product.cartLink
-          }
+          href={product.cartLink}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => sendEvent("AddToCart", { product: product.name, size: product.sizes[selectedSize]?.label })}
+          onClick={() => sendEvent("AddToCart", { product: product.name })}
           className="cta-outline text-center"
         >
-          Aggiungi al carrello
+          {product.ctaLabel}
         </a>
       </div>
       <p className="text-sm text-muted-foreground mt-3">
-        Dubbi sulla taglia? Te la confermiamo su WhatsApp prima dell'acquisto.
+        Hai dubbi sul pelo del tuo cane? Ti consigliamo la routine giusta su WhatsApp prima dell'acquisto.
       </p>
     </div>
   );
@@ -471,11 +248,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
   if (compact) {
     return (
       <div className="space-y-4">
-        <ProductGallery
-          productName={product.name}
-          badge={product.badge}
-          images={getProductImages(product.id)}
-        />
+        {/* PLACEHOLDER IMMAGINE: galleria {product.name} */}
+        <ProductGallery productName={product.name} badge={product.badge} imageCount={4} />
         {content}
       </div>
     );
@@ -486,11 +260,8 @@ const ProductSection = ({ product, compact = false }: Props) => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-24">
-            <ProductGallery
-              productName={product.name}
-              badge={product.badge}
-              images={getProductImages(product.id)}
-            />
+            {/* PLACEHOLDER IMMAGINE: galleria {product.name} */}
+            <ProductGallery productName={product.name} badge={product.badge} imageCount={4} />
           </div>
           {content}
         </div>

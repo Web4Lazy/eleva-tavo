@@ -7,36 +7,44 @@ import {
 
 const faqs = [
 {
-  q: "Come scelgo la taglia?",
-  a: "Ti servono 3 misure del tuo pet: peso, lunghezza (naso-coda) e altezza al garrese. Con questi dati possiamo consigliarti la taglia corretta.\n\nPer Maeve iso, considera anche le dimensioni del sedile della tua auto. Contattaci su WhatsApp per una consulenza personalizzata."
+  q: "Il Kit Conosciamoci è adatto al mio cane?",
+  a: "Il Kit è pensato per cani a pelo lungo o con manto che tende ad annodarsi facilmente, come Maltese, Shih Tzu, Yorkshire, Lhasa Apso, Barboncini, Cavalier King, ecc."
 },
 {
-  q: "Maeve iso funziona nella mia auto?",
-  a: "Gli agganci ISOFIX sono standard, ma le dimensioni del sedile variano per marca e modello. Prima di acquistare, verifica la compatibilità con noi: inviaci marca, modello e anno su WhatsApp."
+  q: "Cosa contiene il Kit Conosciamoci?",
+  a: "Il Kit contiene tre minisize Eleva: Shampoo Delicato 100 ml, Maschera Nutriente 50 ml e Scioglinodi Spray 50 ml. È pensato per provare la routine Eleva prima di passare ai formati più grandi."
 },
 {
-  q: "Dupree è approvato per tutti gli aerei?",
-  a: "Ogni compagnia ha regole diverse su dimensioni e peso. Dupree è progettato secondo gli standard comuni, ma devi verificare con la tua compagnia prima del volo. Ti forniamo le specifiche complete per facilitare il controllo."
+  q: "Il Kit aiuta davvero contro i nodi?",
+  a: "Sì. Il Metodo Eleva aiuta a districare il pelo e a ridurre le condizioni che favoriscono la formazione dei nodi: pelo secco, poco nutrito, difficile da spazzolare o mantenuto in modo discontinuo."
 },
 {
-  q: "Cosa include il Travel System?",
-  a: "Include carrier Maeve iso (taglia a scelta) + telaio Roscoe + accessori (SIP Guard, liner, materassini, organizer). Sistema completo per auto e passeggio."
+  q: "In che ordine devo usare i prodotti?",
+  a: "Durante il bagno usa prima lo Shampoo Delicato, poi la Maschera Nutriente. Tra un bagno e l'altro, usa lo Scioglinodi sul pelo asciutto prima di spazzolare."
 },
 {
-  q: "Tempi di spedizione?",
-  a: "DHL ~10 giorni lavorativi. Tracking via email. Per urgenze, contattaci prima di ordinare."
+  q: "Lo Shampoo Delicato va diluito?",
+  a: "No. Lo Shampoo Delicato Eleva è già pronto all'uso e si applica puro direttamente sul pelo bagnato. L'unico prodotto del Kit da diluire è la Maschera Nutriente, da preparare con acqua calda prima dell'applicazione."
 },
 {
-  q: "Resi?",
-  a: "Gestiti dal partner Tavo. Eleva fornisce supporto informativo e guida nella procedura. Garanzia standard produttore attiva."
+  q: "Come si usa la Maschera Nutriente?",
+  a: "La Maschera Nutriente va diluita in acqua calda e frullata prima dell'applicazione. Sul pelo lungo può essere usata senza risciacquo. Sul pelo corto va risciacquata dopo una posa di qualche minuto."
 },
 {
-  q: "Come uso il codice Vantaggio Fedeltà?",
-  a: "Inserisci il codice ricevuto via email al checkout su elevapet.com. Importo fisso scontato automaticamente. Codice non ricevuto? Recuperalo su WhatsApp."
+  q: "Quando uso lo Scioglinodi?",
+  a: "Lo Scioglinodi si usa sul pelo asciutto, tra un bagnetto e l'altro, prima della spazzolata."
 },
 {
-  q: "Orari assistenza WhatsApp?",
-  a: "Lun–ven 9–18, risposta entro 60 minuti. Assistente umano, non bot. Messaggi fuori orario ricevono risposta alla riapertura."
+  q: "La Spazzola Professional è necessaria?",
+  a: "Per una routine completa è molto consigliata. I cosmetici preparano e nutrono il pelo, ma la spazzola corretta aiuta a lavorare il manto con più facilità e a mantenere il pelo ordinato."
+},
+{
+  q: "Posso chiedere consiglio prima di acquistare?",
+  a: "Sì. Puoi scriverci su WhatsApp e raccontarci com'è il pelo del tuo cane: età, razza, lunghezza, presenza di nodi, cute delicata o altre esigenze. Ti aiutiamo a scegliere la routine più adatta."
+},
+{
+  q: "Quali sono i tempi di spedizione?",
+  a: "Gli ordini vengono spediti con corriere espresso. In genere la spedizione avviene in 24-48 ore salvo ritardi del corriere."
 }];
 
 

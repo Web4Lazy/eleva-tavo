@@ -1,9 +1,9 @@
 const ComeFunzionaSection = () => {
   const steps = [
-  { title: "Scegli il prodotto", desc: "Scegli il prodotto con autonomia o con il supporto di un assistente umano." },
-  { title: "Completa l'ordine", desc: "Completi l'ordine online in modo semplice." },
-  { title: "Spedizione", desc: "Spedizione e gestione logistica sono curate dal partner indicato in pagina." },
-  { title: "Assistenza e resi", desc: "In caso di dubbi o necessità, trovi le indicazioni su assistenza e resi nelle FAQ." }];
+  { title: "Parti dal Kit", desc: "Tre minisize per iniziare subito la routine anti-nodi Eleva." },
+  { title: "Aggiungi la spazzola", desc: "Con la Spazzola Professional completi il metodo e rendi la routine più efficace." },
+  { title: "Usa i prodotti in ordine", desc: "Shampoo, maschera, scioglinodi e spazzola: ogni step ha una funzione precisa." },
+  { title: "Ricevi supporto Eleva", desc: "Ti seguiamo su WhatsApp per aiutarti a costruire la routine giusta per il tuo cane." }];
 
 
   return (

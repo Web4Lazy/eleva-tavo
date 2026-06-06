@@ -1,31 +1,28 @@
-import { getWhatsAppUrl } from "@/config";
-
 const quickFaqs = [
   {
-    q: "Come scelgo la taglia giusta?",
-    a: "Ti servono peso, lunghezza e altezza al garrese del tuo pet. Con questi dati ti consigliamo la taglia corretta.",
+    q: "Il Kit è adatto al mio cane?",
+    a: "Il Kit Conosciamoci è pensato per cani a pelo lungo o con pelo che si annoda facilmente, come Maltese, Shih Tzu, Yorkshire, Barboncini, Cavalier King…",
     link: "#faq",
   },
   {
-    q: "È compatibile con la mia auto?",
-    a: "Gli agganci ISOFIX sono standard, ma le dimensioni del sedile variano. Verifica la compatibilità con noi prima dell'acquisto.",
+    q: "Aiuta davvero contro i nodi?",
+    a: "Sì, la routine aiuta a districare il pelo e a ridurre le condizioni che favoriscono la formazione dei nodi: secchezza, scarsa idratazione.",
     link: "#faq",
   },
   {
-    q: "Posso usarlo per viaggiare?",
-    a: "Dupree è progettato per auto e aereo, ma ogni compagnia ha regole diverse. Ti forniamo le specifiche per verificare.",
+    q: "Come si usa la maschera nutriente?",
+    a: "Dopo lo shampoo, diluisci e frulla la maschera in acqua calda. Applicala su tutto il mantello. Se il tuo cane ha il manto lungo, non risciacquare.",
     link: "#faq",
   },
   {
-    q: "Dubbi? Scrivici prima di acquistare",
-    a: "Puoi contattare un assistente umano via WhatsApp prima dell'acquisto per qualsiasi domanda.",
-    link: getWhatsAppUrl(),
-    external: true,
+    q: "Lo shampoo va diluito?",
+    a: "No. Lo Shampoo Delicato Eleva è già pronto all'uso: si applica puro direttamente sul pelo bagnato. L'unico prodotto del Kit da diluire è la Maschera Nutriente, da preparare con acqua calda prima dell'applicazione.",
+    link: "#faq",
   },
 ];
 
 const QuickFAQSection = () => (
-  <section className="section-padding bg-[#f7f5f3]">
+  <section id="nodi" className="section-padding bg-[#f7f5f3]">
     <div className="container-custom">
       <h2 className="text-foreground mb-8 text-center">Domande veloci</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -33,8 +30,6 @@ const QuickFAQSection = () => (
           <a
             key={i}
             href={faq.link}
-            target={faq.external ? "_blank" : undefined}
-            rel={faq.external ? "noopener noreferrer" : undefined}
             className="group bg-background border border-border rounded-xl p-5 flex flex-col gap-3 transition-shadow duration-200 hover:shadow-md active:scale-[0.98]"
           >
             <h3 className="text-sm font-semibold text-foreground leading-snug">
@@ -44,7 +39,7 @@ const QuickFAQSection = () => (
               {faq.a}
             </p>
             <span className="text-xs text-primary font-medium group-hover:underline mt-auto">
-              {faq.external ? "Scrivi su WhatsApp →" : "Leggi di più →"}
+              Leggi di più →
             </span>
           </a>
         ))}

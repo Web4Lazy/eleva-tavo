@@ -8,13 +8,11 @@ import {
 } from "@/components/ui/carousel";
 import VideoFocusCarousel from "@/components/VideoFocusCarousel";
 
+// TODO(cliente): nomi/iniziali reali degli autori e rating verificati (il doc non li fornisce)
 const textReviews = [
-  { name: "Elena V.", rating: 5, quote: "Finalmente un prodotto pensato davvero per la sicurezza del mio gatto in auto. Consigliatissimo!" },
-  { name: "Roberto D.", rating: 5, quote: "Ho acquistato la cuccia Shell, materiali top! Il mio cocker la adora, si fa certe dormite…" },
-  { name: "Valentina S.", rating: 5, quote: "Ho provato altri prodotti ma nessuno si avvicina alla qualità di ELEVA." },
-  { name: "Giorgio M.", rating: 5, quote: "Assistenza clienti impeccabile, mi hanno guidato nella scelta perfetta." },
-  { name: "Paola C.", rating: 5, quote: "Il sistema ISOFIX dà una sicurezza in più che non ha prezzo." },
-  { name: "Simone F.", rating: 4, quote: "Ottimo prodotto, design elegante e funzionale. Lo consiglio." },
+  { name: "Cliente Eleva", rating: 5, quote: "Abbiamo utilizzato questo kit e devo dire che l'effetto è stato davvero strepitoso. Durante l'asciugatura non ho avuto alcuna difficoltà a districare il pelo grazie allo scioglinodi. Alla fine il mantello della mia piccola era morbidissimo e luminoso." },
+  { name: "Cliente Eleva", rating: 5, quote: "Da quando ho provato questo scioglinodi sulla mia cagnolina mi sono totalmente innamorata della sua delicata profumazione di lavanda. Aiuta a districare il pelo facilmente e ha un potere condizionante e idratante." },
+  { name: "Cliente Eleva", rating: 5, quote: "Spazzola super, sono riuscita a sciogliere dei nodi molto difficili. Lascia un pelo morbido e lucido, la consiglio!" },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (

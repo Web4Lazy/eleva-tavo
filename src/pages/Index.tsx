@@ -21,17 +21,18 @@ import Footer from "@/components/Footer";
 
 const SECTION_IDS = [
   "hero",
-  "manifesto",
-  "scenari",
+  "kit",
+  "metodo",
   "concierge",
-  "vantaggio",
-  "prodotto-dupree",
-  "prodotto-maeve",
-  "prodotto-travel",
-  "prodotto-shell",
+  "nodi",
+  "prodotto-shampoo",
+  "prodotto-maschera",
+  "prodotto-scioglinodi",
+  "prodotto-spazzola",
   "recensioni",
   "come-funziona",
   "faq",
+  "vantaggio",
   "chiusura",
 ];
 

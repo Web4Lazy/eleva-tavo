@@ -2,16 +2,16 @@ import { getWhatsAppFullUrl, sendEvent } from "@/config";
 
 const ConciergeSection = () => {
   const steps = [
-  "Ci dici pet + peso + uso (auto/aereo/casa)",
-  "Ti consigliamo modello + taglia",
-  "Confermi e compri senza dubbi"];
+  "Raccontaci com'è il pelo del tuo cane (razza, lunghezza, nodi)",
+  "Ti consigliamo la routine e il Kit più adatti",
+  "Acquisti con sicurezza e inizi il Metodo Eleva"];
 
 
   return (
     <section id="concierge" className="section-padding bg-primary text-primary-foreground">
       <div className="container-custom text-center">
-        <h2 className="mb-3">Assistente Dedicato Prima Classe</h2>
-        <p className="text-lg opacity-90 mb-12">Un umano (non un bot) ti aiuta a scegliere modello e taglia.</p>
+        <h2 className="mb-3">Consigli personalizzati su WhatsApp</h2>
+        <p className="text-lg opacity-90 mb-12">Un umano (non un bot) ti aiuta a costruire la routine anti-nodi giusta per il tuo cane.</p>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {steps.map((text, i) =>
@@ -29,7 +29,7 @@ const ConciergeSection = () => {
           onClick={() => sendEvent("ClickWhatsApp", { section: "concierge" })}
           className="cta-white mb-4 inline-flex">
 
-          Chiedi a un assistente
+          Chiedi consiglio
         </a>
         <p className="text-[13px] mt-4 text-secondary">+39 351 841 1304 • lun–ven 9–18</p>
       </div>
