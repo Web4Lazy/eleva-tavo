@@ -4,9 +4,6 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import ManifestoSection from "@/components/ManifestoSection";
 import ScenariSection from "@/components/ScenariSection";
-import ExpandableVideoSection from "@/components/ExpandableVideoSection";
-import ConciergeSection from "@/components/ConciergeSection";
-import AssistanceBanner from "@/components/AssistanceBanner";
 import QuickFAQSection from "@/components/QuickFAQSection";
 import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
@@ -21,10 +18,8 @@ import Footer from "@/components/Footer";
 
 const SECTION_IDS = [
   "hero",
-  "kit",
-  "metodo",
-  "concierge",
-  "nodi",
+  "scenari",
+  "manifesto",
   "prodotto-shampoo",
   "prodotto-maschera",
   "prodotto-scioglinodi",
@@ -96,9 +91,7 @@ const Index = () => {
         <HeroSection />
         <ScenariSection onOpenDrawer={handleOpenDrawer} />
         <ManifestoSection />
-        <ExpandableVideoSection />
-        <ConciergeSection />
-        
+
         <QuickFAQSection />
 
         {PRODUCTS.map((product) => (
