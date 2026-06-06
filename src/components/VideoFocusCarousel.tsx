@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
-import { Volume2, VolumeX, ChevronLeft, ChevronRight, Play, Cookie } from "lucide-react";
+import { ChevronLeft, ChevronRight, Cookie } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
+import VideoPlaceholder from "./VideoPlaceholder";
 
 interface VideoSlide {
   id: string;
@@ -34,7 +35,6 @@ const VideoFocusCarousel = () => {
   const marketingAllowed = choices?.marketing ?? false;
   const visibleCount = isMobile ? 3 : 5;
   const [activeIndex, setActiveIndex] = useState(3);
-  const [isMuted, setIsMuted] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
   const touchDeltaX = useRef(0);
@@ -149,73 +149,28 @@ const VideoFocusCarousel = () => {
                     : "0 2px 12px rgba(0,0,0,0.06)",
                 }}
               >
-                {slide.youtubeId ? (
-                  marketingAllowed ? (
-                    <>
-                      <iframe
-                        src={`https://www.youtube-nocookie.com/embed/${slide.youtubeId}?autoplay=${isCenter ? 1 : 0}&mute=1&loop=1&playlist=${slide.youtubeId}&controls=0&modestbranding=1&playsinline=1&rel=0`}
-                        className="absolute inset-0 w-full h-full border-0"
-                        allow="autoplay; encrypted-media"
-                        allowFullScreen
-                        title={slide.label}
-                      />
-                      {!isCenter && (
-                        <div className="absolute inset-0 z-10" />
-                      )}
-                    </>
-                  ) : (
-                    <div
-                      className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
-                      style={{ backgroundColor: slide.color }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        reopenBanner();
-                      }}
-                    >
-                      <Cookie className="w-10 h-10 text-white/70 mb-3" />
-                      <span className="text-white/90 text-sm font-medium leading-snug">
-                        Abilita i cookie marketing per vedere il video
-                      </span>
-                      <span className="text-white/60 text-xs mt-1.5 underline cursor-pointer">
-                        Gestisci preferenze
-                      </span>
-                    </div>
-                  )
-                ) : slide.videoUrl ? (
-                  <video
-                    className="absolute inset-0 w-full h-full object-cover"
-                    src={slide.videoUrl}
-                    muted={isMuted}
-                    loop
-                    playsInline
-                    autoPlay={isCenter}
-                  />
-                ) : (
+                {/* Gating cookie GDPR preservato: i video YouTube richiedono il consenso marketing.
+                    Il media è sostituito da un VideoPlaceholder (TODO cliente: video definitivi). */}
+                {slide.youtubeId && !marketingAllowed ? (
                   <div
-                    className="absolute inset-0 flex flex-col items-center justify-center"
+                    className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center"
                     style={{ backgroundColor: slide.color }}
-                  >
-                    <Play className="w-12 h-12 text-white/60 mb-3" />
-                    <span className="text-white/80 text-sm font-medium">{slide.label}</span>
-                  </div>
-                )}
-
-                {/* Mute toggle — only on center */}
-                {isCenter && (
-                  <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      setIsMuted(!isMuted);
+                      reopenBanner();
                     }}
-                    className="absolute bottom-3 right-3 z-10 w-8 h-8 rounded-full bg-black/40 flex items-center justify-center backdrop-blur-sm hover:bg-black/60 transition-colors active:scale-95"
-                    aria-label={isMuted ? "Attiva audio" : "Disattiva audio"}
                   >
-                    {isMuted ? (
-                      <VolumeX className="h-4 w-4 text-white" />
-                    ) : (
-                      <Volume2 className="h-4 w-4 text-white" />
-                    )}
-                  </button>
+                    <Cookie className="w-10 h-10 text-white/70 mb-3" />
+                    <span className="text-white/90 text-sm font-medium leading-snug">
+                      Abilita i cookie marketing per vedere il video
+                    </span>
+                    <span className="text-white/60 text-xs mt-1.5 underline cursor-pointer">
+                      Gestisci preferenze
+                    </span>
+                  </div>
+                ) : (
+                  /* PLACEHOLDER VIDEO: {slide.label} */
+                  <VideoPlaceholder label={`VIDEO: ${slide.label}`} className="absolute inset-0" />
                 )}
               </div>
             );

@@ -1,11 +1,15 @@
 import { useState } from "react";
-import { ChevronDown, Play } from "lucide-react";
-import crashTestCover from "@/assets/crash-test-cover.png";
-import eceR129 from "@/assets/ece-r129.png";
+import { ChevronDown } from "lucide-react";
+import ImagePlaceholder from "./ImagePlaceholder";
+import VideoPlaceholder from "./VideoPlaceholder";
 
+/*
+ * TODO(cliente): sezione da definire.
+ * Nel doc è la sezione "??????? Da valutare come gestire questa sezione".
+ * Testo/struttura lasciati invariati in attesa di indicazioni; i media sono placeholder.
+ */
 const ExpandableVideoSection = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <section className="border-y border-border bg-[#f7f5f3]">
@@ -32,34 +36,13 @@ const ExpandableVideoSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Testiamo il nostro sistema di protezione per animali domestici in strutture di prova dinamiche, dotate di apparecchiature e tecnologie all'avanguardia. Le prestazioni del nostro sistema rispondono ai più recenti standard ECE delle Nazioni Unite in materia di sicurezza dei bambini (R129).
               </p>
-              <img src={eceR129} alt="Standard ECE R129 / i-Size" className="mt-4 w-56 h-auto" />
+              {/* PLACEHOLDER IMMAGINE: standard ECE R129 / i-Size */}
+              <ImagePlaceholder aspectRatio="2/1" label="IMMAGINE: standard ECE R129 / i-Size" className="mt-4 w-56" />
             </div>
             <div className="lg:w-3/5">
               <div className="relative w-full rounded-xl overflow-hidden" style={{ paddingBottom: '56.25%' }}>
-                {isPlaying ? (
-                  <iframe
-                    src="https://player.vimeo.com/video/928229394?h=&title=0&byline=0&portrait=0&autoplay=1&dnt=1"
-                    className="absolute inset-0 w-full h-full"
-                    frameBorder="0"
-                    allow="autoplay; fullscreen; picture-in-picture"
-                    allowFullScreen />
-                ) : (
-                  <button
-                    onClick={() => setIsPlaying(true)}
-                    className="absolute inset-0 w-full h-full group cursor-pointer"
-                  >
-                    <img
-                      src={crashTestCover}
-                      alt="Video crash test TAVO"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/10 flex items-center justify-center transition-opacity group-hover:bg-black/20">
-                      <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                        <Play className="w-7 h-7 text-primary ml-1" />
-                      </div>
-                    </div>
-                  </button>
-                )}
+                {/* PLACEHOLDER VIDEO: crash test (era Vimeo 928229394) */}
+                <VideoPlaceholder label="VIDEO: crash test" className="absolute inset-0" />
               </div>
             </div>
           </div>
