@@ -2,13 +2,13 @@ import { Instagram, Facebook, Youtube, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/eleva.png";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 const NAV_ITEMS = [
-  { label: "Scenari", href: "#scenari" },
-  { label: "Assistente", href: "#concierge" },
-  { label: "Selezione", href: "#prodotto-dupree" },
-  { label: "Come funziona", href: "#come-funziona" },
+  { label: "Nodi", href: "#nodi" },
+  { label: "Metodo", href: "#metodo" },
+  { label: "Kit", href: "#kit" },
+  { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -46,7 +46,12 @@ const Footer = () => {
         {/* Logo + socials sotto su mobile */}
         <div className="flex flex-col items-center lg:items-start gap-4">
           <a href="#" className="overflow-hidden" style={{ maxWidth: '15rem' }}>
-            <img src={logo} alt="ELEVA" className="h-48 lg:h-60 w-auto object-contain" />
+            {/* PLACEHOLDER IMMAGINE: logo Eleva (footer) */}
+            <ImagePlaceholder
+              aspectRatio="1/1"
+              label="IMMAGINE: logo Eleva"
+              className="h-48 lg:h-60 w-auto"
+            />
           </a>
           <div className="lg:hidden">
             <SocialIcons />
@@ -73,7 +78,7 @@ const Footer = () => {
       </div>
 
       <div className="mt-8 pt-6 flex flex-col lg:flex-row lg:justify-between lg:items-center gap-3 text-sm text-muted-foreground" style={{ borderTop: "1px solid hsl(var(--grigio-bordo))" }}>
-        <span>© {new Date().getFullYear()} ELEVA × TAVO. Tutti i diritti riservati.</span>
+        <span>© {new Date().getFullYear()} ELEVA. Tutti i diritti riservati.</span>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
           <Link to="/cookie-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Cookie Policy

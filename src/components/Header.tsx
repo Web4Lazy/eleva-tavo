@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
-import logo from "@/assets/logo.png";
+import ImagePlaceholder from "./ImagePlaceholder";
 
 interface Props {
   activeSection: string;
 }
 
 const NAV_ITEMS = [
-  { label: "Scenari", href: "#scenari" },
-  { label: "Assistente", href: "#concierge" },
-  { label: "Selezione", href: "#prodotto-dupree" },
-  { label: "Come funziona", href: "#come-funziona" },
+  { label: "Nodi", href: "#nodi" },
+  { label: "Metodo", href: "#metodo" },
+  { label: "Kit", href: "#kit" },
+  { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];
 
@@ -29,7 +29,7 @@ const Header = ({ activeSection }: Props) => {
     <>
       {/* Top Strip */}
       <div className="bg-primary text-primary-foreground text-[13px] text-center py-2 px-4">
-        Scelto da Eleva per chi si prende cura davvero del proprio pet. Supporto WhatsApp lun–ven 9–18.
+        Il Metodo Eleva per un manto lungo più liscio, setoso e luminoso. Supporto WhatsApp lun–ven 9–18.
       </div>
 
       {/* Header */}
@@ -39,7 +39,12 @@ const Header = ({ activeSection }: Props) => {
       >
         <div className="container-custom flex items-center justify-between h-14 lg:h-16">
           <a href="#">
-            <img src={logo} alt="ELEVA × TAVO" className="h-16 lg:h-20 w-auto object-contain" />
+            {/* PLACEHOLDER IMMAGINE: logo Eleva (h-16 lg:h-20) */}
+            <ImagePlaceholder
+              aspectRatio="5/2"
+              label="IMMAGINE: logo Eleva"
+              className="h-16 lg:h-20 w-auto"
+            />
           </a>
 
           {/* Desktop nav */}
@@ -67,7 +72,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "header" })}
               className="cta-outline text-xs py-2 px-4 hidden lg:inline-flex"
             >
-              Chiedi a un assistente
+              Chiedi consiglio
             </a>
 
             {/* Mobile hamburger */}
@@ -103,7 +108,7 @@ const Header = ({ activeSection }: Props) => {
               onClick={() => sendEvent("ClickWhatsApp", { section: "mobile-menu" })}
               className="cta-primary text-sm w-full text-center mt-2"
             >
-              Chiedi a un assistente
+              Chiedi consiglio
             </a>
           </div>
         )}

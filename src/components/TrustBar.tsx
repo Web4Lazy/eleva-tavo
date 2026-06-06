@@ -3,8 +3,8 @@ import { ShoppingCart } from "lucide-react";
 const TrustBar = ({ variant = "light" }: { variant?: "light" | "dark" }) => {
   const items = [
     { icon: <ShoppingCart size={16} />, text: "Checkout su Eleva" },
-    { icon: "📦", text: "Corriere Espresso ~ 10 giorni" },
-    { icon: "↩", text: "Resi gestiti dal partner" },
+    { icon: "📦", text: "Corriere espresso 24-48 ore" },
+    { icon: "💬", text: "Consigli personalizzati Eleva" },
   ];
 
   const isDark = variant === "dark";
