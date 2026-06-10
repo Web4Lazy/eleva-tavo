@@ -2,7 +2,6 @@ import { Instagram, Facebook, Youtube, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useCookieConsent } from "@/hooks/useCookieConsent";
 import { Button } from "@/components/ui/button";
-import ImagePlaceholder from "./ImagePlaceholder";
 
 const NAV_ITEMS = [
   { label: "Nodi", href: "#hero" },
@@ -46,11 +45,12 @@ const Footer = () => {
         {/* Logo + socials sotto su mobile */}
         <div className="flex flex-col items-center lg:items-start gap-4">
           <a href="#" className="overflow-hidden" style={{ maxWidth: '15rem' }}>
-            {/* PLACEHOLDER IMMAGINE: logo Eleva (footer) */}
-            <ImagePlaceholder
-              aspectRatio="1/1"
-              label="IMMAGINE: logo Eleva"
-              className="h-48 lg:h-60 w-auto"
+            {/* Il footer è su bg-secondary (chiaro): il logo teal resta leggibile, niente invert */}
+            <img
+              src="/images/brand/eleva-logo.svg"
+              alt="Eleva"
+              loading="lazy"
+              className="h-20 w-auto object-contain"
             />
           </a>
           <div className="lg:hidden">

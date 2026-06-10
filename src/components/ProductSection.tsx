@@ -24,6 +24,8 @@ export interface ProductData {
   benefits: string[];
   note?: string;
   noteExtra?: string;
+  /** Foto reali della gallery (prima = cover); se assente ProductGallery mostra i placeholder. */
+  images?: string[];
   /** Taglie/varianti — non pertinenti per i cosmetici, lasciate vuote. */
   sizes: ProductSize[];
   cartLink: string;
@@ -51,6 +53,11 @@ export const PRODUCTS: ProductData[] = [
       "Prepara il pelo agli step successivi del Metodo Eleva",
     ],
     note: "Lo Shampoo Delicato è il primo passaggio della routine Eleva: pulisce il manto senza aggredirlo e aiuta a preparare il pelo alla Maschera Nutriente.",
+    images: [
+      "/images/products/shampoo/shampoo-01.jpg",
+      "/images/products/shampoo/shampoo-02.jpg",
+      "/images/products/shampoo/shampoo-03.jpg",
+    ],
     sizes: [],
     cartLink: CONFIG.LINKS.KIT,
     ctaLabel: "Acquista il Kit",
@@ -74,6 +81,12 @@ export const PRODUCTS: ProductData[] = [
       "Si diluisce e si frulla in acqua calda prima dell'applicazione",
     ],
     note: "La Maschera Nutriente è lo step che fa la differenza nei cani a pelo lungo: dopo lo shampoo aiuta a rendere il manto più morbido, elastico e facile da pettinare.",
+    // maschera-04.jpg esclusa: è la variante profumazione Pesca, il Kit è linea Lavanda (vedi TODO_INPUT_CLIENTE.md)
+    images: [
+      "/images/products/maschera/maschera-01.jpg",
+      "/images/products/maschera/maschera-02.jpg",
+      "/images/products/maschera/maschera-03.jpg",
+    ],
     sizes: [],
     cartLink: CONFIG.LINKS.KIT,
     ctaLabel: "Acquista il Kit",
@@ -97,6 +110,11 @@ export const PRODUCTS: ProductData[] = [
       "Aiuta a mantenere il manto più ordinato tra un lavaggio e l'altro",
     ],
     note: "Lo Scioglinodi Spray è lo step di mantenimento del Metodo Eleva: prepara il pelo alla spazzola e aiuta a gestire i nodi tra un bagno e l'altro.",
+    images: [
+      "/images/products/scioglinodi/scioglinodi-01.jpg",
+      "/images/products/scioglinodi/scioglinodi-02.jpg",
+      "/images/products/scioglinodi/scioglinodi-03.jpg",
+    ],
     sizes: [],
     cartLink: CONFIG.LINKS.KIT,
     ctaLabel: "Acquista il Kit",
@@ -124,6 +142,11 @@ export const PRODUCTS: ProductData[] = [
     ],
     note: "La Spazzola Professional è lo strumento che completa il Metodo Eleva: lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato.",
     noteExtra: "Con il Kit Conosciamoci, la Spazzola Professional è riservata a prezzo speciale: -40%.",
+    images: [
+      "/images/products/spazzola/spazzola-01.jpg",
+      "/images/products/spazzola/spazzola-02.jpg",
+      "/images/products/spazzola/spazzola-03.jpg",
+    ],
     sizes: [],
     cartLink: CONFIG.LINKS.KIT,
     ctaLabel: "-40% col kit",
@@ -259,8 +282,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
   if (compact) {
     return (
       <div className="space-y-4">
-        {/* PLACEHOLDER IMMAGINE: galleria {product.name} */}
-        <ProductGallery productName={product.name} badge={product.badge} imageCount={4} />
+        <ProductGallery productName={product.name} badge={product.badge} imageCount={4} images={product.images} />
         {content}
       </div>
     );
@@ -271,8 +293,7 @@ const ProductSection = ({ product, compact = false }: Props) => {
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           <div className="lg:sticky lg:top-24">
-            {/* PLACEHOLDER IMMAGINE: galleria {product.name} */}
-            <ProductGallery productName={product.name} badge={product.badge} imageCount={4} />
+            <ProductGallery productName={product.name} badge={product.badge} imageCount={4} images={product.images} />
           </div>
           {content}
         </div>

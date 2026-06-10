@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
-import ImagePlaceholder from "./ImagePlaceholder";
 
 interface Props {
   activeSection: string;
@@ -39,11 +38,10 @@ const Header = ({ activeSection }: Props) => {
       >
         <div className="container-custom flex items-center justify-between h-14 lg:h-16">
           <a href="#">
-            {/* PLACEHOLDER IMMAGINE: logo Eleva (h-16 lg:h-20) */}
-            <ImagePlaceholder
-              aspectRatio="5/2"
-              label="IMMAGINE: logo Eleva"
-              className="h-16 lg:h-20 w-auto"
+            <img
+              src="/images/brand/eleva-logo.svg"
+              alt="Eleva"
+              className="h-16 lg:h-20 w-auto object-contain"
             />
           </a>
 

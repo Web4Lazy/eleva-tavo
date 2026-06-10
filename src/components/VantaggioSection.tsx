@@ -3,8 +3,14 @@ import { getWhatsAppUrl, sendEvent } from "@/config";
 const VantaggioSection = () =>
 <section
   id="vantaggio"
-  className="section-padding relative shadow-2xl bg-foreground">
-  {/* PLACEHOLDER IMMAGINE: sfondo sezione (era midnight-pattern) — TODO(cliente): immagine di sfondo definitiva */}
+  className="section-padding relative shadow-2xl bg-foreground"
+  style={{
+    backgroundImage: "url('/images/brand/about-eleva.webp')",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}>
+    {/* Overlay scuro per leggibilità del testo bianco sopra la panoramica gamma */}
+    <div className="absolute inset-0 bg-foreground/60" />
 
     <div className="container-custom relative z-10">
       <div className="rounded-2xl p-8 max-w-[800px] mx-auto text-center bg-primary">

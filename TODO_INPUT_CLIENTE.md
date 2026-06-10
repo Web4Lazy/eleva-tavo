@@ -17,13 +17,20 @@ e link segnaposto `[TODO_LINK_…]`.
       anti-nodi per il mio cane.") e l'eventuale messaggio esteso `WHATSAPP_TEXT_FULL`.
 - [ ] Confermare i testi della **sticky bar** ("Chiedi consigli" / "Scopri il Kit").
 
-## 3. Immagini (oggi tutte placeholder)
-- [ ] **Logo Eleva** senza "× Tavo" (header + footer)
-- [ ] Immagine **hero** (cane a pelo lungo / routine)
-- [ ] Foto delle **4 card Kit** (Shampoo, Maschera, Scioglinodi, Spazzola)
-- [ ] **Gallerie prodotto** (foto multiple per ciascuno dei 4 prodotti)
-- [ ] Immagine sezione **Metodo** (es. Stefania & Eva / ambientata)
-- [ ] Immagine/colore di **sfondo** della sezione promo (ex midnight-pattern)
+## 3. Immagini (collegate il 2026-06-10 da `public/images/`)
+- [x] **Logo Eleva** senza "× Tavo" (header + footer) → `brand/eleva-logo.svg`
+- [x] Immagine **hero** → `brand/kit-banner.jpg` (lifestyle Kit; è verticale 2:3 dentro un
+      riquadro 1:1 con crop — confermare visivamente o fornire scatto quadrato)
+- [x] Foto delle **4 card Kit** → cover `*-01.jpg` dei 4 prodotti
+- [x] **Gallerie prodotto** → 3 foto per prodotto in `public/images/products/`
+- [x] Immagine sezione **Metodo** → `brand/stefania.png` (foto fondatrice)
+- [x] Immagine di **sfondo** sezione promo → `brand/about-eleva.webp` + overlay scuro
+- [ ] **maschera-04 (variante Pesca) disponibile: includere in gallery? — decisione cliente.**
+      Il Kit è linea Lavanda, quindi non è stata inserita di default; il file resta in
+      `public/images/products/maschera/maschera-04.jpg`.
+- [ ] **Foto Kit Conosciamoci** (`public/images/products/kit/kit-01..04.jpg`): pronte ma non
+      collegate — nessuna sezione/drawer mostra oggi il Kit come prodotto a sé con gallery.
+      Decidere se/dove usarle (es. scheda Kit dedicata o gallery nella sezione Scenari).
 
 ## 4. Recensioni
 - [ ] **Nomi/iniziali** dei recensori (il doc dà solo i testi; oggi: `TODO(cliente)`, nessun nome inventato).

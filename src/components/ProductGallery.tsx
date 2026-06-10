@@ -38,6 +38,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
           <img
             src={realImages[activeIndex]}
             alt={`${productName} — Foto ${activeIndex + 1}`}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         ) : (
@@ -78,7 +79,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
             } ${!realImages ? "bg-card" : ""}`}
           >
             {realImages ? (
-              <img src={realImages[i]} alt={`Miniatura ${i + 1}`} className="w-full h-full object-cover" />
+              <img src={realImages[i]} alt={`Miniatura ${i + 1}`} loading="lazy" className="w-full h-full object-cover" />
             ) : (
               i + 1
             )}

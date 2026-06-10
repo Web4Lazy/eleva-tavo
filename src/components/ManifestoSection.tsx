@@ -1,5 +1,3 @@
-import ImagePlaceholder from "./ImagePlaceholder";
-
 const STEPS = [
   { name: "Detergi", note: "con lo Shampoo Delicato — Senza SLS/SLES" },
   { name: "Nutri e districa", note: "con la Maschera Nutriente — Vitamina E + B5" },
@@ -36,12 +34,14 @@ const ManifestoSection = () => {
             </ol>
           </div>
           <div className="hidden lg:block">
-            {/* PLACEHOLDER IMMAGINE: Stefania ed Eva / Metodo Eleva */}
-            <ImagePlaceholder
-              aspectRatio="1/1"
-              label="IMMAGINE: Stefania & Eva — Metodo Eleva"
-              className="w-full"
-            />
+            <div className="rounded-lg overflow-hidden w-full" style={{ aspectRatio: "1/1" }}>
+              <img
+                src="/images/brand/stefania.png"
+                alt="Stefania, fondatrice di Eleva"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

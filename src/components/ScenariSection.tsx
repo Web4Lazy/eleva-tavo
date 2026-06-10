@@ -1,4 +1,3 @@
-import ImagePlaceholder from "./ImagePlaceholder";
 import { sendEvent } from "@/config";
 
 interface ScenarioCard {
@@ -6,7 +5,8 @@ interface ScenarioCard {
   scenario: string;
   description: string;
   targetId: string;
-  imageLabel: string;
+  image: string;
+  imageAlt: string;
   badge?: string;
   buttonLabel: string;
 }
@@ -17,7 +17,8 @@ const cards: ScenarioCard[] = [
     scenario: "100 ml – 100% morbidezza",
     description: "Deterge delicatamente il pelo rispettando la cute del cane. È il primo step della routine. Prepara il pelo ai trattamenti successivi senza appesantirlo.",
     targetId: "prodotto-shampoo",
-    imageLabel: "IMMAGINE: Shampoo Delicato 100 ml",
+    image: "/images/products/shampoo/shampoo-01.jpg",
+    imageAlt: "Shampoo Delicato Eleva 100 ml",
     buttonLabel: "Scopri lo shampoo",
   },
   {
@@ -25,7 +26,8 @@ const cards: ScenarioCard[] = [
     scenario: "50 ml – 100% setosità",
     description: "Nutre il pelo rendendolo morbido ed elastico. Aiuta a districare i nodi e ne ritarda la formazione. È lo step fondamentale per favorire la pettinabilità.",
     targetId: "prodotto-maschera",
-    imageLabel: "IMMAGINE: Maschera Nutriente 50 ml",
+    image: "/images/products/maschera/maschera-01.jpg",
+    imageAlt: "Maschera Nutriente Eleva 50 ml",
     buttonLabel: "Scopri la maschera",
   },
   {
@@ -33,7 +35,8 @@ const cards: ScenarioCard[] = [
     scenario: "50 ml – 100% pettinabilità",
     description: "Aiuta a districare i nodi più difficili. Si usa sul pelo asciutto per favorire la spazzolata e mantenere il manto ordinato tra un bagno e l'altro.",
     targetId: "prodotto-scioglinodi",
-    imageLabel: "IMMAGINE: Scioglinodi Spray 50 ml",
+    image: "/images/products/scioglinodi/scioglinodi-01.jpg",
+    imageAlt: "Scioglinodi Spray Eleva 50 ml",
     buttonLabel: "Scopri lo scioglinodi",
   },
   {
@@ -41,7 +44,8 @@ const cards: ScenarioCard[] = [
     scenario: "100% districabilità",
     description: "La spazzola progettata per snodare il pelo con facilità.",
     targetId: "prodotto-spazzola",
-    imageLabel: "IMMAGINE: Spazzola Professional",
+    image: "/images/products/spazzola/spazzola-01.jpg",
+    imageAlt: "Spazzola Professional Eleva",
     badge: "Con il Kit: -40%",
     buttonLabel: "Scopri la spazzola",
   },
@@ -66,12 +70,18 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
         onClick={() => sendEvent("ClickKitCard", { product: card.name })}
         className="card-hover flex-shrink-0 w-[260px] lg:w-auto snap-start border border-border rounded-2xl p-5 flex flex-col bg-secondary no-underline cursor-pointer">
 
-            {/* PLACEHOLDER IMMAGINE: card prodotto Kit */}
-            <ImagePlaceholder
-          aspectRatio="1/1"
-          label={card.imageLabel}
-          badge={card.badge}
-          className="mb-4" />
+            <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
+              {card.badge &&
+          <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
+                  {card.badge}
+                </span>
+          }
+              <img
+            src={card.image}
+            alt={card.imageAlt}
+            loading="lazy"
+            className="w-full h-full object-cover" />
+            </div>
 
             <h3 className="text-foreground mb-1">{card.name}</h3>
             <p className="text-sm text-micro mb-2">{card.scenario}</p>
