@@ -41,7 +41,7 @@ const Header = ({ activeSection }: Props) => {
             <img
               src="/images/brand/eleva-logo.svg"
               alt="Eleva"
-              className="h-16 lg:h-20 w-auto object-contain"
+              className="h-10 lg:h-12 w-auto object-contain"
             />
           </a>
 
