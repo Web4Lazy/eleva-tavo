@@ -114,3 +114,17 @@ Sanatoria hardcoded: `bg-[#f7f5f3]` → `bg-background` (Hero, QuickFAQ, FAQ) o 
 (Scenari, schede shampoo/scioglinodi — alternanza chiaro/crema mantenuta); header `#eae2d6`
 → `bg-secondary`. Invariati: card/popover, micro/muted-foreground, whatsapp, destructive,
 radius, sidebar, blocco `.dark`. Il logo SVG ora combacia esattamente con `--primary`.
+
+## Card Kit ridisegnate con header STEP outline (2026-06-10)
+
+**Card Kit ridisegnate con header STEP outline (mockup cliente).** ⚠️ `docs/card-design-ref.jpeg`
+non era presente nel repo: implementata la spec scritta del brief, confronto visivo col mockup
+da fare a mano. Ogni card della ScenariSection ora ha: titolo "STEP 1–4" maiuscolo solo
+contorno teal (utility `.step-outline` in `index.css`, `-webkit-text-stroke` + fallback pieno)
+che scavalca il bordo superiore (assoluto, `bg-secondary` = bg sezione per interrompere il
+bordo); card `border-2 border-primary rounded-sm bg-card`, contenuto centrato (nome bold
+teal → sottotitolo → paragrafo → foto incorniciata `border-primary/40` → CTA invariata);
+badge "-40%" `bg-peach` sull'angolo della foto (niente collisione con "STEP 4").
+Numerazione = Metodo: 1 Shampoo, 2 Maschera, 3 Scioglinodi, 4 Spazzola. Griglia
+`grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10` (sostituisce il carosello orizzontale
+mobile, come da brief). Contenuti, anchor, handler drawer e badge invariati.

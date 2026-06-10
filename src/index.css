@@ -232,4 +232,18 @@
   .text-micro {
     @apply text-sm;
   }
+
+  /* Titoli "STEP n" delle card Kit: solo contorno teal (mockup cliente) */
+  .step-outline {
+    color: transparent;
+    -webkit-text-stroke: 2px hsl(var(--primary));
+    paint-order: stroke fill;
+    letter-spacing: 0.02em;
+    line-height: 0.9;
+  }
+  @supports not (-webkit-text-stroke: 2px black) {
+    .step-outline {
+      color: hsl(var(--primary)); /* fallback: pieno */
+    }
+  }
 }
