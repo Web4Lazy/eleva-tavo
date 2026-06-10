@@ -67,6 +67,7 @@ export default {
         "grigio-bordo": "hsl(var(--grigio-bordo))",
         micro: "hsl(var(--micro))",
         whatsapp: "hsl(var(--whatsapp))",
+        peach: "hsl(var(--peach))",
       },
       borderRadius: {
         lg: "var(--radius)",

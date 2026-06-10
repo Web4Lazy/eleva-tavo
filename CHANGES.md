@@ -100,3 +100,17 @@ non importati in `src/assets`). `ImagePlaceholder.tsx` resta come fallback (usat
 - **Foto Kit** (`products/kit/kit-01..04.jpg`): nessuna UI mostra il Kit come prodotto a sé
   (il drawer apre solo i 4 singoli) → non collegate, pronte per uso futuro (vedi TODO).
 - `loading="lazy"` su tutte le immagini sotto la fold (incluse quelle di `ProductGallery`).
+
+## Palette allineata al brand Eleva (2026-06-10)
+
+**Palette allineata al brand Eleva (#023b38 + caldi fotografici).** Il verde precedente
+(#1b3629, hsl 152 33% 16%) non esiste nel brand: sostituito ovunque dal teal del logo
+`#023b38` = hsl(177 93% 12%) (lo stesso che elevapet.com usa per body text/bottoni/bordi).
+Neutri scaldati verso il set fotografico: `--background` 32 45% 96%, `--secondary`/`--muted`/
+`--accent` 32 62% 90% (crema #f5e6d5), `--border`/`--input` 32 25% 82%. `--foreground` ora teal.
+Nuovo token accent `--peach` 28 83% 81% (#f7cca7) + colore `peach` in tailwind.config.ts,
+usato SOLO per il badge "-40%" (card Scenari + ProductGallery), `bg-peach text-primary`.
+Sanatoria hardcoded: `bg-[#f7f5f3]` → `bg-background` (Hero, QuickFAQ, FAQ) o `bg-secondary`
+(Scenari, schede shampoo/scioglinodi — alternanza chiaro/crema mantenuta); header `#eae2d6`
+→ `bg-secondary`. Invariati: card/popover, micro/muted-foreground, whatsapp, destructive,
+radius, sidebar, blocco `.dark`. Il logo SVG ora combacia esattamente con `--primary`.

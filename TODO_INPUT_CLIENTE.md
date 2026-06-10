@@ -61,3 +61,6 @@ e link segnaposto `[TODO_LINK_…]`.
 - [ ] Nav: il doc dice "le 4 sezioni" ma elenca **5** etichette → applicate tutte e 5. Confermare.
 - [ ] TrustBar: "Consigli personalizzati" (hero) vs "Consiglio personalizzato" (chiusura):
       usata la forma plurale ovunque (componente condiviso). Confermare o richiedere testi distinti.
+
+## 10. Font
+- [ ] Font: landing in DM Sans, sito ufficiale in Poppins/Montserrat — allineare? (decisione cliente)

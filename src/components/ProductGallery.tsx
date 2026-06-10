@@ -30,7 +30,7 @@ const ProductGallery = ({ productName, badge, imageCount = 8, images: realImages
         onMouseLeave={() => setHovered(false)}
       >
         {badge && (
-          <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
+          <span className="absolute top-3 right-3 bg-peach text-primary text-[11px] font-semibold px-3 py-1 rounded-full z-10">
             {badge}
           </span>
         )}

@@ -22,7 +22,7 @@ const quickFaqs = [
 ];
 
 const QuickFAQSection = () => (
-  <section className="section-padding bg-[#f7f5f3]">
+  <section className="section-padding bg-background">
     <div className="container-custom">
       <h2 className="text-foreground mb-8 text-center">Domande veloci</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">

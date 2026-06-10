@@ -57,7 +57,7 @@ interface Props {
 }
 
 const ScenariSection = ({ onOpenDrawer }: Props) =>
-<section id="scenari" className="section-padding my-0 py-0 bg-[#f7f5f3]">
+<section id="scenari" className="section-padding my-0 py-0 bg-secondary">
     <div className="container-custom">
       <h2 className="text-foreground mb-2">Inizia dal Kit Conosciamoci più spazzola Eleva</h2>
       <p className="text-muted-foreground mb-8">Tre minisize per provare la routine Eleva e capire come risponde il pelo del tuo cane. Aggiungi la Spazzola Professional per completare il metodo fin dal primo utilizzo.</p>
@@ -72,7 +72,7 @@ const ScenariSection = ({ onOpenDrawer }: Props) =>
 
             <div className="relative rounded-lg overflow-hidden mb-4" style={{ aspectRatio: "1/1" }}>
               {card.badge &&
-          <span className="absolute top-3 right-3 bg-primary text-primary-foreground text-[11px] font-semibold px-3 py-1 rounded-full z-10">
+          <span className="absolute top-3 right-3 bg-peach text-primary text-[11px] font-semibold px-3 py-1 rounded-full z-10">
                   {card.badge}
                 </span>
           }

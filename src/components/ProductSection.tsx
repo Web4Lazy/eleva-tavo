@@ -39,7 +39,7 @@ export const PRODUCTS: ProductData[] = [
     tag: "Step 1 — Detersione delicata",
     name: "Shampoo Delicato",
     subtitle: "il primo step del Metodo Eleva",
-    bgClass: "bg-[#f7f5f3]",
+    bgClass: "bg-secondary",
     quickSummary: {
       idealePer: "Cani a pelo lungo, cute delicata e lavaggi frequenti",
       formato: "100 ml nel Kit Conosciamoci",
@@ -96,7 +96,7 @@ export const PRODUCTS: ProductData[] = [
     tag: "Step 3 — Protezione e districabilità",
     name: "Scioglinodi Spray",
     subtitle: "il terzo step del Metodo Eleva",
-    bgClass: "bg-[#f7f5f3]",
+    bgClass: "bg-secondary",
     quickSummary: {
       idealePer: "Cani a pelo lungo, manti che si annodano facilmente e mantenimento tra un bagno e l'altro",
       formato: "50 ml nel Kit Conosciamoci",

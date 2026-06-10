@@ -2,7 +2,7 @@ import TrustBar from "./TrustBar";
 import { getWhatsAppUrl, sendEvent } from "@/config";
 
 const HeroSection = () =>
-<section id="hero" className="section-padding bg-[#f7f5f3]">
+<section id="hero" className="section-padding bg-background">
     <div className="container-custom">
       <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
         <div

@@ -96,35 +96,38 @@
 
 @layer base {
   :root {
-    --background: 40 20% 96%;
-    --foreground: 0 0% 7%;
+    --background: 32 45% 96%;          /* off-white scaldato verso il set fotografico */
+    --foreground: 177 93% 12%;         /* teal logo #023b38 — elevapet.com usa body{color:#023b38} */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 7%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 7%;
-    --primary: 152 33% 16%;
+    --primary: 177 93% 12%;            /* teal logo #023b38 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 36 33% 88%;
+    --secondary: 32 62% 90%;           /* crema delle foto #f5e6d5 */
     --secondary-foreground: 0 0% 7%;
-    --muted: 36 33% 88%;
+    --muted: 32 62% 90%;
     --muted-foreground: 0 0% 40%;
-    --accent: 36 33% 88%;
-    --accent-foreground: 152 33% 16%;
+    --accent: 32 62% 90%;
+    --accent-foreground: 177 93% 12%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 34 14% 79%;
-    --input: 34 14% 79%;
-    --ring: 152 33% 16%;
+    --border: 32 25% 82%;              /* bordo scaldato */
+    --input: 32 25% 82%;
+    --ring: 177 93% 12%;
     --radius: 0.75rem;
 
     /* Custom brand tokens */
-    --verde-scuro: 152 33% 16%;
-    --off-white: 40 20% 96%;
-    --beige: 36 33% 88%;
-    --testo: 0 0% 7%;
-    --grigio-bordo: 34 14% 79%;
+    --verde-scuro: 177 93% 12%;
+    --off-white: 32 45% 96%;
+    --beige: 32 62% 90%;
+    --testo: 177 93% 12%;
+    --grigio-bordo: 32 25% 82%;
     --micro: 0 0% 40%;
     --whatsapp: 142 70% 49%;
+
+    /* Accent fotografico (pesca delle foto packaging #f7cca7) */
+    --peach: 28 83% 81%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;

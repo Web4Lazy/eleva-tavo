@@ -49,7 +49,7 @@ const faqs = [
 
 
 const FAQSection = () =>
-<section id="faq" className="section-padding bg-[#f7f5f3]">
+<section id="faq" className="section-padding bg-background">
     <div className="container-custom max-w-[800px]">
       <h2 className="text-foreground mb-8 text-center">Domande frequenti</h2>
       <Accordion type="single" collapsible className="space-y-3">
