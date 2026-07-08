@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { getWhatsAppUrl } from "@/config";
 import { sendEvent } from "@/config";
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 const NAV_ITEMS = [
   { label: "Nodi", href: "#hero" },
   { label: "Metodo", href: "#manifesto" },
-  { label: "Kit", href: "#scenari" },
+  { label: "Kit", href: "#kit" },
   { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];
@@ -28,7 +27,7 @@ const Header = ({ activeSection }: Props) => {
     <>
       {/* Top Strip */}
       <div className="bg-primary text-primary-foreground text-[13px] text-center py-2 px-4">
-        Il Metodo Eleva per un manto lungo più liscio, setoso e luminoso. Supporto WhatsApp lun–ven 9–18.
+        100% morbidezza, 0% nodi, 0% stress — il Metodo Eleva per il pelo lungo · 30 giorni soddisfatti o rimborsati · Supporto WhatsApp lun–ven 9–18
       </div>
 
       {/* Header */}
@@ -64,20 +63,20 @@ const Header = ({ activeSection }: Props) => {
 
           <div className="flex items-center gap-3">
             <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => sendEvent("ClickWhatsApp", { section: "header" })}
-              className="cta-outline text-xs py-2 px-4 hidden lg:inline-flex"
+              href="#kit"
+              onClick={() => sendEvent("ClickKitCTA", { section: "header" })}
+              className="cta-primary text-xs py-2 px-4 hidden lg:inline-flex"
             >
-              Chiedi consigli
+              Inizia con il Kit — 60€
             </a>
 
             {/* Mobile hamburger */}
             <button
               className="lg:hidden flex flex-col gap-1.5 p-2"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label="Menu"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-menu"
+              aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
             >
               <span className={`block w-5 h-0.5 bg-primary transition-transform duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
               <span className={`block w-5 h-0.5 bg-primary transition-opacity duration-300 ${menuOpen ? "opacity-0" : ""}`} />
@@ -88,7 +87,7 @@ const Header = ({ activeSection }: Props) => {
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="lg:hidden border-t border-border bg-background px-5 py-4 space-y-3">
+          <div id="mobile-menu" className="lg:hidden border-t border-border bg-background px-5 py-4 space-y-3">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
@@ -100,13 +99,14 @@ const Header = ({ activeSection }: Props) => {
               </a>
             ))}
             <a
-              href={getWhatsAppUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => sendEvent("ClickWhatsApp", { section: "mobile-menu" })}
+              href="#kit"
+              onClick={() => {
+                sendEvent("ClickKitCTA", { section: "header" });
+                setMenuOpen(false);
+              }}
               className="cta-primary text-sm w-full text-center mt-2"
             >
-              Chiedi consigli
+              Inizia con il Kit — 60€
             </a>
           </div>
         )}

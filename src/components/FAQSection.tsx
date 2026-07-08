@@ -43,6 +43,10 @@ const faqs = [
   a: "Sì. Puoi scriverci su WhatsApp e raccontarci com'è il pelo del tuo cane: età, razza, lunghezza, presenza di nodi, cute delicata o altre esigenze. Ti aiutiamo a scegliere la routine più adatta."
 },
 {
+  q: "Come funziona \"soddisfatti o rimborsati\"?",
+  a: "Se entro 30 giorni dalla consegna la routine non fa per te, ci rispedisci i prodotti cosmetici e ti rimborsiamo il loro importo. La Spazzola Professional non rientra nel reso. Le spese di spedizione del reso (12€) sono a carico del cliente, pagate a parte, e non vengono detratte dal rimborso. Ti chiediamo solo di raccontarci cosa non ha funzionato: ci aiuta a fare meglio."
+},
+{
   q: "Quali sono i tempi di spedizione?",
   a: "Gli ordini vengono spediti con corriere espresso. In genere la spedizione avviene in 24-48 ore salvo ritardi del corriere."
 }];
@@ -50,14 +54,16 @@ const faqs = [
 
 const FAQSection = () =>
 <section id="faq" className="section-padding bg-background">
-    <div className="container-custom max-w-[800px]">
+    <div className="container-custom">
+      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-eyebrow mb-3 text-center">Prima di acquistare</p>
       <h2 className="text-foreground mb-8 text-center">Domande frequenti</h2>
-      <Accordion type="single" collapsible className="space-y-3">
+      <Accordion type="single" collapsible>
+        <div className="grid md:grid-cols-2 gap-x-6 gap-y-3 items-start">
         {faqs.map((faq, i) =>
       <AccordionItem
         key={i}
         value={`faq-${i}`}
-        className="bg-background border border-border rounded-lg px-5">
+        className="bg-card border border-border rounded-lg px-5">
 
             <AccordionTrigger className="text-left text-[15px] font-semibold text-foreground hover:no-underline">
               {faq.q}
@@ -67,6 +73,7 @@ const FAQSection = () =>
             </AccordionContent>
           </AccordionItem>
       )}
+        </div>
       </Accordion>
     </div>
   </section>;

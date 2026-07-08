@@ -2,14 +2,17 @@ import { useState, useEffect, useCallback } from "react";
 import { sendEvent } from "@/config";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import ManifestoSection from "@/components/ManifestoSection";
+import StoriaSection from "@/components/StoriaSection";
 import ScenariSection from "@/components/ScenariSection";
+import ManifestoSection from "@/components/ManifestoSection";
+import GaranziaSection from "@/components/GaranziaSection";
 import QuickFAQSection from "@/components/QuickFAQSection";
-import VantaggioSection from "@/components/VantaggioSection";
 import ProductSection, { PRODUCTS } from "@/components/ProductSection";
+import VideoFocusCarousel from "@/components/VideoFocusCarousel";
 import ReviewsSection from "@/components/ReviewsSection";
 import ComeFunzionaSection from "@/components/ComeFunzionaSection";
 import FAQSection from "@/components/FAQSection";
+import LeadMagnetSection from "@/components/LeadMagnetSection";
 import ClosingSection from "@/components/ClosingSection";
 import StickyBottomBar from "@/components/StickyBottomBar";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -18,16 +21,19 @@ import Footer from "@/components/Footer";
 
 const SECTION_IDS = [
   "hero",
-  "scenari",
+  "storia",
+  "kit",
   "manifesto",
+  "garanzia",
   "prodotto-shampoo",
   "prodotto-maschera",
   "prodotto-scioglinodi",
   "prodotto-spazzola",
+  "unboxing",
   "recensioni",
   "come-funziona",
   "faq",
-  "vantaggio",
+  "guida",
   "chiusura",
 ];
 
@@ -89,19 +95,21 @@ const Index = () => {
 
       <main>
         <HeroSection />
+        <StoriaSection />
         <ScenariSection onOpenDrawer={handleOpenDrawer} />
         <ManifestoSection />
-
+        <GaranziaSection />
         <QuickFAQSection />
 
         {PRODUCTS.map((product) => (
           <ProductSection key={product.id} product={product} />
         ))}
 
+        <VideoFocusCarousel />
         <ReviewsSection />
         <ComeFunzionaSection />
         <FAQSection />
-        <VantaggioSection />
+        <LeadMagnetSection />
         <ClosingSection />
         <Footer />
       </main>

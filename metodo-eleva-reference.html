@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<!--
+  =====================================================================
+  METODO ELEVA — RIFERIMENTO DI DESIGN (non è il file di produzione)
+  Build HTML fedele al PDF "Landing_Metodo_ELEVA_v5_new.pdf".
+  USO: fonte autorevole di PALETTE (:root), FONT, TESTI/COPY, STRUTTURA
+  e ORDINE SEZIONI. Da PORTARE nell'app React/Vite/Tailwind esistente.
+  Le immagini sono placeholder (vedi src="assets/..." e gli alt).
+  =====================================================================
+-->
+
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metodo Eleva — Routine anti-nodi per cani a pelo lungo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#023a36;
+    --green-2:#0a463f;
+    --teal:#4d7a72;
+    --eyebrow:#6f938b;
+    --cream:#e8e9d9;
+    --cream-2:#eef0e6;
+    --nav:#ecefe3;
+    --panel:#f3f4ea;
+    --white:#ffffff;
+    --taupe:#cdb99f;
+    --taupe-2:#c2a888;
+    --rose:#bb7e6f;
+    --gold:#e0a63c;
+    --ink:#22302c;
+    --ink-soft:#5d6b66;
+    --muted:#8b938d;
+    --line:#e0e3d8;
+    --line-2:#d7dccd;
+    --radius:16px;
+    --radius-lg:26px;
+    --maxw:1120px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:'Poppins',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--white);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    font-weight:600;font-size:15px;line-height:1;
+    padding:15px 26px;border-radius:12px;border:1.6px solid transparent;
+    cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn--primary{background:var(--green);color:#fff}
+  .btn--primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(2,58,54,.24)}
+  .btn--outline{background:#fff;color:var(--green);border-color:var(--green)}
+  .btn--outline:hover{transform:translateY(-2px);background:#f7f9f4}
+  .btn--tan{background:var(--taupe);color:var(--green);font-weight:700}
+  .btn--tan:hover{transform:translateY(-2px);background:var(--taupe-2);box-shadow:0 12px 28px rgba(0,0,0,.22)}
+  .btn--light-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+  .btn--light-outline:hover{transform:translateY(-2px);background:rgba(255,255,255,.08)}
+  .btn--sm{padding:12px 20px;font-size:14px}
+  .btn--lg{padding:17px 34px;font-size:16px}
+
+  .wa-link{color:var(--rose);font-weight:600;font-size:14.5px;text-decoration:underline;text-underline-offset:3px}
+  .wa-link:hover{color:#a56a5c}
+
+  /* ---------- Eyebrow / headings ---------- */
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:.22em;font-weight:600;
+    font-size:12px;color:var(--eyebrow);margin:0 0 14px;
+  }
+  h1,h2,h3{margin:0;color:var(--green);letter-spacing:-.01em}
+  .h2{font-size:clamp(28px,3.4vw,40px);font-weight:800;line-height:1.12}
+  .lead{color:var(--ink-soft);font-size:17px;max-width:60ch}
+
+  /* ---------- Top announcement ---------- */
+  .topbar{background:var(--green);color:#eef0e6;text-align:center;font-size:12.5px;padding:9px 16px;font-weight:500;letter-spacing:.01em}
+  .topbar b{color:#fff;font-weight:700}
+
+  /* ---------- Nav ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:var(--nav);border-bottom:1px solid var(--line-2)}
+  .nav__inner{display:flex;align-items:center;justify-content:space-between;gap:20px;height:70px}
+  .brand{display:flex;align-items:center}
+  .brand img{height:38px;width:auto;background:var(--panel);border-radius:9px;padding:5px 9px;border:1px solid var(--line)}
+  .nav__links{display:flex;gap:30px;font-weight:500;font-size:15px;color:var(--green)}
+  .nav__links a{position:relative;padding:4px 0;color:var(--green);opacity:.85}
+  .nav__links a:hover{opacity:1}
+  .nav__links a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--teal);transition:width .2s ease}
+  .nav__links a:hover::after{width:100%}
+
+  /* ---------- Section helpers ---------- */
+  .section{padding:76px 0}
+  .section--cream{background:var(--cream)}
+  .section--pad-lg{padding:96px 0}
+
+  /* ---------- Hero ---------- */
+  .hero{background:#fff;padding:64px 0 20px}
+  .hero__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  h1.hero__title{font-size:clamp(40px,5.4vw,60px);font-weight:800;line-height:1.02;margin-bottom:22px}
+  h1.hero__title .l2{color:var(--teal);display:block}
+  .hero__body{font-size:18px;color:var(--ink-soft);margin:0 0 14px;max-width:46ch}
+  .hero__body b{color:var(--ink);font-weight:700}
+  .hero__note{font-style:italic;color:var(--muted);font-size:15px;max-width:44ch;margin:0 0 26px}
+  .hero__cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+  .rating{display:flex;align-items:center;gap:10px;font-size:14.5px;color:var(--ink-soft);margin-bottom:16px}
+  .rating b{color:var(--ink)}
+  .stars{color:var(--gold);letter-spacing:1px;font-size:15px}
+  .ticks{display:grid;grid-template-columns:1fr 1fr;gap:8px 26px;max-width:520px;margin-bottom:22px}
+  .tick{display:flex;align-items:center;gap:9px;font-size:14.5px;color:var(--ink-soft)}
+  .tick svg{flex:none;color:var(--teal)}
+  .guarantee-mini{background:var(--cream);border-radius:14px;padding:18px 20px;font-size:14.5px;color:var(--ink-soft);max-width:520px}
+  .guarantee-mini b{color:var(--green);display:block;margin-bottom:2px}
+  .hero__media{border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 24px 60px rgba(2,58,54,.16);aspect-ratio:1/1;background:#0f3b38}
+  .hero__media img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- Trust strip ---------- */
+  .trust{background:var(--cream);border-radius:18px;padding:22px 30px;margin:34px 0 0;text-align:center}
+  .trust__row{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 30px;font-size:14px;color:var(--ink-soft);font-weight:500}
+  .trust__row .dot{color:var(--line-2)}
+  .trust__row span{display:inline-flex;align-items:center;gap:8px}
+  .trust__row svg{color:var(--teal)}
+  .trust__line{margin-top:10px;font-weight:700;color:var(--green);font-size:14.5px}
+
+  /* ---------- Story ---------- */
+  .story__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .story__photo{border-radius:20px;overflow:hidden;background:#000;box-shadow:0 20px 50px rgba(0,0,0,.18)}
+  .story__photo img{width:100%;aspect-ratio:4/5;object-fit:cover}
+  .quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.2vw,25px);line-height:1.5;color:#2c3a36;margin:0 0 22px}
+  .attrib{font-size:14.5px;color:var(--ink-soft)}
+  .attrib b{color:var(--ink)}
+
+  /* ---------- Section head (centered) ---------- */
+  .shead{text-align:center;max-width:760px;margin:0 auto 48px}
+  .shead .eyebrow{text-align:center}
+  .shead p{color:var(--ink-soft);font-size:16.5px;margin:16px auto 0;max-width:66ch}
+  .shead p b{color:var(--ink)}
+
+  /* ---------- Step cards ---------- */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:stretch}
+  .stepcard{background:#fff;border:1px solid var(--line);border-radius:20px;padding:22px 20px 24px;display:flex;flex-direction:column;box-shadow:0 8px 22px rgba(2,58,54,.05)}
+  .stepbadge{align-self:flex-start;background:var(--green);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+  .stepcard h3{font-size:19px;font-weight:700;margin-bottom:4px;min-height:auto}
+  .stepcard .spec{color:var(--muted);font-size:12.5px;margin:0 0 12px}
+  .stepcard .desc{color:var(--ink-soft);font-size:13.5px;line-height:1.55;margin:0 0 16px;flex:1}
+  .stepcard .off{align-self:flex-start;background:var(--rose);color:#fff;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;margin:-4px 0 12px}
+  .stepcard__img{border-radius:12px;overflow:hidden;margin-top:auto;background:var(--panel)}
+  .stepcard__img img{width:100%;aspect-ratio:1/1;object-fit:cover}
+
+  /* ---------- Pricing box ---------- */
+  .pricebox{background:linear-gradient(160deg,#0a463f 0%,#023a36 60%);border-radius:26px;padding:48px 40px 40px;color:#fff;text-align:center;margin-top:44px;box-shadow:0 26px 60px rgba(2,58,54,.28)}
+  .pricebox h3{color:#fff;font-size:clamp(24px,2.8vw,30px);font-weight:800;margin-bottom:34px}
+  .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:820px;margin:0 auto 34px}
+  .price .cap{font-size:13px;color:#b7c9c5;font-weight:500;margin-bottom:8px}
+  .price .amt{font-size:38px;font-weight:800;line-height:1;display:flex;gap:10px;align-items:baseline;justify-content:center}
+  .price .amt s{font-size:19px;font-weight:500;color:#7fa39d;text-decoration:line-through}
+  .price .sub{font-size:12.5px;color:#cdddd9;margin-top:10px;font-weight:600;line-height:1.4}
+  .pricebox .fine{font-size:13px;color:#9fc0bb;margin-top:22px}
+  .divv{width:1px;background:rgba(255,255,255,.12)}
+
+  /* ---------- Method ---------- */
+  .method__grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .method__body .lead{margin-bottom:26px}
+  .mlist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:16px}
+  .mlist li{display:flex;gap:14px;align-items:flex-start;font-size:15.5px;color:var(--ink-soft)}
+  .mlist li b{color:var(--ink);font-weight:700}
+  .mnum{flex:none;width:28px;height:28px;border-radius:50%;background:var(--green);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+  .method__media{border-radius:22px;overflow:hidden;box-shadow:0 22px 54px rgba(2,58,54,.16);aspect-ratio:1.06/1;background:#0f3b38}
+  .method__media img{width:100%;height:100%;object-fit:cover}
+
+  /* ---------- Guarantee band ---------- */
+  .gband{border:1.5px solid var(--teal);border-radius:24px;padding:38px 40px;display:grid;grid-template-columns:auto 1fr;gap:38px;align-items:center;background:#fff}
+  .gcircle{width:118px;height:118px;border-radius:50%;background:var(--green);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:none}
+  .gcircle b{font-size:34px;font-weight:800;line-height:1}
+  .gcircle span{font-size:13px;letter-spacing:.05em}
+  .gband h3{font-size:clamp(23px,2.6vw,29px);font-weight:800;margin-bottom:14px}
+  .gband p{color:var(--ink-soft);font-size:15px;margin:0 0 10px}
+  .gband p b{color:var(--green)}
+  .gband .fine{font-style:italic;color:var(--muted);font-size:13.5px}
+
+  /* ---------- Quick FAQ cards ---------- */
+  .qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(2,58,54,.04)}
+  .qcard h4{color:var(--green);font-size:16px;font-weight:700;margin:0 0 12px;line-height:1.3}
+  .qcard p{color:var(--ink-soft);font-size:14px;line-height:1.55;margin:0 0 16px;flex:1}
+  .qcard .more{color:var(--rose);font-weight:600;font-size:14px}
+  .qcard .more:hover{color:#a56a5c}
+
+  /* ---------- Reviews ---------- */
+  .rhead{text-align:center;margin-bottom:14px}
+  .rrating{text-align:center;color:var(--ink-soft);font-size:14.5px;margin-bottom:38px}
+  .rrating .stars{margin-right:6px}
+  .rrating b{color:var(--ink)}
+  .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .review{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 24px;box-shadow:0 6px 18px rgba(2,58,54,.04)}
+  .review .stars{font-size:14px;margin-bottom:14px;display:block}
+  .review q{font-style:italic;color:var(--ink);font-size:14.5px;line-height:1.6;display:block;margin-bottom:18px;quotes:none}
+  .review .who{font-weight:700;color:var(--ink);font-size:14.5px}
+  .review .who span{display:block;font-weight:400;color:var(--muted);font-size:12.5px;margin-top:2px}
+
+  /* ---------- Product detail ---------- */
+  .pd{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}
+  .pd__media{display:flex;flex-direction:column;gap:12px}
+  .pd__frame{border-radius:20px;overflow:hidden;box-shadow:0 16px 44px rgba(2,58,54,.12)}
+  .pd__frame img{width:100%;aspect-ratio:1/1;object-fit:cover}
+  .pd__thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .pd__thumbs span{height:56px;border-radius:12px;background:var(--cream-2);border:1px solid var(--line)}
+  .pd__pill{display:inline-block;background:var(--cream-2);color:var(--green);font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;margin-bottom:14px;border:1px solid var(--line)}
+  .pd__body h3{font-size:clamp(28px,3vw,36px);font-weight:800;margin-bottom:6px}
+  .pd__sub{color:var(--muted);font-size:15px;margin:0 0 22px}
+  .infobox{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:24px 26px;display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;margin-bottom:22px}
+  .infobox .k{font-weight:700;color:var(--green);font-size:14px;margin-bottom:3px}
+  .infobox .v{color:var(--ink-soft);font-size:13.5px;line-height:1.5}
+  .checks{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:11px}
+  .checks li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft)}
+  .checks svg{flex:none;color:var(--teal);margin-top:3px}
+  .pd__note{font-style:italic;color:var(--ink-soft);font-size:14.5px;line-height:1.6;margin:0 0 22px;max-width:56ch}
+  .pd__cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+
+  /* ---------- Come funziona ---------- */
+  .how{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+  .howstep .hn{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-bottom:16px}
+  .howstep h4{color:var(--green);font-size:17px;font-weight:700;margin:0 0 8px}
+  .howstep p{color:var(--ink-soft);font-size:14px;line-height:1.55;margin:0}
+
+  /* ---------- Full FAQ ---------- */
+  .faq{columns:2;column-gap:52px}
+  .faq__item{break-inside:avoid;margin-bottom:26px}
+  .faq__item h4{color:var(--green);font-size:16px;font-weight:700;margin:0 0 7px}
+  .faq__item p{color:var(--ink-soft);font-size:14px;line-height:1.6;margin:0}
+
+  /* ---------- Email capture ---------- */
+  .lead-capture{background:var(--cream);border-radius:26px;padding:52px 44px;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+  .lead-capture .eyebrow{margin-bottom:12px}
+  .lead-capture h3{font-size:clamp(24px,2.8vw,32px);font-weight:800;line-height:1.15;margin-bottom:14px}
+  .lead-capture p{color:var(--ink-soft);font-size:15px;margin:0}
+  .lc-form{display:flex;flex-direction:column;gap:12px}
+  .lc-form input{padding:15px 18px;border-radius:12px;border:1.5px solid var(--line-2);font-family:inherit;font-size:15px;background:#fff;color:var(--ink)}
+  .lc-form input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(77,122,114,.15)}
+
+  /* ---------- Final CTA ---------- */
+  .final{background:var(--green);color:#fff;text-align:center;padding:80px 0}
+  .final h2{color:#fff;font-size:clamp(30px,4vw,46px);font-weight:800;margin-bottom:18px}
+  .final p{color:#c7d6d2;font-size:16.5px;max-width:60ch;margin:0 auto 30px}
+  .final__cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:20px}
+  .final .ok{color:#cfe0dc;font-weight:600;font-size:14.5px;margin-bottom:16px}
+  .final .ok b{color:#fff}
+  .final .fine{color:#8fb1ab;font-size:13.5px;margin-bottom:6px}
+  .final .fine .dot{opacity:.5;margin:0 6px}
+  .final .waline{color:#fff;font-weight:700;font-size:14.5px}
+
+  /* ---------- Footer ---------- */
+  .foot{background:var(--nav);padding:30px 0}
+  .foot__row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .foot__nav{display:flex;gap:26px;font-weight:500;font-size:14.5px;color:var(--green)}
+  .foot__nav a{opacity:.85}.foot__nav a:hover{opacity:1}
+  .foot__legal{text-align:right;color:var(--muted);font-size:12.5px;line-height:1.6}
+  .foot .brand img{height:34px}
+
+  /* ---------- Reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:980px){
+    .hero__grid,.story__grid,.method__grid,.pd,.lead-capture{grid-template-columns:1fr;gap:38px}
+    .pd .pd__media{order:-1;max-width:420px;margin:0 auto}
+    .story__photo{max-width:360px;margin:0 auto}
+    .steps,.qgrid,.reviews,.how{grid-template-columns:repeat(2,1fr)}
+    .prices{grid-template-columns:1fr;gap:28px}
+    .divv{display:none}
+    .faq{columns:1}
+    .nav__links{display:none}
+    .gband{grid-template-columns:1fr;text-align:center;justify-items:center;gap:24px}
+  }
+  @media (max-width:560px){
+    .wrap{padding:0 18px}
+    .section{padding:56px 0}
+    .steps,.qgrid,.reviews,.how{grid-template-columns:1fr}
+    .infobox{grid-template-columns:1fr}
+    .ticks{grid-template-columns:1fr}
+    .hero__cta,.final__cta{flex-direction:column;align-items:stretch}
+    .btn{width:100%}
+    .foot__row{flex-direction:column;align-items:flex-start}
+    .foot__legal{text-align:left}
+    .trust{padding:20px}
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="topbar">100% morbidezza, 0% nodi, 0% stress — il Metodo Eleva per il pelo lungo · <b>30 giorni soddisfatti o rimborsati</b> · Supporto WhatsApp lun–ven 9–18</div>
+
+<!-- Nav -->
+<header class="nav">
+  <div class="wrap nav__inner">
+    <a class="brand" href="#top"><img src="assets/logo-eleva.png" alt="Eleva"></a>
+    <nav class="nav__links">
+      <a href="#nodi">Nodi</a>
+      <a href="#metodo">Metodo</a>
+      <a href="#kit">Kit</a>
+      <a href="#spazzola">Spazzola</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="#kit">Inizia con il Kit — 38€</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero__grid">
+      <div class="reveal">
+        <h1 class="hero__title">Stop ai nodi:<span class="l2">Metodo Eleva</span></h1>
+        <p class="hero__body">La <b>routine gentile in 4 step</b> per cani a pelo lungo: aiuta a districare i nodi, prevenirne la formazione e mantenere il manto <b>più liscio, setoso e luminoso</b>.</p>
+        <p class="hero__note">Non serve spazzolare di più. Servono cosmetici delicati, strumenti corretti e una routine semplice.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary btn--lg" href="#kit">Inizia con il Kit — 38€</a>
+          <a class="btn btn--outline btn--lg" href="#">Chiedi consiglio su WhatsApp</a>
+        </div>
+        <div class="rating"><span class="stars">★★★★★</span> <b>4,9/5</b> · 40 recensioni</div>
+        <div class="ticks">
+          <span class="tick"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> 30 giorni soddisfatti o rimborsati</span>
+          <span class="tick"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Spedizione gratuita sopra 49€</span>
+          <span class="tick"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Made in Italy</span>
+        </div>
+        <div class="guarantee-mini"><b>Ci fidiamo dei nostri prodotti perché li usiamo ogni giorno con Eva.</b>Se entro 30 giorni la routine non fa per te, rendi i prodotti e ti rimborsiamo.</div>
+      </div>
+      <div class="hero__media reveal"><img src="assets/hero-prodotti-eleva.jpg" alt="Kit Metodo Eleva su tessuto"></div>
+    </div>
+
+    <!-- Trust strip -->
+    <div class="trust reveal">
+      <div class="trust__row">
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Pagamenti sicuri al 100%</span><span class="dot">·</span>
+        <span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Spedizioni gratuite sopra 49€</span><span class="dot">·</span>
+        <span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg> Consegne affidabili con corrieri selezionati</span>
+      </div>
+      <div class="trust__line">Assistenza WhatsApp lun–ven 9–18 — rispondiamo in giornata.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Story -->
+<section class="section" id="nodi">
+  <div class="wrap">
+    <div class="story__grid">
+      <div class="story__photo reveal"><img src="assets/stefania-eva.jpg" alt="Stefania, co-fondatrice di Eleva"></div>
+      <div class="reveal">
+        <p class="eyebrow">La nostra storia</p>
+        <h2 class="h2" style="margin-bottom:22px">Nato in casa nostra, con Eva</h2>
+        <p class="quote">«Il Metodo Eleva nasce con Eva, la nostra Maltese a pelo lungo. Avevamo provato di tutto: troppi prodotti, poco metodo, troppi nodi. Poi abbiamo capito che servivano meno gesti, fatti meglio. Questo metodo è quello che usiamo ogni giorno con lei: detergere, nutrire, proteggere, spazzolare. Con calma, un gesto alla volta.»</p>
+        <p class="attrib"><b>— Stefania &amp; Marcello, fondatori di ELEVA</b> · con Eva, la nostra Maltese</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Da dove iniziare / Kit -->
+<section class="section section--cream" id="kit">
+  <div class="wrap">
+    <div class="shead reveal">
+      <p class="eyebrow">Da dove iniziare</p>
+      <h2 class="h2">Inizia dal Kit Conosciamoci più Spazzola Eleva</h2>
+      <p>Tre prodotti in <b>formato mini</b> per provare la routine Eleva e capire come risponde il pelo del tuo cane, spendendo poco. <b>Aggiungi la Spazzola Professional</b> per completare il metodo fin dal primo utilizzo.</p>
+    </div>
+
+    <div class="steps">
+      <div class="stepcard reveal">
+        <span class="stepbadge">Step 1</span>
+        <h3>Shampoo Delicato</h3>
+        <p class="spec">100 ml · Senza SLS/SLES</p>
+        <p class="desc">Deterge delicatamente il pelo rispettando la cute del cane. È il primo step della routine: prepara il pelo ai trattamenti successivi.</p>
+        <div class="stepcard__img"><img src="assets/step-shampoo.jpg" alt="Shampoo Delicato"></div>
+      </div>
+      <div class="stepcard reveal">
+        <span class="stepbadge">Step 2</span>
+        <h3>Maschera Nutriente</h3>
+        <p class="spec">50 ml · Vitamina E + B5</p>
+        <p class="desc">Nutre il pelo rendendolo morbido ed elastico. Aiuta a districare i nodi e ne ritarda la formazione. È lo step fondamentale per favorire la pettinabilità.</p>
+        <div class="stepcard__img"><img src="assets/step-maschera.jpg" alt="Maschera Nutriente"></div>
+      </div>
+      <div class="stepcard reveal">
+        <span class="stepbadge">Step 3</span>
+        <h3>Scioglinodi Spray</h3>
+        <p class="spec">50 ml · Si usa sul pelo asciutto</p>
+        <p class="desc">Aiuta a districare i nodi più difficili. Si usa sul pelo asciutto per favorire la spazzolata e mantenere il manto ordinato tra un bagno e l'altro.</p>
+        <div class="stepcard__img"><img src="assets/step-scioglinodi.jpg" alt="Scioglinodi Spray"></div>
+      </div>
+      <div class="stepcard reveal">
+        <span class="stepbadge">Step 4</span>
+        <h3>Spazzola Professional</h3>
+        <p class="spec">Corpo in legno di faggio</p>
+        <span class="off">Con il Kit: −40%</span>
+        <p class="desc">La spazzola progettata per snodare il pelo con facilità, senza spezzarlo. Da usare dopo lo Scioglinodi, sul pelo asciutto.</p>
+        <div class="stepcard__img"><img src="assets/step-spazzola.jpg" alt="Spazzola Professional"></div>
+      </div>
+    </div>
+
+    <!-- Pricing box -->
+    <div class="pricebox reveal">
+      <h3>La routine anti-nodi completa</h3>
+      <div class="prices">
+        <div class="price">
+          <div class="cap">Kit Conosciamoci</div>
+          <div class="amt">38€</div>
+          <div class="sub">Shampoo, Maschera e Scioglinodi insieme</div>
+        </div>
+        <div class="divv"></div>
+        <div class="price">
+          <div class="cap">Spazzola Professional</div>
+          <div class="amt">25,20€ <s>42€</s></div>
+          <div class="sub">−40% solo insieme al Kit</div>
+        </div>
+        <div class="divv"></div>
+        <div class="price">
+          <div class="cap">Kit + Spazzola</div>
+          <div class="amt">63,20€ <s>80€</s></div>
+          <div class="sub">Il metodo completo, dal primo giorno</div>
+        </div>
+      </div>
+      <a class="btn btn--tan btn--lg" href="#">Kit + Spazzola — 63,20€</a>
+      <p class="fine">30 giorni soddisfatti o rimborsati · Spedizione gratuita sopra 49€ · Consegna in 24–48 ore</p>
+    </div>
+  </div>
+</section>
+
+<!-- Il Metodo -->
+<section class="section" id="metodo">
+  <div class="wrap">
+    <div class="method__grid">
+      <div class="method__body reveal">
+        <p class="eyebrow">Il metodo</p>
+        <h2 class="h2" style="margin-bottom:20px">Il Metodo Eleva. Routine gentile in 4 step</h2>
+        <p class="lead">Il pelo lungo non ha bisogno di mille prodotti, ha bisogno di un metodo facile da applicare. Per questo, il Metodo Eleva si fonda su una routine semplice in 4 step: detergere, nutrire, proteggere e spazzolare.</p>
+        <ol class="mlist">
+          <li><span class="mnum">1</span><span><b>Detergi</b> con lo Shampoo Delicato — senza SLS/SLES</span></li>
+          <li><span class="mnum">2</span><span><b>Nutri e districa</b> con la Maschera Nutriente — Vitamina E + B5</span></li>
+          <li><span class="mnum">3</span><span><b>Proteggi e districa</b> il pelo asciutto con lo Scioglinodi — Vitamina E + B5</span></li>
+          <li><span class="mnum">4</span><span><b>Spazzola</b> dopo aver spruzzato lo Scioglinodi</span></li>
+        </ol>
+      </div>
+      <div class="method__media reveal"><img src="assets/hero-prodotti-eleva.jpg" alt="Prodotti Metodo Eleva"></div>
+    </div>
+
+    <!-- Guarantee band -->
+    <div class="gband reveal" style="margin-top:70px">
+      <div class="gcircle"><b>30</b><span>giorni</span></div>
+      <div>
+        <h3>Provalo con calma. Soddisfatti o rimborsati.</h3>
+        <p><b>Ci fidiamo dei nostri prodotti perché li usiamo ogni giorno con Eva.</b> Se entro 30 giorni la routine non fa per te, ci rispedisci i prodotti e ti rimborsiamo l'intero importo. Ti chiediamo solo di raccontarci cosa non ha funzionato: ci aiuta a fare meglio.</p>
+        <p class="fine">Valida entro 30 giorni dalla consegna. Il rimborso prevede il reso dei prodotti.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Domande veloci -->
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="shead reveal"><h2 class="h2">Domande veloci</h2></div>
+    <div class="qgrid">
+      <div class="qcard reveal">
+        <h4>Il Kit è adatto al mio cane?</h4>
+        <p>Il Kit Conosciamoci è pensato per cani a pelo lungo o con pelo che si annoda facilmente, come Maltese, Shih Tzu, Yorkshire, Barboncini, Cavalier King.</p>
+        <a class="more" href="#faq">Leggi di più →</a>
+      </div>
+      <div class="qcard reveal">
+        <h4>Aiuta davvero contro i nodi?</h4>
+        <p>Sì: la routine aiuta a districare il pelo e a ridurre le condizioni che favoriscono la formazione dei nodi, come secchezza e scarsa idratazione.</p>
+        <a class="more" href="#faq">Leggi di più →</a>
+      </div>
+      <div class="qcard reveal">
+        <h4>Come si usa la maschera nutriente?</h4>
+        <p>Dopo lo shampoo, diluisci e frulla la maschera in acqua calda. Applicala su tutto il mantello. Se il tuo cane ha il manto lungo, non risciacquare.</p>
+        <a class="more" href="#faq">Leggi di più →</a>
+      </div>
+      <div class="qcard reveal">
+        <h4>Lo shampoo va diluito?</h4>
+        <p>No: lo Shampoo Delicato Eleva è già pronto all'uso e si applica puro direttamente sul pelo bagnato. L'unico prodotto del Kit da diluire è la Maschera Nutriente.</p>
+        <a class="more" href="#faq">Leggi di più →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Recensioni -->
+<section class="section">
+  <div class="wrap">
+    <div class="rhead reveal"><p class="eyebrow">Chi l'ha provato</p><h2 class="h2">Recensioni</h2></div>
+    <p class="rrating reveal"><span class="stars">★★★★★</span> <b>4,9/5</b> su 40 recensioni · ci trovi anche a Quattrozampe in Fiera, Torino e Milano</p>
+    <div class="reviews">
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <q>"Pelo lucido e senza nodi. Finalmente una spazzolata che non è più un dramma! La consiglio a chi ha cani con manti lunghi e delicati."</q>
+        <div class="who">Alessandra<span>Recensione cliente Eleva</span></div>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <q>"Prodotti fantastici: il mio maltese non ha più irritazioni e il mantello resta morbido per giorni. Una vera svolta per noi!"</q>
+        <div class="who">Paola<span>Recensione cliente Eleva</span></div>
+      </div>
+      <div class="review reveal">
+        <span class="stars">★★★★★</span>
+        <q>"Mai visto il pelo così setoso e profumato. Con pochi passaggi sembra appena uscito dal toelettatore, ma a casa."</q>
+        <div class="who">Teresa<span>Recensione cliente Eleva</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product: Shampoo -->
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="pd">
+      <div class="pd__media reveal">
+        <div class="pd__frame"><img src="assets/prod-shampoo.jpg" alt="Shampoo Delicato"></div>
+        <div class="pd__thumbs"><span></span><span></span><span></span></div>
+      </div>
+      <div class="pd__body reveal">
+        <span class="pd__pill">Step 1 — Detersione delicata</span>
+        <h3>Shampoo Delicato</h3>
+        <p class="pd__sub">Il primo step del Metodo Eleva</p>
+        <div class="infobox">
+          <div><div class="k">Ideale per:</div><div class="v">cani a pelo lungo, cute delicata e lavaggi frequenti</div></div>
+          <div><div class="k">Formato consigliato:</div><div class="v">100 ml nel Kit Conosciamoci</div></div>
+          <div><div class="k">Punto forte:</div><div class="v">tensioattivi vegetali e pH bilanciato: deterge senza seccare il pelo</div></div>
+          <div><div class="k">Quando sceglierlo:</div><div class="v">per iniziare una routine delicata contro i nodi</div></div>
+        </div>
+        <ul class="checks">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Deterge il manto rispettando la cute del cane</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Già pronto all'uso: non va diluito</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Senza SLS/SLES, con tensioattivi delicati</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Prepara il pelo agli step successivi del Metodo Eleva</li>
+        </ul>
+        <div class="pd__cta">
+          <a class="btn btn--primary" href="#kit">Inizia con il Kit — 38€</a>
+          <a class="wa-link" href="#">Hai dubbi? Scrivici su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product: Maschera -->
+<section class="section">
+  <div class="wrap">
+    <div class="pd">
+      <div class="pd__media reveal">
+        <div class="pd__frame"><img src="assets/prod-maschera.jpg" alt="Maschera Nutriente"></div>
+        <div class="pd__thumbs"><span></span><span></span><span></span></div>
+      </div>
+      <div class="pd__body reveal">
+        <span class="pd__pill">Step 2 — Nutrimento e districabilità</span>
+        <h3>Maschera Nutriente</h3>
+        <p class="pd__sub">Il secondo step del Metodo Eleva</p>
+        <div class="infobox">
+          <div><div class="k">Ideale per:</div><div class="v">cani a pelo lungo, manti secchi, annodati o difficili da pettinare</div></div>
+          <div><div class="k">Formato consigliato:</div><div class="v">50 ml nel Kit Conosciamoci</div></div>
+          <div><div class="k">Punto forte:</div><div class="v">nutre, ammorbidisce e aiuta a districare il pelo</div></div>
+          <div><div class="k">Quando sceglierla:</div><div class="v">dopo lo shampoo, per un manto più morbido e pettinabile</div></div>
+        </div>
+        <ul class="checks">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Nutre il pelo dopo la detersione</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Rende il manto setoso senza appesantire né allungare i tempi di asciugatura</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aiuta a districare i nodi e a prevenirne la formazione</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Si diluisce e si frulla in acqua calda prima dell'applicazione</li>
+        </ul>
+        <p class="pd__note">È lo step che fa la differenza nei cani a pelo lungo: dopo lo shampoo, rende il manto elastico e facile da pettinare.</p>
+        <div class="pd__cta">
+          <a class="btn btn--primary" href="#kit">Inizia con il Kit — 38€</a>
+          <a class="wa-link" href="#">Hai dubbi? Scrivici su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product: Scioglinodi -->
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="pd">
+      <div class="pd__media reveal">
+        <div class="pd__frame"><img src="assets/prod-scioglinodi.jpg" alt="Scioglinodi Spray"></div>
+        <div class="pd__thumbs"><span></span><span></span><span></span></div>
+      </div>
+      <div class="pd__body reveal">
+        <span class="pd__pill">Step 3 — Protezione e districabilità</span>
+        <h3>Scioglinodi Spray</h3>
+        <p class="pd__sub">Il terzo step del Metodo Eleva</p>
+        <div class="infobox">
+          <div><div class="k">Ideale per:</div><div class="v">cani a pelo lungo, manti che si annodano facilmente</div></div>
+          <div><div class="k">Formato consigliato:</div><div class="v">50 ml nel Kit Conosciamoci</div></div>
+          <div><div class="k">Punto forte:</div><div class="v">aiuta a districare il pelo asciutto prima della spazzolata</div></div>
+          <div><div class="k">Quando sceglierlo:</div><div class="v">tra un bagnetto e l'altro, quando il pelo tende ad annodarsi</div></div>
+        </div>
+        <ul class="checks">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Si usa sul pelo asciutto prima della spazzolata</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aiuta a districare i nodi e a rendere il pelo più pettinabile</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Favorisce una spazzolatura più veloce e meno stressante</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aiuta a mantenere il manto più ordinato tra un lavaggio e l'altro</li>
+        </ul>
+        <p class="pd__note">Lo step di mantenimento del Metodo Eleva: prepara il pelo alla spazzola e aiuta a gestire i nodi tra un bagno e l'altro.</p>
+        <div class="pd__cta">
+          <a class="btn btn--primary" href="#kit">Inizia con il Kit — 38€</a>
+          <a class="wa-link" href="#">Hai dubbi? Scrivici su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Product: Spazzola -->
+<section class="section" id="spazzola">
+  <div class="wrap">
+    <div class="pd">
+      <div class="pd__media reveal">
+        <div class="pd__frame"><img src="assets/prod-spazzola.jpg" alt="Spazzola Professional"></div>
+        <div class="pd__thumbs"><span></span><span></span><span></span></div>
+      </div>
+      <div class="pd__body reveal">
+        <span class="pd__pill">Step 4 — Spazzolatura corretta</span>
+        <h3>Spazzola Professional</h3>
+        <p class="pd__sub">Completa il Metodo Eleva</p>
+        <div class="infobox">
+          <div><div class="k">Ideale per:</div><div class="v">cani a pelo lungo, manti annodati o difficili da spazzolare</div></div>
+          <div><div class="k">Uso consigliato:</div><div class="v">dopo lo Scioglinodi sul pelo asciutto, oppure durante l'asciugatura</div></div>
+          <div><div class="k">Punto forte:</div><div class="v">aiuta a districare facilmente il pelo senza spezzarlo</div></div>
+          <div><div class="k">Prezzo con il Kit:</div><div class="v">25,20€ invece di 42€ (−40%)</div></div>
+        </div>
+        <ul class="checks">
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Completa la routine anti-nodi Eleva</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Da usare dopo lo Scioglinodi, sul pelo asciutto</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aiuta a snodare il pelo velocemente, per piccole zone</li>
+          <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Corpo in legno di faggio, denti in acciaio e cuscinetto antistatico</li>
+        </ul>
+        <p class="pd__note">Lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato.</p>
+        <div class="pd__cta">
+          <a class="btn btn--primary" href="#kit">Aggiungi la Spazzola — 25,20€</a>
+          <a class="wa-link" href="#">Hai dubbi? Scrivici su WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Come funziona -->
+<section class="section section--cream">
+  <div class="wrap">
+    <div class="reveal" style="margin-bottom:44px">
+      <p class="eyebrow">Semplice davvero</p>
+      <h2 class="h2">Come funziona</h2>
+    </div>
+    <div class="how">
+      <div class="howstep reveal"><div class="hn">1</div><h4>Parti dal Kit</h4><p>Tre minisize per iniziare subito la routine anti-nodi Eleva, a 38€.</p></div>
+      <div class="howstep reveal"><div class="hn">2</div><h4>Aggiungi la spazzola</h4><p>Con la Spazzola Professional completi il metodo: 25,20€ invece di 42€, solo insieme al Kit.</p></div>
+      <div class="howstep reveal"><div class="hn">3</div><h4>Usa i prodotti in ordine</h4><p>Shampoo, maschera, scioglinodi e spazzola: ogni step ha una funzione precisa.</p></div>
+      <div class="howstep reveal"><div class="hn">4</div><h4>Ricevi supporto Eleva</h4><p>Ti seguiamo su WhatsApp per aiutarti a costruire la routine giusta per il tuo cane.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Full FAQ -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="shead reveal"><p class="eyebrow">Prima di acquistare</p><h2 class="h2">Domande frequenti</h2></div>
+    <div class="faq reveal">
+      <div class="faq__item"><h4>Il Kit Conosciamoci è adatto al mio cane?</h4><p>È pensato per cani a pelo lungo o con pelo che si annoda facilmente: Maltese, Shih Tzu, Yorkshire, Barboncini, Cavalier King e manti simili.</p></div>
+      <div class="faq__item"><h4>Cosa contiene il Kit Conosciamoci?</h4><p>Tre minisize della linea Carezze di Lavanda: Shampoo Delicato (100 ml), Maschera Nutriente (50 ml) e Scioglinodi Spray (50 ml).</p></div>
+      <div class="faq__item"><h4>Il Kit aiuta davvero contro i nodi?</h4><p>Sì: la routine aiuta a districare il pelo e a ridurre le condizioni che favoriscono la formazione dei nodi, come secchezza e scarsa idratazione. Per nodi gravi o feltri, rivolgiti a un toelettatore.</p></div>
+      <div class="faq__item"><h4>In che ordine devo usare i prodotti?</h4><p>Nell'ordine dei 4 step: shampoo, maschera, scioglinodi sul pelo asciutto, poi spazzola. Ogni step prepara il successivo.</p></div>
+      <div class="faq__item"><h4>Lo Shampoo Delicato va diluito?</h4><p>No: è già pronto all'uso e si applica puro direttamente sul pelo bagnato. L'unico prodotto del Kit da diluire è la Maschera Nutriente, da preparare con acqua calda prima dell'applicazione.</p></div>
+      <div class="faq__item"><h4>Come si usa la Maschera Nutriente?</h4><p>Dopo lo shampoo, diluisci e frulla la maschera in acqua calda. Applicala su tutto il mantello. Se il tuo cane ha il manto lungo, non risciacquare.</p></div>
+      <div class="faq__item"><h4>Quando uso lo Scioglinodi?</h4><p>Sul pelo asciutto, prima della spazzolata: tra un bagnetto e l'altro, quando il pelo tende ad annodarsi o diventa più difficile da spazzolare.</p></div>
+      <div class="faq__item"><h4>La Spazzola Professional è necessaria?</h4><p>Il Kit funziona anche da solo, ma la Spazzola Professional completa il metodo: snoda il pelo asciutto dopo lo Scioglinodi, senza spezzarlo. Con il Kit è scontata del 40%.</p></div>
+      <div class="faq__item"><h4>Posso chiedere consiglio prima di acquistare?</h4><p>Certo: scrivici su WhatsApp lun–ven 9–18. Ti aiutiamo a scegliere la routine giusta per il pelo del tuo cane prima dell'acquisto.</p></div>
+      <div class="faq__item"><h4>Come funziona "soddisfatti o rimborsati"?</h4><p>Se entro 30 giorni la routine non fa per voi, ci rispedite i prodotti e vi rimborsiamo l'intero importo. Vi chiediamo solo di raccontarci cosa non ha funzionato.</p></div>
+      <div class="faq__item"><h4>Quali sono i tempi di spedizione?</h4><p>Spedizione gratuita per ordini sopra i 49€. Gli ordini partono con corriere espresso e arrivano in genere in 24–48 ore, salvo ritardi del corriere.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Email capture -->
+<section class="section">
+  <div class="wrap">
+    <div class="lead-capture reveal">
+      <div>
+        <p class="eyebrow">Non sei ancora pronto?</p>
+        <h3>Scarica la mini guida: 5 minuti al giorno contro i nodi</h3>
+        <p>Il metodo che usiamo con Eva, spiegato passo passo: dove si formano i nodi, come districare senza tirare e come costruire una routine gentile in 5 minuti al giorno. Gratis, nella tua casella email.</p>
+      </div>
+      <div class="lc-form">
+        <input type="email" placeholder="La tua email" aria-label="La tua email">
+        <a class="btn btn--primary btn--lg" href="#">Inviami la guida gratuita</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Inizia la routine anti-nodi Eleva</h2>
+    <p>Kit Conosciamoci, Spazzola Professional e consiglio personalizzato per prenderti cura del manto lungo con metodo. Con calma, un gesto alla volta.</p>
+    <div class="final__cta">
+      <a class="btn btn--tan btn--lg" href="#kit">Kit + Spazzola — 63,20€</a>
+      <a class="btn btn--light-outline btn--lg" href="#">Chiedi consiglio su WhatsApp</a>
+    </div>
+    <p class="ok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><polyline points="20 6 9 17 4 12"/></svg> <b>30 giorni soddisfatti o rimborsati sul primo Kit</b></p>
+    <p class="fine">Checkout su Eleva<span class="dot">·</span>Corriere espresso 24–48 ore<span class="dot">·</span>Consigli personalizzati Eleva</p>
+    <p class="waline">Assistenza WhatsApp lun–ven 9–18 — rispondiamo in giornata.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+  <div class="wrap foot__row">
+    <a class="brand" href="#top"><img src="assets/logo-eleva.png" alt="Eleva"></a>
+    <nav class="foot__nav">
+      <a href="#nodi">Nodi</a><a href="#metodo">Metodo</a><a href="#kit">Kit</a><a href="#spazzola">Spazzola</a><a href="#faq">FAQ</a>
+    </nav>
+    <div class="foot__legal">© 2026 ELEVA. Tutti i diritti riservati.<br>Documento di lavoro — prezzi indicativi da confermare prima della pubblicazione.</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce || !('IntersectionObserver' in window)){
+      els.forEach(function(e){e.classList.add('in')});
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  })();
+</script>
+</body>
+</html>

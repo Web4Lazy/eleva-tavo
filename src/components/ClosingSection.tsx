@@ -7,9 +7,13 @@ const ClosingSection = () => (
       <h2 className="mb-3">Inizia la routine anti-nodi Eleva</h2>
       <p className="text-lg opacity-90 mb-10">Kit Conosciamoci, Spazzola Professional e consiglio personalizzato per prenderti cura del manto lungo con metodo.</p>
 
-      <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-        <a href="#scenari" className="cta-white">
-          Scopri il Kit
+      <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6">
+        <a
+          href="#kit"
+          onClick={() => sendEvent("ClickBundle", { section: "closing" })}
+          className="cta-white"
+        >
+          Inizia con il Kit — 60€
         </a>
         <a
           href={getWhatsAppUrl()}
@@ -18,13 +22,13 @@ const ClosingSection = () => (
           onClick={() => sendEvent("ClickWhatsApp", { section: "closing" })}
           className="cta-outline-white"
         >
-          Chiedi consiglio
+          Chiedi consiglio su WhatsApp
         </a>
       </div>
-      <p className="text-sm opacity-80 mb-2">Ti aiutiamo a scegliere la routine più adatta al pelo del tuo cane.</p>
-      <p className="text-xs opacity-60 mb-8">Risposta umana su WhatsApp negli orari indicati.</p>
+      <p className="text-sm font-semibold opacity-90 mb-2">30 giorni soddisfatti o rimborsati sul primo Kit</p>
+      <p className="text-xs opacity-70 mb-8">Ti aiutiamo a scegliere la routine più adatta al pelo del tuo cane · Risposta umana su WhatsApp negli orari indicati.</p>
 
-      <TrustBar variant="dark" />
+      <TrustBar variant="dark" context="closing" />
     </div>
   </section>
 );

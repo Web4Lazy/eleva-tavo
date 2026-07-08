@@ -12,6 +12,8 @@ export interface ProductData {
   tag: string;
   name: string;
   subtitle?: string;
+  /** Volume/formato mostrato in evidenza accanto al nome (es. "100 ml"). */
+  volume: string;
   badge?: string;
   quickSummary?: {
     idealePer: string;
@@ -28,6 +30,7 @@ export interface ProductData {
   images?: string[];
   /** Taglie/varianti — non pertinenti per i cosmetici, lasciate vuote. */
   sizes: ProductSize[];
+  /** Pagina del prodotto singolo (CTA secondaria); la CTA primaria punta sempre al Kit. */
   cartLink: string;
   ctaLabel: string;
   bgClass: string;
@@ -39,6 +42,7 @@ export const PRODUCTS: ProductData[] = [
     tag: "Step 1 — Detersione delicata",
     name: "Shampoo Delicato",
     subtitle: "il primo step del Metodo Eleva",
+    volume: "100 ml",
     bgClass: "bg-secondary",
     quickSummary: {
       idealePer: "Cani a pelo lungo, cute delicata e lavaggi frequenti",
@@ -59,14 +63,15 @@ export const PRODUCTS: ProductData[] = [
       "/images/products/shampoo/shampoo-03.jpg",
     ],
     sizes: [],
-    cartLink: CONFIG.LINKS.KIT,
-    ctaLabel: "Acquista il Kit",
+    cartLink: CONFIG.LINKS.SHAMPOO,
+    ctaLabel: "Acquista lo Shampoo",
   },
   {
     id: "prodotto-maschera",
     tag: "Step 2 — Nutrimento e districabilità",
     name: "Maschera Nutriente",
     subtitle: "il secondo step del Metodo Eleva",
+    volume: "50 ml",
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Cani a pelo lungo, manti secchi, annodati o difficili da pettinare",
@@ -88,14 +93,15 @@ export const PRODUCTS: ProductData[] = [
       "/images/products/maschera/maschera-03.jpg",
     ],
     sizes: [],
-    cartLink: CONFIG.LINKS.KIT,
-    ctaLabel: "Acquista il Kit",
+    cartLink: CONFIG.LINKS.MASCHERA,
+    ctaLabel: "Acquista la Maschera",
   },
   {
     id: "prodotto-scioglinodi",
     tag: "Step 3 — Protezione e districabilità",
     name: "Scioglinodi Spray",
     subtitle: "il terzo step del Metodo Eleva",
+    volume: "50 ml",
     bgClass: "bg-secondary",
     quickSummary: {
       idealePer: "Cani a pelo lungo, manti che si annodano facilmente e mantenimento tra un bagno e l'altro",
@@ -116,15 +122,15 @@ export const PRODUCTS: ProductData[] = [
       "/images/products/scioglinodi/scioglinodi-03.jpg",
     ],
     sizes: [],
-    cartLink: CONFIG.LINKS.KIT,
-    ctaLabel: "Acquista il Kit",
+    cartLink: CONFIG.LINKS.SCIOGLINODI,
+    ctaLabel: "Acquista lo Scioglinodi",
   },
   {
     id: "prodotto-spazzola",
     tag: "Step 4 — Spazzolatura corretta",
     name: "Spazzola Professional",
     subtitle: "completa il Metodo Eleva",
-    badge: "-40% col Kit",
+    volume: "Corpo in legno di faggio",
     bgClass: "bg-background",
     quickSummary: {
       idealePer: "Cani a pelo lungo, manti annodati o difficili da spazzolare",
@@ -141,15 +147,14 @@ export const PRODUCTS: ProductData[] = [
       "Cuscinetto antistatico",
     ],
     note: "La Spazzola Professional è lo strumento che completa il Metodo Eleva: lo Scioglinodi prepara il pelo, la spazzola aiuta a lavorarlo con più delicatezza e a mantenere il manto ordinato.",
-    noteExtra: "Con il Kit Conosciamoci, la Spazzola Professional è riservata a prezzo speciale: -40%.",
     images: [
       "/images/products/spazzola/spazzola-01.jpg",
       "/images/products/spazzola/spazzola-02.jpg",
       "/images/products/spazzola/spazzola-03.jpg",
     ],
     sizes: [],
-    cartLink: CONFIG.LINKS.KIT,
-    ctaLabel: "-40% col kit",
+    cartLink: CONFIG.LINKS.SPAZZOLA,
+    ctaLabel: "Acquista la Spazzola",
   },
 ];
 
@@ -168,8 +173,11 @@ const ProductSection = ({ product, compact = false }: Props) => {
       <span className="inline-block bg-secondary text-foreground text-sm font-medium px-3 py-1 rounded-full mb-3">
         {product.tag}
       </span>
-      <div className="flex items-baseline gap-3 mb-1">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mb-1">
         <h2 className="text-foreground">{product.name}</h2>
+        <span className="inline-block whitespace-nowrap rounded-full border border-primary/40 bg-card px-3 py-0.5 text-sm font-semibold text-primary">
+          {product.volume}
+        </span>
       </div>
       {product.subtitle && <p className="text-muted-foreground text-sm mb-4">{product.subtitle}</p>}
 
@@ -253,29 +261,37 @@ const ProductSection = ({ product, compact = false }: Props) => {
         </div>
       )}
 
-      <div className="flex flex-col sm:flex-row gap-3">
+      {/* CTA con gerarchia: Kit dominante (pieno), prodotto singolo defilato (outline leggero) */}
+      <div className="flex flex-col sm:flex-row sm:items-center gap-3">
         <a
-          href={getWhatsAppUrl()}
+          href={CONFIG.LINKS.KIT}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
+          onClick={() => sendEvent("AddToCart", { product: "Kit Conosciamoci", section: product.id })}
           className="cta-primary text-center"
         >
-          Chiedi consiglio
+          Inizia con il Kit — 60€
         </a>
         <a
           href={product.cartLink}
           target="_blank"
           rel="noopener noreferrer"
           onClick={() => sendEvent("AddToCart", { product: product.name })}
-          className="cta-outline text-center"
+          className="inline-flex items-center justify-center rounded-lg border border-primary/50 px-5 py-3 text-center text-sm font-medium text-primary transition-colors duration-200 hover:bg-primary/5"
         >
           {product.ctaLabel}
         </a>
       </div>
-      <p className="text-sm text-muted-foreground mt-3">
-        Hai dubbi sul pelo del tuo cane? Ti consigliamo la routine giusta su WhatsApp prima dell'acquisto.
-      </p>
+      <a
+        href={getWhatsAppUrl()}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => sendEvent("ClickWhatsApp", { product: product.name, section: "product" })}
+        className="mt-4 inline-block text-sm font-medium hover:underline"
+        style={{ color: "hsl(var(--rose))" }}
+      >
+        Hai dubbi? Scrivici su WhatsApp
+      </a>
     </div>
   );
 

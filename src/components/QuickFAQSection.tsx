@@ -22,7 +22,7 @@ const quickFaqs = [
 ];
 
 const QuickFAQSection = () => (
-  <section className="section-padding bg-background">
+  <section className="section-padding bg-secondary">
     <div className="container-custom">
       <h2 className="text-foreground mb-8 text-center">Domande veloci</h2>
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -30,7 +30,7 @@ const QuickFAQSection = () => (
           <a
             key={i}
             href={faq.link}
-            className="group bg-background border border-border rounded-xl p-5 flex flex-col gap-3 transition-shadow duration-200 hover:shadow-md active:scale-[0.98]"
+            className="group bg-card border border-border rounded-xl p-5 flex flex-col gap-3 transition-shadow duration-200 hover:shadow-md active:scale-[0.98]"
           >
             <h3 className="text-sm font-semibold text-foreground leading-snug">
               {faq.q}

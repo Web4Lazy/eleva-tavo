@@ -9,6 +9,7 @@ const ComeFunzionaSection = () => {
   return (
     <section id="come-funziona" className="section-padding bg-secondary">
       <div className="container-custom">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-eyebrow mb-3 text-center lg:text-left">SEMPLICE DAVVERO</p>
         <h2 className="text-foreground mb-10 text-center lg:text-left">Come funziona</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, i) =>

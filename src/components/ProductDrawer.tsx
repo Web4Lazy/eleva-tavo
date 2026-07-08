@@ -25,7 +25,7 @@ const ProductDrawer = ({ productId, onClose }: Props) => {
       >
         <SheetHeader className="px-6 py-4 border-b border-border flex-shrink-0">
           <SheetTitle className="text-left">
-            {product?.name} — Dettagli & Taglie
+            {product?.name} — Dettagli
           </SheetTitle>
         </SheetHeader>
         <div ref={contentRef} className="flex-1 overflow-y-auto px-6 py-6">

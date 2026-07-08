@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 const NAV_ITEMS = [
   { label: "Nodi", href: "#hero" },
   { label: "Metodo", href: "#manifesto" },
-  { label: "Kit", href: "#scenari" },
+  { label: "Kit", href: "#kit" },
   { label: "Spazzola", href: "#prodotto-spazzola" },
   { label: "FAQ", href: "#faq" },
 ];

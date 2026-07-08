@@ -7,9 +7,9 @@ const STEPS = [
 
 const ManifestoSection = () => {
   return (
-    <section id="manifesto" className="section-padding bg-secondary">
+    <section id="manifesto" className="section-padding bg-background">
       <div className="container-custom">
-        <div className="max-w-[720px] mx-auto lg:max-w-none lg:grid lg:grid-cols-[1fr_320px] lg:gap-16 lg:items-center">
+        <div className="max-w-[720px] mx-auto lg:max-w-none lg:grid lg:grid-cols-[1fr_440px] lg:gap-16 lg:items-center">
           <div className="text-center lg:text-left">
             <h2 className="text-foreground mb-6">Il Metodo Eleva. Routine gentile in 4 step</h2>
             <p className="text-base text-muted-foreground leading-relaxed mb-8">
@@ -34,10 +34,10 @@ const ManifestoSection = () => {
             </ol>
           </div>
           <div className="hidden lg:block">
-            <div className="rounded-lg overflow-hidden w-full" style={{ aspectRatio: "1/1" }}>
+            <div className="rounded-lg overflow-hidden w-full" style={{ aspectRatio: "4/5" }}>
               <img
-                src="/images/brand/stefania.png"
-                alt="Stefania, fondatrice di Eleva"
+                src="/images/brand/routine-flatlay.jpg"
+                alt="I prodotti del Metodo Eleva: shampoo, maschera, scioglinodi e spazzola"
                 loading="lazy"
                 className="w-full h-full object-cover"
               />

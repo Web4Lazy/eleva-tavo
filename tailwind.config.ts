@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['"DM Sans"', 'sans-serif'],
+        sans: ['"Poppins"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -61,11 +62,16 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
         verde: "hsl(var(--verde-scuro))",
+        teal: "hsl(var(--teal))",
+        eyebrow: "hsl(var(--eyebrow))",
         "off-white": "hsl(var(--off-white))",
         beige: "hsl(var(--beige))",
         testo: "hsl(var(--testo))",
         "grigio-bordo": "hsl(var(--grigio-bordo))",
         micro: "hsl(var(--micro))",
+        tan: "hsl(var(--tan))",
+        rose: "hsl(var(--rose))",
+        gold: "hsl(var(--gold))",
         whatsapp: "hsl(var(--whatsapp))",
         peach: "hsl(var(--peach))",
       },
